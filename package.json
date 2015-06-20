@@ -1,7 +1,7 @@
 {
   "name": "in.",
   "version": "0.0.0",
-  "description": "",
+  "description": "Dynamic argument injector.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/nomilous/in./issues"
   },
-  "homepage": "https://github.com/nomilous/in.#readme"
+  "homepage": "https://github.com/nomilous/in.#readme",
+  "devDependencies": {
+    "objective": "0.0.24",
+    "should": "^7.0.1"
+  },
+  "dependencies": {
+    "when": "^3.7.3"
+  }
 }
