@@ -44,9 +44,25 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                     
             @expansion = eval: 'expand.thing(\'arg value\', $a.previousArg)'
             @accum = {previousArg: 'VALUE'};
+            
             Compiler.perform(@opts, @accum, @expans, @expansion)
             .then (res) ->
 
                 res.should.eql [1, 2, 3]
                 done()
 
+    it 'provides the expander result for further expansion by coffee script snippet',
+
+        (done, In, Compiler) ->
+
+            mock(global.$$in.expanders).does
+                thirdPartyExpander: (conf, arg1) ->
+                    then: (resolver) -> 
+                        resolver [{a: 1}, {a: 2}, {a: 'THREE'}]
+
+            @expansion = eval: 'thing.a for thing in expand.thirdPartyExpander(\'arg\')'
+            
+            Compiler.perform(@opts, @accum, @expans, @expansion)
+            .then (res) ->
+                res.should.eql [1, 2, 'THREE']
+                done()
