@@ -21,7 +21,9 @@
     "should": "^7.0.1"
   },
   "dependencies": {
-    "when": "^3.7.3",
-    "in.shell": "0.0.0"
+    "coffee-script": "^1.9.3",
+    "in.shell": "0.0.0",
+    "in.expand.dir": "0.0.0",
+    "when": "^3.7.3"
   }
 }
