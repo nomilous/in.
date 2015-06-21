@@ -1,3 +1,52 @@
-objective 'Compile embedded infusions', ->
+objective 'Compile embedded in{{fusions}}', (should) ->
 
-    it '', ->
+    beforeEach ->
+
+        @opts = value: 'VALUE 1'
+        @accum = {}
+        @expans = []
+        @expansion = eval: 'opts.value'
+
+    it 'returns the result of the expansion eval',
+
+        (done, Compiler) ->
+
+            Compiler.perform @opts, @accum, @expans, @expansion
+            .then (res) ->
+
+                res.should.equal 'VALUE 1'
+                done()
+
+    it 'does not allow more than one call to expand.thing',
+
+        (done, Compiler) ->
+
+            @expansion = eval: 'expand.thing() and expand.thisToo()'
+            Compiler.perform(@opts, @accum, @expans, @expansion)
+            .then( 
+                (res) ->
+                (err) ->
+                    should.exist err
+                    done()
+            )
+
+    it 'calls the specified external expander',
+
+        (done, In, Compiler) ->
+
+            mock(global.$$in.expanders).does
+
+                thing: (conf, arg1, arg2) ->
+
+                    arg1.should.equal 'arg value'
+                    arg2.should.equal 'VALUE'
+                    then: (resolver) -> resolver([1, 2, 3]);
+                    
+            @expansion = eval: 'expand.thing(\'arg value\', $a.previousArg)'
+            @accum = {previousArg: 'VALUE'};
+            Compiler.perform(@opts, @accum, @expans, @expansion)
+            .then (res) ->
+
+                res.should.eql [1, 2, 3]
+                done()
+
