@@ -54,6 +54,16 @@ objective('In', function(should) {
     })
   });
 
+  context('aliases', function(In) {
+
+    it('calls shell on $', function(done) {
+      $$in.actions = {as: {reason: {shell: done}}}
+      In(function(progress) { // in.as.reason $ /usr/local/bin/being < /dev/imagination | /usr/sbin/culture |
+      });
+    })
+
+  });
+
   
 
 });
