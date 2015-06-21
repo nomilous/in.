@@ -15,25 +15,30 @@ objective 'Format infuser', ->
         arg.should.eql
             name: 'name'
             in: 'in.action actor p a r r a m s'
-            action: 'action'
-            actor: 'actor'
-            params: 'p a r r a m s'
+            actions: [
+                action: 'action'
+                actor: 'actor'
+                params: 'p a r r a m s'
+            ]
 
 
         Format.perform {}, {}, arg = name: 'name', in: 'in.action actor'
         arg.should.eql
             name: 'name'
             in: 'in.action actor'
-            action: 'action'
-            actor: 'actor'
-            params: undefined
+            actions: [
+                action: 'action'
+                actor: 'actor'
+                params: undefined
+            ]
 
 
         Format.perform {}, {}, arg = name: 'name', in: 'in.action'
         arg.should.eql
             name: 'name'
             in: 'in.action'
-            action: 'action'
-            actor: undefined
-            params: undefined
-
+            actions: [
+                action: 'action'
+                actor: undefined
+                params: undefined
+            ]
