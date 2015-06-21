@@ -24,12 +24,15 @@ objective('In', function(should) {
       Format.does(
         function perform(opts, accum, arg){
           arg.name.should.equal('arg1');
+          return {then: function(resolver) {resolver(arg)}}
         },
         function perform(opts, accum, arg){
           arg.name.should.equal('arg2');
+          return {then: function(resolver) {resolver(arg)}}
         },
         function perform(opts, accum, arg){
           arg.name.should.equal('arg3');
+          return {then: function(resolver) {resolver(arg)}}
         }
       );
       In(function(arg1, arg2, arg3) {}).then(function() {
@@ -42,7 +45,9 @@ objective('In', function(should) {
   context('action', function(In, Format, Action) {
 
     it('calls action.perform with each argument', function(done) {
-      Format.stub(function perform() {});
+      Format.stub(function perform(opts, accum, arg) {
+        return {then: function(resolver) {resolver(arg)}}
+      });
       Action.does(
         function perform(defer) { defer.resolve() },
         function perform(defer) { defer.resolve() },
