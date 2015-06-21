@@ -1,6 +1,6 @@
 # in.
 
-## implementation in p.ogr..s
+## in.plementation in p.ogr..s
 
 ### end goal
 
