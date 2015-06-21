@@ -155,7 +155,7 @@ objective 'Call infuse action', (should) ->
         it 'supports multiple actions in the same arg',
 
             why: """Formatter can expand.
-                    eg. // in.as shell cat {file for file in expand.dir('/etc/bind/zones/db.*')}
+                    eg. // in.as shell cat {{file for file in expand.dir('/etc/bind/zones/db.*')}}
                  """
 
             (Action, In, done) ->
