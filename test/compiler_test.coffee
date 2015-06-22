@@ -3,6 +3,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
     beforeEach ->
 
         @opts = value: 'VALUE 1'
+        @arg = {}
         @accum = {}
         @expans = []
         @expansion = eval: 'opts.value'
@@ -11,7 +12,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
 
         (done, Compiler) ->
 
-            Compiler.perform @opts, @accum, @expans, @expansion
+            Compiler.perform @opts, @arg, @accum, @expans, @expansion
             .then (res) ->
 
                 res.should.equal 'VALUE 1'
@@ -22,7 +23,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
         (done, Compiler) ->
 
             @expansion = eval: 'expand.thing() and expand.thisToo()'
-            Compiler.perform(@opts, @accum, @expans, @expansion)
+            Compiler.perform(@opts, @arg, @accum, @expans, @expansion)
             .then( 
                 (res) ->
                 (err) ->
@@ -45,7 +46,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
             @expansion = eval: 'expand.thing(\'arg value\', $a.previousArg)'
             @accum = {previousArg: 'VALUE'};
             
-            Compiler.perform(@opts, @accum, @expans, @expansion)
+            Compiler.perform(@opts, @arg, @accum, @expans, @expansion)
             .then (res) ->
 
                 res.should.eql [1, 2, 3]
@@ -62,7 +63,23 @@ objective 'Compile embedded in{{fusions}}', (should) ->
 
             @expansion = eval: 'thing.a for thing in expand.thirdPartyExpander(\'arg\')'
             
-            Compiler.perform(@opts, @accum, @expans, @expansion)
+            Compiler.perform(@opts, @arg, @accum, @expans, @expansion)
             .then (res) ->
                 res.should.eql [1, 2, 'THREE']
                 done()
+
+
+    context 'array flag', ->
+
+        it 'is set if "for" appears in eval',
+
+            (done, In, Compiler) ->
+
+                @opts = vvv: [1, 3, 3]
+                @expansion = eval: '{v:i} for i in $o.vvv'
+                Compiler.perform(@opts, @arg, @accum, @expans, @expansion)
+                .then (res) =>
+                    @arg.asArray.should.equal true
+                    # console.log res
+                    done()
+

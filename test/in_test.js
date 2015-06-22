@@ -12,7 +12,7 @@ objective('In', function(should) {
   });
 
 
-  context('formatting', function(In, Format, Action) {
+  context('formatting', function(In, Format, Action,  Injector) {
 
     it('calls format.perform with each argument', function(done) {
 
@@ -35,6 +35,9 @@ objective('In', function(should) {
           return {then: function(resolver) {resolver(arg)}}
         }
       );
+      Injector.stub(function perform(){
+        return {then: function(resolver) {resolver()}}
+      })
       In(function(arg1, arg2, arg3) {}).then(function() {
         done();
       });
@@ -42,7 +45,7 @@ objective('In', function(should) {
   });
 
   
-  context('action', function(In, Format, Action) {
+  context('action', function(In, Format, Action, Injector) {
 
     it('calls action.perform with each argument', function(done) {
       Format.stub(function perform(opts, accum, arg) {
@@ -53,22 +56,28 @@ objective('In', function(should) {
         function perform(defer) { defer.resolve() },
         function perform(defer) { defer.resolve() }
       )
+      Injector.stub(function perform(){
+        return {then: function(resolver) {resolver()}}
+      })
       In(function(arg1, arg2, arg3) {}).then(function() {
         done();
       });
     })
   });
 
-  context('aliases', function(In) {
+  context('aliases', function(In, Injector) {
 
     it('calls shell on $', function(done) {
+
+      Injector.stub(function perform(){
+        return {then: function(resolver) {resolver()}}
+      })
+
       $$in.actions = {as: {reason: {shell: done}}}
       In(function(progress) { // in.as.reason $ /usr/local/bin/being < /dev/imagination | /usr/sbin/culture |
       });
     })
 
   });
-
-  
 
 });

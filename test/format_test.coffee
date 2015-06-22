@@ -1,5 +1,9 @@
 objective 'Format infuser', ->
 
+    beforeEach (Expander) ->
+
+        Expander.stub perform: -> then: (resolve) -> resolve()
+
     it 'defaults to module', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name'
@@ -43,12 +47,10 @@ objective 'Format infuser', ->
                 params: undefined
             ]
 
-    it 'returns a promise', (Format, done) ->
+    it 'returns a promise', (Format, Expander, done) ->
 
-        Format.perform({}, {}, arg = name: 'name', in: 'in.action').then (arg) ->
-
-            arg.name.should.equal 'name'
-            done()
+        Format.perform({}, {}, arg = name: 'name', in: 'in.action')
+        .then done, done
 
 
     it 'calls the expander', (Format, Expander, done) ->

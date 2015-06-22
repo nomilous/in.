@@ -21,23 +21,23 @@ objective 'Expand infuser arguments', ->
 
         (done, Expander, Compiler) ->
 
-            Compiler.does perform: (opts, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
                 expansion.eval.should.equal 'd'
                 then: (resolver) -> resolver('d')
 
-            Compiler.does perform: (opts, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
                 expansion.eval.should.equal 'l'
                 then: (resolver) -> resolver('L')
 
-            Compiler.does perform: (opts, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
                 expansion.eval.should.equal 'r'
                 then: (resolver) -> resolver('R')
 
-            Compiler.does perform: (opts, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
                 expansion.eval.should.equal 'o'
                 then: (resolver) -> resolver('o')
 
-            Compiler.does perform: (opts, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
                 expansion.eval.should.equal 'w'
                 then: (resolver) -> resolver('w')
 
@@ -54,11 +54,11 @@ objective 'Expand infuser arguments', ->
 
         (done, Expander, Compiler) ->
 
-            Compiler.does perform: (opts, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
                 expansion.eval.should.equal 'another bit of code'
                 then: (resolve) -> resolve ['A', 'B', 'C']
 
-            Compiler.does perform: (opts, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
                 expansion.eval.should.equal 'bit of code'
                 then: (resolve) -> resolve ['one', 'two', 'three']
 

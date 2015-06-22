@@ -169,6 +169,7 @@ objective 'Call infuse action', (should) ->
                     $$in.promise (resolve) ->
                         resolve('RESULT')
 
+                @arg.asArray = true
                 Action.perform @defer, @opts, @accum, @expansions, @arg
 
 
@@ -186,12 +187,12 @@ objective 'Call infuse action', (should) ->
                         resolve('RESULT')
 
                 global.$$in.actions.ACTION1.ACTOR1
-                .onExpanded = (actionArgs, expansions, results) ->
+                .onExpanded = (arg, actionArgs, expansions, results) ->
 
                     results.should.eql ['RESULT', 'RESULT']
                     return 'REFORMATTED BY EXPANSION HANDLER'
 
-
+                @arg.asArray = true
                 Action.perform @defer, @opts, @accum, @expansions, @arg
 
 
