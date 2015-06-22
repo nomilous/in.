@@ -65,7 +65,7 @@ $$in(function(
 }).then...
 ```
 
-#### So, with fun module names
+#### (TODO) So, with fun module names
 
 ```javascript
 $$in(function(
