@@ -29,7 +29,7 @@ $$in( function(){} ).then...
 #### It accepts [options](#options)
 
 ```javascript
-$$in(  {op:'sion'},  function(){} ).then...
+$$in(  {opt:'ion'},  function(){} ).then...
 ```
 
 #### It [injects](Injection) node modules (by name) into the function
@@ -124,6 +124,14 @@ $$in (arg1, arg2) ->
 
 
 ## Expanding
+
+### Using options
+
+### Using previous argument
+
+### Using expander
+
+### Using expander result
 
 
 ## Error Handling
