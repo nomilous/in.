@@ -10,7 +10,7 @@ objective 'Format infuser', ->
         arg.in.should.equal 'in.module name'
 
 
-    it 'extracts the action and actor', (Format) ->
+    it 'extracts the action and actor and parameters', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', in: 'in.action actor p a r r a m s'
         arg.should.eql
@@ -19,10 +19,12 @@ objective 'Format infuser', ->
             value: undefined
             actions: [
                 action: 'action'
+                filters: []
                 actor: 'actor'
                 params: 'p a r r a m s'
             ]
 
+    it 'extracts the action and actor', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', in: 'in.action actor'
         arg.should.eql
@@ -31,10 +33,12 @@ objective 'Format infuser', ->
             value: undefined
             actions: [
                 action: 'action'
+                filters: []
                 actor: 'actor'
                 params: undefined
             ]
 
+    it 'extracts the action', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', in: 'in.action'
         arg.should.eql
@@ -43,7 +47,50 @@ objective 'Format infuser', ->
             value: undefined
             actions: [
                 action: 'action'
-                actor: undefined
+                filters: []
+                actor: 'none'
+                params: undefined
+            ]
+
+    it 'extracts the action and filter and actor and params', (Format) ->
+
+        Format.perform {}, {}, arg = name: 'name', in: 'in.action.filter actor params'
+        arg.should.eql
+            name: 'name'
+            in: 'in.action.filter actor params'
+            value: undefined
+            actions: [
+                action: 'action'
+                filters: ['filter']
+                actor: 'actor'
+                params: 'params'
+            ]
+
+    it 'extracts the action and filter and actor', (Format) ->
+
+        Format.perform {}, {}, arg = name: 'name', in: 'in.action.filter1.filter2 actor'
+        arg.should.eql
+            name: 'name'
+            in: 'in.action.filter1.filter2 actor'
+            value: undefined
+            actions: [
+                action: 'action'
+                filters: ['filter1', 'filter2']
+                actor: 'actor'
+                params: undefined
+            ]
+
+    it 'extracts the action and filter', (Format) ->
+
+        Format.perform {}, {}, arg = name: 'name', in: 'in.action.filter1.filter2'
+        arg.should.eql
+            name: 'name'
+            in: 'in.action.filter1.filter2'
+            value: undefined
+            actions: [
+                action: 'action'
+                filters: ['filter1', 'filter2']
+                actor: 'none'
                 params: undefined
             ]
 

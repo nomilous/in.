@@ -1,4 +1,4 @@
-objective 'Call infuse action', (should) ->
+objective 'Call infusion actor', (should) ->
 
     trace.filter = true
 
@@ -6,7 +6,7 @@ objective 'Call infuse action', (should) ->
 
         @defer = 
             resolve: ->
-            reject: ->
+            reject: (e) -> console.log(e);
             nofity: ->
         @opts = {}
         @accum = {}
@@ -14,52 +14,57 @@ objective 'Call infuse action', (should) ->
         @arg = 
             actions: [
                 action: 'action'
+                filters: []
                 actor: 'actor'
+                params: ''
             ]
+
+        global.$$in.actors = actor: ->
+        global.$$in.actors.actor.$$can = ->
+
+    it 'rejects with error if pipe is not first filter',
+
+        # filters process right to left
+
+        (done, Action) ->
+
+            global.$$in.actors = actor: done
+            @arg.actions[0].filters = ['json', 'pipe']
+            @defer.reject = (e) ->
+
+                e.toString().should.match /InfusionError\: pipe must be first filter/
+                done()
+
+            Action.perform @defer, @opts, @accum, @expansions, @arg
+
+
+    it 'checks the actor for filter support',
+
+        (done, Action) ->
+
+            @arg.actions[0].filters = ['pipe']
+
+            global.$$in.actors.actor.$$can = (doStuff) ->
+
+                doStuff.filters.should.eql ['pipe']
+                done()
+                true
+
+            Action.perform @defer, @opts, @accum, @expansions, @arg
 
 
     it 'calls the action actor',
 
         (done, Action) ->
 
-            global.$$in.actions = action: actor: done
-            Action.perform @defer, @opts, @accum, @expansions, @arg
+            @arg.actions[0].filters = ['pipe']
 
+            global.$$in.actors.actor = (opts, accumulate, actionArg, actorPath) ->
 
-    it 'some actions have no actor',
-
-        (done, Action) ->
-
-            global.$$in.actions = action2: done
-            @arg.actions[0].actor = undefined
-            @arg.actions[0].action = 'action2'
-            Action.perform @defer, @opts, @accum, @expansions, @arg
-
-
-    it 'rejects with an InfusionError if no action.actor',
-
-        (done, Action) ->
-
-            global.$$in.actions = action: actor: done
-            @arg.actions[0].actor = undefined
-            @defer.reject = (e) ->
-                e.toString().should
-                .match /InfusionError\: No function at \$\$in\.actions\.action/
+                actionArg.filters.should.eql ['pipe']
                 done()
 
-            Action.perform @defer, @opts, @accum, @expansions, @arg
-
-
-    it 'rejects with an InfusionError if no action.actor',
-
-        (done, Action) ->
-
-            global.$$in.actions = action: actor: done
-            @arg.actions[0].action = 'deeper.action'
-            @defer.reject = (e) ->
-                e.toString().should
-                .match /InfusionError\: No function at \$\$in\.actions\.deeper\.action\.actor/
-                done()
+            global.$$in.actors.actor.$$can = () -> true
 
             Action.perform @defer, @opts, @accum, @expansions, @arg
 
@@ -68,40 +73,16 @@ objective 'Call infuse action', (should) ->
 
         (done, Action) ->
 
-            global.$$in.actions = once: upon: a: time: there: was: 1: ->
+            @arg.actions[0].actor = 'actor.can.do.multiple.things'
 
-                arguments[2].should.eql action: 'once.upon.a.time.there.was', actor: '1'
+            global.$$in.actors.actor = (opts, accumulate, actionArg, actorPath) ->
+
+                actorPath.should.eql ['can', 'do', 'multiple', 'things']
                 done()
 
-            @arg.actions[0].action = 'once.upon.a.time.there.was'
-            @arg.actions[0].actor = '1'
+            global.$$in.actors.actor.$$can = () -> true
+
             Action.perform @defer, @opts, @accum, @expansions, @arg
-
-
-    it 'differentiates actionPath and actorPath',
-
-        (done, Action) ->
-
-            global.$$in.actions = and: they: lived: happily: ever: NaN: done
-
-            @arg.actions[0].action = 'and.they.lived'
-            @arg.actions[0].actor = 'happily.ever.NaN'
-            Action.perform @defer, @opts, @accum, @expansions, @arg
-
-
-    it 'hands the remaing actorPath to the first function along it',
-
-        (done, Action) ->
-
-            global.$$in.actions = and: they: lived: happily: ->
-
-                arguments[3].should.eql ['ever', 'NaN']
-                done()
-
-            @arg.actions[0].action = 'and.they.lived'
-            @arg.actions[0].actor = 'happily.ever.NaN'
-            Action.perform @defer, @opts, @accum, @expansions, @arg
-
 
 
     context 'promise', ->
@@ -110,7 +91,8 @@ objective 'Call infuse action', (should) ->
 
             @arg.actions[0].action = 'ACTION1'
             @arg.actions[0].actor = 'ACTOR1'
-            global.$$in.actions = ACTION1: ACTOR1: -> 'RESULT'
+            global.$$in.actors = ACTOR1: -> 'RESULT'
+            global.$$in.actors.ACTOR1.$$can = -> true
 
 
         it 'resolves with returned value if the actor returns no promise',
@@ -149,6 +131,7 @@ objective 'Call infuse action', (should) ->
             @arg.actions[1] = 
                 action: 'ACTION1'
                 actor: 'ACTOR1'
+                filters: []
             global.$$in.actions = ACTION1: ACTOR1: -> 'RESULT'
 
 
@@ -165,15 +148,17 @@ objective 'Call infuse action', (should) ->
                     res.should.eql ['RESULT', 'RESULT']
                     done()
 
-                global.$$in.actions = ACTION1: ACTOR1: -> 
+                global.$$in.actors = ACTOR1: -> 
                     $$in.promise (resolve) ->
                         resolve('RESULT')
+
+                global.$$in.actors.ACTOR1.$$can = -> true
 
                 @arg.asArray = true
                 Action.perform @defer, @opts, @accum, @expansions, @arg
 
 
-        it 'passes result through the infusers expansion handler if defined',
+        xit 'passes result through the infusers expansion handler if defined',
 
             (Action, In, done) ->
 

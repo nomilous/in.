@@ -1,4 +1,4 @@
-objective('ensure it works with included plugins', function(should) {
+xobjective('ensure it works with included plugins', function(should) {
 
   trace.filter = false
 
@@ -50,7 +50,7 @@ objective('ensure it works with included plugins', function(should) {
 
   context('in.actor.shell', function() {
 
-    it.only('is called on shell action', function(In, done) {
+    it('is called on shell action', function(In, done) {
 
 
       $$in(

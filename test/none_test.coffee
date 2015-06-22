@@ -1,3 +1,0 @@
-objective 'Default actor', ->
-
-    context()
