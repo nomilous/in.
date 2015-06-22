@@ -4,14 +4,14 @@ an argument infuser
 
 ### Basics
 
-#### It pollutes the global namespace.
+#### It [pollutes]{###extending} the global namespace.
 
 ```javascript
 In = require('in.');
 $$in() === In;
 ```
 
-#### It returns a promise
+#### It returns a [promise](#promising)
 
 ```javascript
 $$in().then( function(result){} );
@@ -58,4 +58,11 @@ $$in(function(
 
 
 ### Injection
+
+
+### Promising
+
+
+
+### Extending
 
