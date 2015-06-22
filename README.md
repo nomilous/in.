@@ -92,12 +92,12 @@ $$in(function(
 }).then...
 ```
 
-#### It has [Actions](#actions) and [Actors](#actors) and parameters
+#### It has [Actions](#actions), [Filters](#filters), [Actors](#actors) and parameters
 
 ```javascript
 $$in(function(
 
-    arg // in.<action> <actor> <parameters>
+    arg // in.<action>.<filter> <actor> para{{'m'}}eters
 
 ){}).then...
 ```
@@ -118,6 +118,7 @@ $$in (arg1, arg2) ->
 
 ## Actions
 
+## Filters
 
 ## Actors
 
