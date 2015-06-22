@@ -60,7 +60,7 @@ $$in(function(
 ){    
     
     txt === 'here is some text';
-    num === 3;
+    num === '3'; // todo - make actually number
 
 }).then...
 ```
