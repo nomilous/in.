@@ -4,7 +4,7 @@ an argument infuser
 
 ### Basics
 
-#### It [pollutes]{###extending} the global namespace.
+#### It [pollutes]{#extending} the global namespace.
 
 ```javascript
 In = require('in.');
