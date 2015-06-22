@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "coffee-script": "^1.9.3",
-    "in.shell": "0.0.0",
+    "in.actor.shell": "0.0.0",
     "in.expander.dir": "0.0.0",
     "when": "^3.7.3"
   }

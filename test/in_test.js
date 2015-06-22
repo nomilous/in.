@@ -11,6 +11,8 @@ objective('In', function(should) {
     should.exist($$in);
   });
 
+  it('returns a promise', function() {});
+
 
   context('formatting', function(In, Format, Action,  Injector) {
 
@@ -65,7 +67,7 @@ objective('In', function(should) {
     })
   });
 
-  context('aliases', function(In, Injector) {
+  xcontext('aliases', function(In, Injector) {
 
     it('calls shell on $', function(done) {
 

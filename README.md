@@ -1,20 +1,18 @@
 # in.
 
-## in.plementation in p.ogr..s
+an argument infuser
 
-### end goal
+### Basics
 
-as arbitrary example
+It pollutes the global namespace.
 
 ```javascript
+In = require('in.');
+$$in() == In;
+```
 
-require('in.')(
-  function(
-    liveZones, // in.as.json $ cat {{file.name for file in expand.dir('/etc/bind/zones/db.*')}} | zone2json
-    dbZones   // in.as.json $ psql -c "SELECT * ... OUTER JOIN ... INNER PEACE ... WHERE domain = '{{z.domain for z in args.liveZones}}' | psql2json
-  ) {
-    liveZones.forEach( function(zone) { ... /* etc. */
-  }
-);
+It returns a promise
 
+```javascript
+$$in().then( function(result){} );
 ```
