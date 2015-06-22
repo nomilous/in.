@@ -125,6 +125,8 @@ $$in (arg1, arg2) ->
 
 ## Expanding
 
+### Using for loop
+
 ### Using options
 
 ### Using previous argument
@@ -132,6 +134,8 @@ $$in (arg1, arg2) ->
 ### Using expander
 
 ### Using expander result
+
+### Multiple expanders
 
 
 ## Error Handling
