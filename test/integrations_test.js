@@ -1,4 +1,4 @@
-xobjective('ensure it works with included plugins', function(should) {
+objective('ensure it works with included plugins', function(should) {
 
   trace.filter = false
 
@@ -9,7 +9,7 @@ xobjective('ensure it works with included plugins', function(should) {
 
   context('in.expander.dir', function() {
 
-    it('is called on expand.dir', function(In, dir, done) {
+      it ('is called on expand.dir', function(In, dir, done) {
 
       // set expectation on expand.dir() handler
 
@@ -37,6 +37,7 @@ xobjective('ensure it works with included plugins', function(should) {
         function(
           files // in. {{expand.dir('./')}}
         ){
+
           files.should.eql ['file1', 'file2']
           done()
         }
@@ -47,16 +48,17 @@ xobjective('ensure it works with included plugins', function(should) {
   })
 
 
-  context('in.shell', function() {
+  context('in.actor.shell', function() {
 
-    it('is called on shell action', function(In, dir, done) {
+    it.only('is called on shell action', function(In, done) {
 
 
       $$in(
         function(
-          files // in. {{expand.dir('./')}}
+          files // in. {{i for i in [0..10]}}
         ){
-          files.should.eql ['file1', 'file2']
+          console.log(files)
+          // files.should.eql ['file1', 'file2']
           done()
         }
       ).then(function(){}, done)

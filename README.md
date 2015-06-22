@@ -74,12 +74,54 @@ $$in(function(
 
 ){}).then...
 ```
-But [why](#why)?
+But [why](#why) do this?
+
+#### The moustache interpreter is coffee-script
+
+It [expands](#expanders) on `for` loops.
+
+```javascript
+$$in(function(
+
+    array // in. {{i for i in [0..9]}}
+
+){
+    array === ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+              // todo: these are strings... (not ideal)
+}).then...
+```
+
+#### It has [Actions](#actions) and [Actors](#actors) and [Parameters](#parameters)
+
+```javascript
+$$in(function(
+
+    arg // in.<action> <actor> <parameters>
+
+){}).then...
+```
+
+#### It supports coffeescript
+
+Coffee does not allow comments among the arguments. So the infusers can be specified inside the function.
+
+```coffee
+$$in (arg1, arg2) ->
+    
+    ### in(arg1). ... ###
+    ### in(arg2). ... ###
+
+.then (result) ->
+
+```
 
 
 ### Error Handling
 
 What if things go wrong in the `//in.`...
+
+
+
 
 
 
@@ -92,9 +134,17 @@ What if things go wrong in the `//in.`...
 
 ### Promising
 
+### Actions
 
 
-### Extending
+### Actors
+
+### Parameters
+
+
+### Expanding
+
+
 
 
 ### Infusion
