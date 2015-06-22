@@ -4,7 +4,7 @@ an argument infuser
 
 ### Basics
 
-#### It [pollutes](#extending) the global namespace.
+#### It [pollutes](#extending) the global namespace
 
 ```javascript
 In = require('in.');
@@ -65,7 +65,7 @@ $$in(function(
 }).then...
 ```
 
-#### (TODO) So, with fun module names
+#### (TODO) So, for incompatible module names
 
 ```javascript
 $$in(function(
@@ -74,7 +74,6 @@ $$in(function(
 
 ){}).then...
 ```
-But [why](#why) do this?
 
 #### The moustache interpreter is coffee-script
 
@@ -91,7 +90,7 @@ $$in(function(
 }).then...
 ```
 
-#### It has [Actions](#actions) and [Actors](#actors) and [Parameters](#parameters)
+#### It has [Actions](#actions) and [Actors](#actors) and parameters
 
 ```javascript
 $$in(function(
@@ -115,6 +114,14 @@ $$in (arg1, arg2) ->
 
 ```
 
+## Actions
+
+
+## Actors
+
+
+## Expanding
+
 
 ### Error Handling
 
@@ -134,15 +141,10 @@ What if things go wrong in the `//in.`...
 
 ### Promising
 
-### Actions
 
 
-### Actors
-
-### Parameters
 
 
-### Expanding
 
 
 
