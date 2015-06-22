@@ -16,3 +16,23 @@ It returns a promise
 ```javascript
 $$in().then( function(result){} );
 ```
+
+It runs the function passed
+
+```javascript
+$$in( function(){} ).then...
+```
+
+It accepts [options](#options)
+
+```javascript
+$$in(  {},  function(){} ).then...
+```
+
+
+
+
+
+
+
+### Options
