@@ -1,6 +1,9 @@
 # in.
 
-an argument infuser
+an argument infuser <br>
+
+`npm install in. --save` <br>
+
 
 ## Basics
 
