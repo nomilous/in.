@@ -4,32 +4,32 @@ an argument infuser
 
 ### Basics
 
-It pollutes the global namespace.
+#### It pollutes the global namespace.
 
 ```javascript
 In = require('in.');
 $$in() === In;
 ```
 
-It returns a promise
+#### It returns a promise
 
 ```javascript
 $$in().then( function(result){} );
 ```
 
-It runs the function passed
+#### It runs the function passed
 
 ```javascript
 $$in( function(){} ).then...
 ```
 
-It accepts [options](#options)
+#### It accepts [options](#options)
 
 ```javascript
 $$in(  {},  function(){} ).then...
 ```
 
-It [injects](Injection) node modules (by name) into the function
+#### It [injects](Injection) node modules (by name) into the function
 
 ```javascript
 $$in(function(express){    
@@ -39,7 +39,7 @@ $$in(function(express){
 }).then...
 ```
 
-It [infuses](Infusion) arguments from their comment
+#### It [infuses](Infusion) arguments from their comment
 
 ```javascript
 $$in(function(
@@ -50,6 +50,7 @@ $$in(function(
 
 }).then...
 ```
+
 
 
 
