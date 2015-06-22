@@ -51,6 +51,36 @@ $$in(function(
 }).then...
 ```
 
+#### It interprets the infuser's moustaches
+
+```javascript
+$$in(function(
+    txt, // in. here is some {{'t'}}ext
+    num // in. {{1 + 1}}
+){    
+    
+    txt === 'here is some text';
+    num === 3;
+
+}).then...
+```
+
+#### So, with fun module names
+
+```javascript
+$$in(function(
+
+    io // in. {{require('socket.io-client')}}
+
+){}).then...
+```
+But [why](#why)?
+
+
+### Error Handling
+
+What if things go wrong in the `//in.`...
+
 
 
 
@@ -65,4 +95,11 @@ $$in(function(
 
 
 ### Extending
+
+
+### Infusion
+
+
+### Why
+
 
