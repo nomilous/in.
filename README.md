@@ -92,7 +92,7 @@ $$in(function(
 }).then...
 ```
 
-#### It has [Actions](#actions), [Filters](#filters), [Actors](#actors) and parameters
+#### It has [Actions](#actions), [Filters](#filters), [Actors](#actors) and para[{{'m'}}](#expanders)eters
 
 ```javascript
 $$in(function(
@@ -122,8 +122,7 @@ $$in (arg1, arg2) ->
 
 ## Actors
 
-
-## Expanding
+## Expanders
 
 ### Using for loop
 
