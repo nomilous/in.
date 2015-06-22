@@ -2,7 +2,7 @@
 
 an argument infuser
 
-### Basics
+## Basics
 
 #### It [pollutes](#extending) the global namespace
 
@@ -123,7 +123,7 @@ $$in (arg1, arg2) ->
 ## Expanding
 
 
-### Error Handling
+## Error Handling
 
 What if things go wrong in the `//in.`...
 
