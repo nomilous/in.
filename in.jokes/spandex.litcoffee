@@ -1,6 +1,6 @@
 #! /usr/bin/env coffee
 
-The expander supports multiple asyncronous functions.
+The expander supports multiple asyncronous functions that `appear = syncronous()`.
 
 To achieve that it needed to do some peculiar things.
 
