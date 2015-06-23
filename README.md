@@ -254,4 +254,4 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 
 `$` aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime filter for formatting into probably json.<br>
 <br>
-<b>and then:</b> `bob, // in.as.unkle {{is('your\'s')}}`
+<b>and then:</b> `bob, // in.as.unkle {{ is ('your')}}`'[s](https://github.com/nomilous/in./blob/master/test/ALSO.md)
