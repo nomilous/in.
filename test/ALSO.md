@@ -1,11 +1,20 @@
-## Also, we're all up to something...
+## Also, we're up to something...
 
 ### What?
 
-`function(this) // in. $ /usr/local/bin/being < /dev/imagination | /usr/sbin/culture`
+```javascript
+
+function(youToo) /* in.as
+.participant $ /usr/local/bin/being < /dev/imagination | objective
+*/ { '?' }
+
+```
 
 ### How?
 
+(evil giggle)<br>
+<br>
+<br>
 `one, // in.ring to rule {{ them( 'all' ) }}`<br>
 `one, // in.ring to bind {{ them }}`<br>
 `one, // in.ring to bring {{ them( 'all' )}}`<br>
