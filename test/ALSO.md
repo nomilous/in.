@@ -4,9 +4,9 @@
 
 ```javascript
 
-$$in(function(youToo, resolve) /* in.as
+$$in(function(youToo, /* in.as
 .participant $ /usr/local/bin/being < /dev/imagination | objective | /usr/sbin/culture
-*/ { resolve('?'); }).then...
+*/ resolve) { resolve( youToo = '?' ); }).then...
 
 ```
 
