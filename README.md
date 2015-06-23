@@ -113,7 +113,7 @@ $$in(function(
 }).then...
 ```
 
-#### It has [Actions](#extending-actions), [Filters](#extending-filters), [Actors](#extending-actors) and para{{'m'}}eters
+#### It has [Actions](#creating-actions), [Filters](#creating-filters), [Actors](#creating-actors) and para{{'m'}}eters
 
 ```javascript
 $$in(function(
@@ -123,7 +123,7 @@ $$in(function(
 ){}).then...
 ```
 
-#### It has asynchronous [Expanders](#extending-expanders)
+#### It has asynchronous [Expanders](#creating-expanders)
 
 ```javascript
 $$in(function(
@@ -181,19 +181,19 @@ What if things go wrong in the `//in.`...
 
 # Extending
 
-## Extending Actions
+## Creating Actions
 
 See also [Using Actions](#using-actions)
 
-## Extending Filters
+## Creating Filters
 
 See also [Using Filters](#using-filters)
 
-## Extending Actors
+## Creating Actors
 
 See also [Using Actors](#using-actors)
 
-## Extending Expanders
+## Creating Expanders
 
 See also [Using Expanders](#using-expanders)
 
@@ -237,6 +237,21 @@ See also [Using Expanders](#using-expanders)
 
 ## Why
 
-Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...
+Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...<br>
+
+But besides that. Assuming that someone has taken the trouble to implement the modules `in.filter.uptime` and `in.filter.unkle` (search npm 'in.')<br>
+
+then `bob, // in.as.unkle {{is('yours')}}`
+
+```javascript
+
+require('in.');
+require('in.filter.uptime');
+$$in(function(uptime)) { // in.as.uptime $ uptime
+    
+    /* and so forth...
+```
+
+`$` aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime filter for formatting into probably json.
 
 
