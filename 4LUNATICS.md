@@ -35,8 +35,9 @@ unleash = $$in(opts = {
 ) { /* ... */ });
 
 
-unleash( 'Cape Town', Math.floor(
-  Date.now() + Math.random() 
+unleash( 'Cape Town', Math.floor // Building 11, Room 919
+
+  ( Date.now() + Math.random() 
   * Date.now() / Math.PI 
   * isNaN(release.date) ? Math.random() : release.date
 )).then(
