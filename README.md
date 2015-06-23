@@ -8,6 +8,8 @@ an argument infuser
 
 #### It [pollutes](#extending) the global namespace
 
+Sorry about that. (see [extending](#extending))
+
 ```javascript
 In = require('in.');
 $$in() === In;
@@ -151,6 +153,8 @@ $$in (arg1, arg2) ->
 .then (result) ->
 
 ```
+
+# Extending
 
 ## Actions
 
