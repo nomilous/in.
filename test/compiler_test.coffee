@@ -69,7 +69,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                     res.should.eql [1, 2, 'THREE']
                     done()
 
-        it.only 'supports multiple sequencial expanders',
+        it 'supports multiple sequencial expanders',
 
             (done, In, Compiler) ->
 
@@ -100,6 +100,50 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                         done()
                     (e) -> done e
                 )
+
+        it.only 'supports expansion passages',
+
+            (done, In, Compiler) ->
+
+                trace.filter = true
+
+                otherArgs = ''
+
+                mock(global.$$in.expanders).does
+
+                    A: (arg, i) -> $$in.promise (resolve) ->
+
+                        otherArgs += arg
+                        ++a.i for a in i.anArray
+                        resolve(i);
+
+                    I: (arg) -> $$in.promise (resolve) -> 
+
+                        otherArgs += arg
+                        resolve anArray: [{i:1}, {i:2}, {i:3}]
+                                                                                              # property on async call
+                                                                                              # as if synchronous
+                                                                                              #
+                # @expansion = eval: 'console.log xxx: expand.A(\'loop\', expand.I(\'stem \')).anArray'
+                @expansion = eval: '++a.i for a in expand.A(\'loop\', expand.I(\'stem \')).anArray'
+
+
+                Compiler.perform(@opts, @arg, @accum, @expansion)
+                .then(
+                    (res) ->
+                        otherArgs.should.equal 'stem loop'
+                        res.should.eql [3, 4, 5]
+                        done()
+                    (err) ->
+                        console.log ERR: err
+                        done err
+                )
+
+
+        it.only 'supports passing expanders to expanders'
+
+
+        it.only 'pipelines wher passing with firstN args not a function'
 
 
 
