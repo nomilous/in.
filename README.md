@@ -113,7 +113,7 @@ $$in(function(
 }).then...
 ```
 
-#### It has [Actions](#actions), [Filters](#filters), [Actors](#actors) and para[{{'m'}}](#expanders)eters
+#### It has [Actions](#extending-actions), [Filters](#extending-filters), [Actors](#extending-actors) and para[{{'m'}}](#extending-expanders)eters
 
 ```javascript
 $$in(function(
@@ -123,7 +123,7 @@ $$in(function(
 ){}).then...
 ```
 
-#### It has infusion [Expanders](#expanders)
+#### It has infusion [Expanders](#extending-expanders)
 
 ```javascript
 $$in(function(
@@ -181,19 +181,19 @@ What if things go wrong in the `//in.`...
 
 # Extending
 
-## Actions
+## Extending Actions
 
 See also [using actions](#using-actions)
 
-## Filters
+## Extending Filters
 
 See also [using filters](#using-filters)
 
-## Actors
+## Extending Actors
 
 See also [using actors](#using-actors)
 
-## Expanders
+## Extending Expanders
 
 See also [using expanders](#using-expanders)
 
