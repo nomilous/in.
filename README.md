@@ -157,7 +157,7 @@ loadJsonFrom('www.arg1.com/spokes').then...
 // see lib/none/actor.js or npm in.actor.shell
 ```
 
-[resolve] is a special argument. There are [others](#special-arguments).
+`resolve` is a special argument. There are [others](#special-arguments).
 
 #### It supports coffeescript
 
