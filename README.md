@@ -257,7 +257,7 @@ $$in(function(uptime) { // in.as.uptime $ uptime
     /* and so forth...
 ```
 
-__`$`__ aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Filter](#creating-filters) for formatting into probably json to arrive into the function argument completely devoid of all further effort ever ([possible exageration?])(#in).<br>
+__$__ aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Filter](#creating-filters) for formatting into probably json to arrive into the function argument completely devoid of all further effort ever ([possible exageration?])(#in).<br>
 <br>
 And then... `bob, // in.as.unkle {{ expand.is ( 'your\'s' ) }}`'<br>
 <br>
