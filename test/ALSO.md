@@ -6,7 +6,7 @@
 
 function(youToo) /* in.as
 .participant $ /usr/local/bin/being < /dev/imagination | objective | /usr/sbin/culture
-*/ { '?' }
+*/ { '?'; }
 
 ```
 
