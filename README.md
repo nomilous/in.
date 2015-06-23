@@ -254,12 +254,4 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 
 `$` aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime filter for formatting into probably json.<br>
 <br>
-and then: `bob, // in.as.unkle {{is('your\'s')}}`
-
-## Also,
-
-`one, // in.ring to rule {{them('all')}}`<br>
-`one, // in.ring to bind {{them}}`<br>
-`one, // in.ring to bring {{them('all')}}`<br>
-`and, // in. `[the darkness](http://objective.black)` {{bind(`[them](http://objective.blue)`)}}`<br>
-
+<b>and then:</b> `bob, // in.as.unkle {{is('your\'s')}}`
