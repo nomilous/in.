@@ -242,7 +242,7 @@ Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/maste
 
 But besides that. Assuming that someone has taken the trouble to implement the modules __in.filter.uptime__ and __in.filter.unkle__.
 
-Search npm for [actors](https://www.npmjs.com/search?q=in.actor), [filters](https://www.npmjs.com/search?q=in.filter), [expanders](https://www.npmjs.com/search?q=in.expander) and [lovers](https://www.npmjs.com/search?q=in.love)
+Search npm for [actors](https://www.npmjs.com/search?q=in.actor) or [filters](https://www.npmjs.com/search?q=in.filter) or [expanders](https://www.npmjs.com/search?q=in.expander) or [lovers](https://www.npmjs.com/search?q=in.love)
 
 
 ```javascript
