@@ -57,7 +57,7 @@ $$in(function(
 }).then...
 ```
 
-#### It interprets moustaches
+#### It [interprets]#{#interpreter} moustaches
 
 ```javascript
 $$in(function(
@@ -71,7 +71,24 @@ $$in(function(
 }).then...
 ```
 
-#### (TODO) So, for incompatible module names
+#### (TODO) It provides the [error](#error_handling)
+
+```javascript
+$$in(function(
+    somthing, // in. {{this}}
+    somthingElse, // in. {{throw new Error('No such thing.')}}
+    e
+){
+    e.toString() === 'Error: No such thing.'
+    somthingElse === null
+    somthing === (dunno, haven't really thought about this and that)
+
+}).then...
+```
+`e` is a special argument. There are [others](#special_arguments).
+
+
+#### (TODO) (Perhaps remove this doc fragment, a deviation) For incompatible module names
 
 ```javascript
 $$in(function(
@@ -112,14 +129,14 @@ $$in(function(
 $$in(function(
 
     bunchOFjson, // in.as.json $ cat {{expand.dir('/my/*.json')}}
-    ointment    // in.as.myFilter {{expand.myExpander(bunchOFjson)}}
+    ointment    // in.as.myFiltrationSystem {{expand.myExpander(bunchOFjson)}}
 
 ){}).then...
 
 // dir is the only baked-in expander,
 // and json is the only baked in filter
-// $$in.filters.myFilter = function( ... // lib/none/filter or npm in.filter.json
-// $$in.expanders.myExpander = function( ... // npm in.expander.dir
+// $$in.filters.myFiltrationSystem = function( ...see lib/none/filter or npm in.filter.json
+// $$in.expanders.myExpander = function( ...see npm in.expander.dir
 
 ```
 
@@ -154,6 +171,17 @@ $$in (arg1, arg2) ->
 
 ```
 
+
+# Error Handling
+
+What if things go wrong in the `//in.`...
+
+
+
+
+
+
+
 # Extending
 
 ## Actions
@@ -171,6 +199,11 @@ $$in (arg1, arg2) ->
 * async
 * async.cb
 
+# Special Arguments
+
+
+# Interpreter
+
 ### Using for loop
 
 ### Using options
@@ -183,36 +216,16 @@ $$in (arg1, arg2) ->
 
 ### Multiple expanders
 
-
-## Error Handling
-
-What if things go wrong in the `//in.`...
-
-
-
-
-
-
-
 ### Options
-
 
 ### Injection
 
-
 ### Promising
-
-
-
-
-
-
-
-
 
 ### Infusion
 
 
-### Why
+## Why
 
+because it's "the in. thing"... ;)
 
