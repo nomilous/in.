@@ -122,6 +122,8 @@ $$in (arg1, arg2) ->
 
 ## Actors
 
+* '.' for no actor
+
 ## Expanders
 
 ### Using for loop

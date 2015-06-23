@@ -6,7 +6,6 @@ objective 'Expand infuser arguments', ->
 
         @opts = value: 1
         @accum = {}
-        @expans = []
         @arg = 
             name: 'arg1'
             value: undefined
@@ -17,33 +16,43 @@ objective 'Expand infuser arguments', ->
                 params: 'echo {{opts.value}}'
             ]
 
+    it 'creates the arg context',
+
+        (done, Expander, Compiler) ->
+
+            Compiler.stub perform: -> then: (resolver) -> resolver()
+            Expander.perform(@opts, @accum, @arg).then =>
+                @arg.context.should.eql {}
+                done()
+
+
     it 'calls the compiler for each {{tib}}',
 
         (done, Expander, Compiler) ->
 
-            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansion) ->
                 expansion.eval.should.equal 'd'
                 then: (resolver) -> resolver('d')
 
-            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansion) ->
                 expansion.eval.should.equal 'l'
                 then: (resolver) -> resolver('L')
 
-            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansion) ->
                 expansion.eval.should.equal 'r'
                 then: (resolver) -> resolver('R')
 
-            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansion) ->
                 expansion.eval.should.equal 'o'
                 then: (resolver) -> resolver('o')
 
-            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansion) ->
                 expansion.eval.should.equal 'w'
                 then: (resolver) -> resolver('w')
 
 
             @arg.actions[0].params = 'hello {{w}} {{o}}{{r}}{{l}}{{d}}'
-            Expander.perform(@opts, @accum, @arg, @expans).then =>
+            Expander.perform(@opts, @accum, @arg).then =>
 
                 @arg.actions[0].params.should.equal 'hello w oRLd'
                 @arg.actions.length.should.equal 1
@@ -54,17 +63,17 @@ objective 'Expand infuser arguments', ->
 
         (done, Expander, Compiler) ->
 
-            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansion) ->
                 expansion.eval.should.equal 'another bit of code'
                 then: (resolve) -> resolve ['A', 'B', 'C']
 
-            Compiler.does perform: (opts, arg, args, expansions, expansion) ->
+            Compiler.does perform: (opts, arg, args, expansion) ->
                 expansion.eval.should.equal 'bit of code'
                 then: (resolve) -> resolve ['one', 'two', 'three']
 
             @arg.actions[0].params = 'testing, testing {{bit of code}} {{another bit of code}}'
 
-            Expander.perform(@opts, @accum, @arg, @expans).then =>
+            Expander.perform(@opts, @accum, @arg).then =>
 
                 @arg.actions.length.should.equal 3 * 3
                 @arg.actions[0].params.should.equal 'testing, testing one A'

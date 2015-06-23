@@ -1,13 +1,20 @@
 objective 'Format infuser', ->
 
-    beforeEach (Expander) ->
+    beforeEach (In, Expander) ->
 
         Expander.stub perform: -> then: (resolve) -> resolve()
+        global.$$in.actors.none = ->
+        global.$$in.actors.actor = ->
 
     it 'defaults to module', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name'
         arg.in.should.equal 'in.module name'
+
+    it 'sets the actor to none if it does not exist', (Format) ->
+
+        Format.perform {}, {}, arg = name: 'name', in: 'in.action moon-dancer p a r r a m s'
+        arg.actions[0].actor.should.equal 'none'
 
 
     it 'extracts the action and actor and parameters', (Format) ->
@@ -102,13 +109,12 @@ objective 'Format infuser', ->
 
     it 'calls the expander', (Format, Expander, done) ->
 
-        Expander.does perform: (opts, accum, arg, expansions) ->
+        Expander.does perform: (opts, accum, arg) ->
 
             opts.should.equal 'OPTS'
             accum.should.equal 'ACCUM'
             arg.name.should.equal 'name'
-            expansions.should.equal 'expansions'
 
             return then: done
 
-        Format.perform 'OPTS', 'ACCUM', arg = {name: 'name', in: 'in.action'}, 'expansions'
+        Format.perform 'OPTS', 'ACCUM', arg = {name: 'name', in: 'in.action'}

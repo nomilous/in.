@@ -10,7 +10,6 @@ objective 'Call infusion actor', (should) ->
             nofity: ->
         @opts = {}
         @accum = {}
-        @expansions = []
         @arg = 
             actions: [
                 action: 'action'
@@ -35,7 +34,7 @@ objective 'Call infusion actor', (should) ->
                 e.toString().should.match /InfusionError\: pipe must be first filter/
                 done()
 
-            Action.perform @defer, @opts, @accum, @expansions, @arg
+            Action.perform @defer, @opts, @accum, @arg
 
 
     it 'checks the actor for filter support',
@@ -50,7 +49,7 @@ objective 'Call infusion actor', (should) ->
                 done()
                 true
 
-            Action.perform @defer, @opts, @accum, @expansions, @arg
+            Action.perform @defer, @opts, @accum, @arg
 
 
     it 'calls the action actor',
@@ -66,7 +65,7 @@ objective 'Call infusion actor', (should) ->
 
             global.$$in.actors.actor.$$can = () -> true
 
-            Action.perform @defer, @opts, @accum, @expansions, @arg
+            Action.perform @defer, @opts, @accum, @arg
 
 
     it 'matters not how deep the rabbit hole goes',
@@ -82,7 +81,7 @@ objective 'Call infusion actor', (should) ->
 
             global.$$in.actors.actor.$$can = () -> true
 
-            Action.perform @defer, @opts, @accum, @expansions, @arg
+            Action.perform @defer, @opts, @accum, @arg
 
 
     context 'promise', ->
@@ -95,31 +94,31 @@ objective 'Call infusion actor', (should) ->
             global.$$in.actors.ACTOR1.$$can = -> true
 
 
-        it 'resolves with returned value if the actor returns no promise',
+        xit 'resolves with returned value if the actor returns no promise',
 
             (Action, done) ->
 
                 @defer.resolve = (res) ->
 
-                    res.should.equal 'RESULT'
+                    res.should.eql ['RESULT']
                     done()
 
-                Action.perform @defer, @opts, @accum, @expansions, @arg
+                Action.perform @defer, @opts, @accum, @arg
 
 
-        it 'resolves with what the actor resolves with if actor returns a promise',
+        xit 'resolves with what the actor resolves with if actor returns a promise',
 
             (Action, In, done) ->
 
                 @defer.resolve = (res) ->
-                    res.should.equal 'RESULT'
+                    res.should.eql ['RESULT']
                     done()
 
                 global.$$in.actions = ACTION1: ACTOR1: -> 
                     $$in.promise (resolve) ->
                         resolve('RESULT')
 
-                Action.perform @defer, @opts, @accum, @expansions, @arg
+                Action.perform @defer, @opts, @accum, @arg
 
 
     context 'expansion', ->
@@ -144,8 +143,8 @@ objective 'Call infusion actor', (should) ->
             (Action, In, done) ->
 
                 @defer.resolve = (res) ->
-                    
-                    res.should.eql ['RESULT', 'RESULT']
+
+                    res.should.eql [['RESULT', 'RESULT']]
                     done()
 
                 global.$$in.actors = ACTOR1: -> 
@@ -155,7 +154,7 @@ objective 'Call infusion actor', (should) ->
                 global.$$in.actors.ACTOR1.$$can = -> true
 
                 @arg.asArray = true
-                Action.perform @defer, @opts, @accum, @expansions, @arg
+                Action.perform @defer, @opts, @accum, @arg
 
 
         xit 'passes result through the infusers expansion handler if defined',
@@ -172,13 +171,13 @@ objective 'Call infusion actor', (should) ->
                         resolve('RESULT')
 
                 global.$$in.actions.ACTION1.ACTOR1
-                .onExpanded = (arg, actionArgs, expansions, results) ->
+                .onExpanded = (arg, actionArgs, results) ->
 
                     results.should.eql ['RESULT', 'RESULT']
                     return 'REFORMATTED BY EXPANSION HANDLER'
 
                 @arg.asArray = true
-                Action.perform @defer, @opts, @accum, @expansions, @arg
+                Action.perform @defer, @opts, @accum, @arg
 
 
 
