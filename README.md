@@ -128,8 +128,8 @@ $$in(function(
 ```javascript
 $$in(function(
 
-    bunchOFjson, // in.as.json $ cat {{expand.dir('/my/*.json')}}
-    ointment    // in.as.myFiltrationSystem {{expand.myExpander(bunchOFjson)}}
+    bunchOFjsons, // in.as.json $ cat {{expand.dir('/my/*.json')}}
+    ointment     // in.as.myFiltrationSystem {{expand.myExpander(bunchOFjson)}}
 
 ){}).then...
 
@@ -150,12 +150,14 @@ loadJsonFrom = $$in({pend: true}, function(
   resolve
 ){resolve(arg2)});
 
-loadJsonFrom('www.arg1.com/blimps').then...
+loadJsonFrom('www.arg1.com/spokes').then...
 
 // actor: 'web.*' has not been implemented
 // $$in.actors.web(...) {...} 
-// see lib/none/actor.js
+// see lib/none/actor.js or npm in.actor.shell
 ```
+
+[resolve] is a special argument. There are [others](#special-arguments).
 
 #### It supports coffeescript
 
