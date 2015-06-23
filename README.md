@@ -55,7 +55,7 @@ $$in(function(
 }).then...
 ```
 
-#### It interprets the infuser's moustaches
+#### It interprets the in.fuser's moustaches
 
 ```javascript
 $$in(function(
