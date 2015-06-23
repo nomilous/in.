@@ -240,7 +240,7 @@ See also [Using Expanders](#using-expanders)
 
 Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...<br>
 
-But besides that. Assuming that someone has taken the trouble to implement the modules `in.filter.uptime` and `in.filter.unkle`.
+But besides that. Assuming that someone has taken the trouble to implement the modules __in.filter.uptime__ and __in.filter.unkle__.
 
 Search npm for [actors](https://www.npmjs.com/search?q=in.actor), [filters](https://www.npmjs.com/search?q=in.filter), [expanders](https://www.npmjs.com/search?q=in.expander)
 
