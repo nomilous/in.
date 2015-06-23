@@ -202,7 +202,7 @@ See also [using expanders](#using-expanders)
 
 ## Special Arguments
 
-## The `in.` terpreter
+## The in.terpreter
 
 ### Using Actions
 
