@@ -1,4 +1,10 @@
-## Also, we're up to something!
+## Also, we're all up to something...
+
+### What?
+
+`(this) // in. $ /usr/local/bin/being < /dev/imagination | /usr/sbin/culture`
+
+### How?
 
 `one, // in.ring to rule {{ them( 'all' ) }}`<br>
 `one, // in.ring to bind {{ them }}`<br>
@@ -17,3 +23,4 @@
 <br>
 
 But first, [the hobbit](http://www.the-hobbit.gov)...
+
