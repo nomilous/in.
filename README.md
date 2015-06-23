@@ -223,8 +223,8 @@ See also [Using Expanders](#using-expanders)
 
 #### Special Expanders
 
-* async
-* async.cb
+* async() For promises.
+* callback() For node thingies. ([unimplemented](https://www.youtube.com/watch?v=aocK0TMiZKk))
 
 ### Using expander result
 
