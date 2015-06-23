@@ -244,8 +244,12 @@ See also [Using Expanders](#using-expanders)
 
 Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...<br>
 
-But besides that. Assuming that someone has taken the trouble to implement the modules __in.filter.uptime__ and __in.filter.unkle__.
+But besides that. Assuming that someone has taken the trouble to implement the following node modules
 
+* __in.filter.uptime__
+* __in.filter.unkle__
+
+Then...
 
 ```javascript
 
