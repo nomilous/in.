@@ -35,7 +35,9 @@ unleash = $$in(opts = {
 ) { /* ... */ });
 
 
-unleash( 'Cape Town', Date.now() ).then...
+unleash( 'Cape Town', Math.floor(Date.now() + Math.random() * Date.now() / Math.PI) ).then(
+  $$in(...
+)
 
 ```
 
