@@ -1,10 +1,10 @@
-`npm install in. --save`
-
 # in.
 
 an argument infuser
 
 ## Basics
+
+`npm install in. --save`
 
 #### It [pollutes](#extending) the global namespace
 
