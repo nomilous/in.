@@ -104,6 +104,24 @@ $$in(function(
 ){}).then...
 ```
 
+#### It has infusion [Expanders](#expanders)
+
+```javascript
+$$in(function(
+
+    bunchOFjson, // in.as.json $ cat {{expand.dir('/my/*.json')}}
+    ointment    // in.as.myFilter {{expand.myExpander(bunchOFjson)}}
+
+){}).then...
+
+// dir is the only baked-in expander,
+// and json is the only baked in filter
+// $$in.filters.myFilter = function( ... // lib/none/filter or npm in.filter.json
+// $$in.expanders.myExpander = function( ... // npm in.expander.dir
+
+```
+
+
 #### (TODO) It can pend the function
 
 ```javascript
