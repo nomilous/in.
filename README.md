@@ -261,6 +261,13 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 <br>
 <b>and then:</b> `bob, // in.as.unkle {{ is ('your')}}`'[s](https://github.com/nomilous/in./blob/master/test/ALSO.md)<br>
 <br>
-<b>Search npm:</b> For [actors](https://www.npmjs.com/search?q=in.actor) or [filters](https://www.npmjs.com/search?q=in.filter) or [expanders](https://www.npmjs.com/search?q=in.expander) or [lovers](https://www.npmjs.com/search?q=in.love)
 
+## Next
+
+Search npm for: 
+* [Actors](https://www.npmjs.com/search?q=in.actor)
+* [Filters](https://www.npmjs.com/search?q=in.filter)
+* [Expanders](https://www.npmjs.com/search?q=in.expander)
+* [Lovers](https://www.npmjs.com/search?q=in.love)
+* 'Thanks for all the fish'
 
