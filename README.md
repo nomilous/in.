@@ -71,7 +71,7 @@ $$in(function(
 }).then...
 ```
 
-#### (TODO) It provides the [error](#error_handling)
+#### (TODO) It provides the [error](#error-handling)
 
 ```javascript
 $$in(function(
@@ -85,7 +85,7 @@ $$in(function(
 
 }).then...
 ```
-`e` is a special argument. There are [others](#special_arguments).
+`e` is a special argument. There are [others](#special-arguments).
 
 
 #### (TODO) (Perhaps remove this doc fragment, a deviation) For incompatible module names
