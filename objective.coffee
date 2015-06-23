@@ -5,7 +5,8 @@ objective 'Dynamic Function Injector', (recurse, link) ->
     # objective, bug: why must link before recurse?
     # objective, bug: can only link one?
 
-    link.root './node_modules/in.actor.shell/objective'
+    # link.root './node_modules/in.actor.shell/objective'
     # .then -> link.root './node_modules/in.expander.dir/objective'
-    .then -> recurse ['lib', 'test'], createDir: true
+    # .then -> 
+    recurse ['lib', 'test'], createDir: true
     .then -> 

@@ -102,6 +102,22 @@ $$in(function(
 ){}).then...
 ```
 
+#### (TODO) It can pend the function
+
+```javascript
+loadJsonFrom = $$in({pend: true}, function(
+  arg1,
+  arg2, // in.as.json web.get {{arg1}}
+  resolve
+){resolve(arg2)});
+
+loadJsonFrom('www.arg1.com/blimps').then...
+
+// actor: 'web.*' has not been implemented
+// $$in.actors.web(...) {...} 
+// see lib/none/actor.js
+```
+
 #### It supports coffeescript
 
 Coffee does not allow comments among the arguments. So the infusers can be specified inside the function.
@@ -125,6 +141,11 @@ $$in (arg1, arg2) ->
 * '.' for no actor
 
 ## Expanders
+
+### Special Expanders
+
+* async
+* async.cb
 
 ### Using for loop
 

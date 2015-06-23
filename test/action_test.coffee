@@ -20,6 +20,7 @@ objective 'Call infusion actor', (should) ->
 
         global.$$in.actors = actor: ->
         global.$$in.actors.actor.$$can = ->
+        global.$$in.filters.pipe = ->
 
     it 'rejects with error if pipe is not first filter',
 

@@ -30,42 +30,63 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                     done()
             )
 
-    it 'calls the specified external expander',
+    context 'expanders', ->
 
-        (done, In, Compiler) ->
+        it 'calls the specified external expander',
 
-            mock(global.$$in.expanders).does
+            (done, In, Compiler) ->
 
-                thing: (conf, arg1, arg2) ->
+                mock(global.$$in.expanders).does
 
-                    arg1.should.equal 'arg value'
-                    arg2.should.equal 'VALUE'
-                    then: (resolver) -> resolver([1, 2, 3]);
-                    
-            @expansion = eval: 'expand.thing(\'arg value\', $p.previousArg)'
-            @accum = {previousArg: 'VALUE'};
-            
-            Compiler.perform(@opts, @arg, @accum, @expansion)
-            .then (res) ->
+                    thing: (conf, arg1, arg2) ->
 
-                res.should.eql [1, 2, 3]
-                done()
+                        arg1.should.equal 'arg value'
+                        arg2.should.equal 'VALUE'
+                        then: (resolver) -> resolver([1, 2, 3]);
+                        
+                @expansion = eval: 'expand.thing(\'arg value\', $p.previousArg)'
+                @accum = {previousArg: 'VALUE'};
+                
+                Compiler.perform(@opts, @arg, @accum, @expansion)
+                .then (res) ->
 
-    it 'provides the expander result for further expansion by coffee script snippet',
+                    res.should.eql [1, 2, 3]
+                    done()
 
-        (done, In, Compiler) ->
+        it 'provides the expander result for further expansion by coffee script snippet',
 
-            mock(global.$$in.expanders).does
-                thirdPartyExpander: (conf, arg1) ->
-                    then: (resolver) -> 
-                        resolver [{a: 1}, {a: 2}, {a: 'THREE'}]
+            (done, In, Compiler) ->
 
-            @expansion = eval: 'thing.a for thing in expand.thirdPartyExpander(\'arg\')'
-            
-            Compiler.perform(@opts, @arg, @accum, @expansion)
-            .then (res) ->
-                res.should.eql [1, 2, 'THREE']
-                done()
+                mock(global.$$in.expanders).does
+                    thirdPartyExpander: (conf, arg1) ->
+                        then: (resolver) -> 
+                            resolver [{a: 1}, {a: 2}, {a: 'THREE'}]
+
+                @expansion = eval: 'thing.a for thing in expand.thirdPartyExpander(\'arg\')'
+                
+                Compiler.perform(@opts, @arg, @accum, @expansion)
+                .then (res) ->
+                    res.should.eql [1, 2, 'THREE']
+                    done()
+
+        xit 'supports miltiple expanders',
+
+            (done, In, Compiler) ->
+
+                mock(global.$$in.expanders).does
+
+                    ex1: (arg) -> then: (r) -> r [arg, 'a', 'b', 'c']
+                    ex2: (arg) -> then: (r) -> r [arg, 1, 2, 3]
+                    ex3: (arg) -> then: (r) -> r [arg, 'do', 're', 'me']
+
+                @expansion = eval: '[expand.ex1(\'arg1\'), expand.ex2(\'arg2\'), expand.ex3(\'arg3\')]'
+
+                Compiler.perform(@opts, @arg, @accum, @expansion)
+                .then (res) ->
+                    console.log res
+                    done()
+
+
 
 
     context 'array flag', ->
