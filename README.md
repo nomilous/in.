@@ -261,6 +261,6 @@ and then: `bob, // in.as.unkle {{is('your\'s')}}`
 `one, // in.ring to rule {{them}}`<br>
 `one, // in.ring to bind {{them}}`<br>
 `one, // in.ring to bring {{them('all')}}`<br>
-`and, // in. the darkness {{`[bind](#http//objective.black)`(them)}}`<br>
+`and, // in. the `[darkness](http//objective.black)` {{`[bind](http//objective.blue)`(them)}}`<br>
 
 
