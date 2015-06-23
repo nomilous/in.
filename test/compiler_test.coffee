@@ -69,7 +69,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                     res.should.eql [1, 2, 'THREE']
                     done()
 
-        xit 'supports miltiple expanders',
+        it.only 'supports multiple sequencial expanders',
 
             (done, In, Compiler) ->
 
@@ -77,14 +77,29 @@ objective 'Compile embedded in{{fusions}}', (should) ->
 
                     ex1: (arg) -> then: (r) -> r [arg, 'a', 'b', 'c']
                     ex2: (arg) -> then: (r) -> r [arg, 1, 2, 3]
-                    ex3: (arg) -> then: (r) -> r [arg, 'do', 're', 'me']
+                    # ex3: 
+                    #     deeper: (arg) -> then: (r) -> r [arg, 'do', 're', 'me']
+                    async: (arg) -> then: (r) -> r [arg, 'alpha', 'beta', 'um?']
 
-                @expansion = eval: '[expand.ex1(\'arg1\'), expand.ex2(\'arg2\'), expand.ex3(\'arg3\')]'
+
+                global.$$in.expanders.ex3 = 
+                    deeper: (arg) -> then: (r) -> r [arg, 'do', 're', 'me']
+
+
+                @expansion = eval: '[expand.ex1(\'arg1\'), expand.ex2(\'arg2\'), expand.ex3.deeper(\'arg3\'), async(\'one\')]'
 
                 Compiler.perform(@opts, @arg, @accum, @expansion)
-                .then (res) ->
-                    console.log res
-                    done()
+                .then( 
+                    (res) ->
+                        
+                        res.should.eql [ [ 'arg1', 'a', 'b', 'c' ],
+                                         [ 'arg2', 1, 2, 3 ],
+                                         [ 'arg3', 'do', 're', 'me' ],
+                                         [ 'one', 'alpha', 'beta', 'um?' ] ]
+
+                        done()
+                    (e) -> done e
+                )
 
 
 
