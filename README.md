@@ -57,7 +57,7 @@ $$in(function(
 }).then...
 ```
 
-#### It [interprets]#{#interpreter} moustaches
+#### It [interprets](#interpreter) moustaches
 
 ```javascript
 $$in(function(
