@@ -237,4 +237,6 @@ See also [Using Expanders](#using-expanders)
 
 ## Why
 
+Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...
+
 

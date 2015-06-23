@@ -1,4 +1,4 @@
-# for likeminded lunatics
+# 4 like-minded lunatics
 
 ```javascript
 
@@ -39,4 +39,4 @@ unleash( 'Cape Town', Date.now() ).then...
 
 ```
 
-<b>Note:</b> This is missing resolvers, see [Special Args](https://github.com/nomilous/in.#special-arguments) 
+<b>Note:</b> This is missing resolvers, see [Special Args](https://github.com/nomilous/in.#special-arguments)
