@@ -43,7 +43,7 @@ $$in(function(express){
 }).then...
 ```
 
-#### It [injects](Injection) arguments from their comments.
+#### It [injects](Injection) arguments from their comments
 
 Using the `in.` operator.
 
@@ -57,7 +57,7 @@ $$in(function(
 }).then...
 ```
 
-#### It interprets the in.fuser's moustaches
+#### It interprets moustaches
 
 ```javascript
 $$in(function(
