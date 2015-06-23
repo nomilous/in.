@@ -265,9 +265,9 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 ## Next
 
 Search npm for: 
+
 * [Actors](https://www.npmjs.com/search?q=in.actor)
 * [Filters](https://www.npmjs.com/search?q=in.filter)
 * [Expanders](https://www.npmjs.com/search?q=in.expander)
 * [Lovers](https://www.npmjs.com/search?q=in.love)
-* 'Thanks for all the fish'
 
