@@ -248,7 +248,8 @@ then `bob, // in.as.unkle {{is('yours')}}`
 
 require('in.');
 require('in.filter.uptime');
-$$in(function(uptime)) { // in.as.uptime $ uptime
+
+$$in(function(uptime) { // in.as.uptime $ uptime
     
     /* and so forth...
 ```
