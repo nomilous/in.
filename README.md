@@ -97,7 +97,7 @@ $$in(function(
 ```javascript
 $$in(function(
 
-    arg // in.<action>.<filter> <actor> para{{'m'}}eters
+    arg // in.<action>.<filter1>.<filter2...> <actor> para{{'m'}}eters
 
 ){}).then...
 ```
