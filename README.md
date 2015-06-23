@@ -183,19 +183,19 @@ What if things go wrong in the `//in.`...
 
 ## Extending Actions
 
-See also [using actions](#using-actions)
+See also [Using Actions](#using-actions)
 
 ## Extending Filters
 
-See also [using filters](#using-filters)
+See also [Using Filters](#using-filters)
 
 ## Extending Actors
 
-See also [using actors](#using-actors)
+See also [Using Actors](#using-actors)
 
 ## Extending Expanders
 
-See also [using expanders](#using-expanders)
+See also [Using Expanders](#using-expanders)
 
 
 # Injector
