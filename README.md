@@ -1,8 +1,7 @@
 # in.
 
-an argument infuser.<br>
-<br>
-proceed directly to [why](#why)?
+An argument infuser,<br>
+perhaps proceed directly to [why](#why)?
 
 ## Basics
 
