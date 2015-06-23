@@ -35,8 +35,12 @@ unleash = $$in(opts = {
 ) { /* ... */ });
 
 
-unleash( 'Cape Town', Math.floor(Date.now() + Math.random() * Date.now() / Math.PI * isNaN(releaseDate)) ).then(
-  $$in ( { pend: true, uuid: '...
+unleash( 'Cape Town', Math.floor(
+  Date.now() + Math.random() * Date.now() / Math.PI * isNaN(release.date) ? Math.random() : release.date
+)).then(
+
+  $$in( { pend: true, uuid: '...
+
 )
 
 ```
