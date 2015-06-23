@@ -242,8 +242,6 @@ Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/maste
 
 But besides that. Assuming that someone has taken the trouble to implement the modules `in.filter.uptime` and `in.filter.unkle` (search npm 'in.')<br>
 
-then `bob, // in.as.unkle {{is('yours')}}`
-
 ```javascript
 
 require('in.');
@@ -254,6 +252,8 @@ $$in(function(uptime) { // in.as.uptime $ uptime
     /* and so forth...
 ```
 
-`$` aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime filter for formatting into probably json.
+`$` aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime filter for formatting into probably json.<br>
+<br>
+and then: `bob, // in.as.unkle {{is('yours')}}`
 
 
