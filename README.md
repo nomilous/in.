@@ -258,7 +258,9 @@ and then: `bob, // in.as.unkle {{is('your\'s')}}`
 
 ## Also,
 
-`one, // in. ring to rule {{them}}`<br>
-`one, // in. ring to bind {{them}}`<br>
+`one, // in.ring to rule {{them}}`<br>
+`one, // in.ring to bind {{them}}`<br>
+`one, // in.ring to bring {{them('all')}}`<br>
+`and, // in. the darkness {{bind(them)}}`<br>
 
 
