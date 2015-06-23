@@ -3,7 +3,11 @@
 An argument infuser,<br>
 perhaps proceed directly to [why](#why)?
 
-## Basics
+Skip to [Error Handling](#error-handling)
+Skip to [Extending](#extending)
+Skip to [Injector](#injector)
+
+## The Basics
 
 `npm install in. --save`
 
