@@ -246,8 +246,6 @@ Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/maste
 
 But besides that. Assuming that someone has taken the trouble to implement the modules __in.filter.uptime__ and __in.filter.unkle__.
 
-Search npm for [actors](https://www.npmjs.com/search?q=in.actor) or [filters](https://www.npmjs.com/search?q=in.filter) or [expanders](https://www.npmjs.com/search?q=in.expander) or [lovers](https://www.npmjs.com/search?q=in.love)
-
 
 ```javascript
 
@@ -261,4 +259,8 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 
 `$` aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime filter for formatting into probably json to arrive into the function argument completely devoid of all further effort ever ([possible exageration?])(#in).<br>
 <br>
-<b>and then:</b> `bob, // in.as.unkle {{ is ('your')}}`'[s](https://github.com/nomilous/in./blob/master/test/ALSO.md)
+<b>and then:</b> `bob, // in.as.unkle {{ is ('your')}}`'[s](https://github.com/nomilous/in./blob/master/test/ALSO.md)<br>
+<br>
+<b>Search npm for</b> [actors](https://www.npmjs.com/search?q=in.actor) or [filters](https://www.npmjs.com/search?q=in.filter) or [expanders](https://www.npmjs.com/search?q=in.expander) or [lovers](https://www.npmjs.com/search?q=in.love)
+
+
