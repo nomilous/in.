@@ -26,12 +26,13 @@ unleash = $$in(opts = {
   ) { /*..*/ })
 
 }, function(
+
   instructions, // in. ...
   where,
   when,
   who // in. {{async(instructions, lions, bears, frogs)}}
 
-) { /* ... */ })
+) { /* ... */ });
 
 
 unleash( 'Cape Town', Date.now() ).then...
