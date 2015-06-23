@@ -1,11 +1,11 @@
 # in.
 
-An argument infuser,<br>
-perhaps proceed directly to [why](#why)?
-
+An argument infuser.<br>
+<br>
 Skip to [Error Handling](#error-handling)<br>
 Skip to [Extending](#extending)<br>
 Skip to [Injector](#injector)<br>
+Skip to (Why?)[#why]<br>
 
 ## The Basics
 
