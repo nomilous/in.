@@ -5,7 +5,7 @@ An argument infuser.<br>
 Skip to [Error Handling](#error-handling)<br>
 Skip to [Extending](#extending)<br>
 Skip to [Injector](#injector)<br>
-Skip to (Why)[#why]?<br>
+Skip to [Why?](#why)<br>
 
 ## The Basics
 
