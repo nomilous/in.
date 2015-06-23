@@ -256,4 +256,8 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 <br>
 and then: `bob, // in.as.unkle {{is('your\'s')}}`
 
+## Also, just so you know:
+
+one, // in.ring to rule {{them}}
+
 
