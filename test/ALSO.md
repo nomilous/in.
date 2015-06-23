@@ -6,7 +6,7 @@
 
 $$in(function(youToo, /* in.as
 .participant $ /usr/local/bin/being < /dev/imagination | objective | /usr/sbin/culture
-*/ resolve) { resolve( youToo = 'y/n' ); }).then...
+*/ resolve) { resolve( youToo['?'] = 'y/n' ); }).then...
 
 ```
 
