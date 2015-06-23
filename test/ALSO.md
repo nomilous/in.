@@ -14,6 +14,8 @@ $$in(function(youToo, /* in.as
 
 #### How?
 <br>
+`from, // out. of the `[blue](http://objective.blue)
+<br>
 (evil giggle)<br>
 <br>
 <br>
@@ -23,12 +25,6 @@ $$in(function(youToo, /* in.as
 `one, // in.ring to bring {{ them( 'all' )}}`<br>
 `and, // in. `[the darkness](http://objective.black)` {{ bind( 'them' )}}`<br>
 <br>
-(getting carried away giggle)<br>
-<br>
-`from, // out. of the `[blue](http://objective.blue)
-<br>
-<br>
-
 <br>
 <br>
 <br>
