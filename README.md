@@ -113,7 +113,7 @@ $$in(function(
 }).then...
 ```
 
-#### It has [Actions](#extending-actions), [Filters](#extending-filters), [Actors](#extending-actors) and para[{{'m'}}](#extending-expanders)eters
+#### It has [Actions](#extending-actions), [Filters](#extending-filters), [Actors](#extending-actors) and para{{'m'}}
 
 ```javascript
 $$in(function(
@@ -123,7 +123,7 @@ $$in(function(
 ){}).then...
 ```
 
-#### It has infusion [Expanders](#extending-expanders)
+#### It has asynchronous [Expanders](#extending-expanders)
 
 ```javascript
 $$in(function(
