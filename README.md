@@ -41,7 +41,9 @@ $$in(function(express){
 }).then...
 ```
 
-#### It [injects](Injection) arguments from their comment using the `in.` operator
+#### It [injects](Injection) arguments from their comments.
+
+Using the `in.` operator.
 
 ```javascript
 $$in(function(
