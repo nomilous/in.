@@ -1,6 +1,8 @@
-## Also, we're up to something...
+## Also, 
 
-### What?
+### we're up to something...
+
+#### What?
 
 ```javascript
 
@@ -10,7 +12,7 @@ $$in(function(youToo, /* in.as
 
 ```
 
-### How?
+#### How?
 
 (evil giggle)<br>
 <br>
