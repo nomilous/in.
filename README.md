@@ -33,7 +33,7 @@ $$in( function(){} ).then...
 $$in(  {opt:'ion'},  function(){} ).then...
 ```
 
-#### It [injects](Injection) node modules (by name) into the function
+#### It [injects](injector) node modules (by name) into the function
 
 ```javascript
 $$in(function(express){    
@@ -43,7 +43,7 @@ $$in(function(express){
 }).then...
 ```
 
-#### It [injects](Injection) arguments from their comments
+#### It [injects](injector) arguments from their comments
 
 Using the `in.` operator.
 
@@ -179,32 +179,38 @@ $$in (arg1, arg2) ->
 What if things go wrong in the `//in.`...
 
 
-
-
-
-
-
 # Extending
 
 ## Actions
 
+See also [using actions](#using-actions)
+
 ## Filters
+
+See also [using filters](#using-filters)
 
 ## Actors
 
-* '.' for no actor
+See also [using actors](#using-actors)
 
 ## Expanders
 
-### Special Expanders
-
-* async
-* async.cb
-
-# Special Arguments
+See also [using expanders](#using-expanders)
 
 
-# Interpreter
+# Injector
+
+## Special Arguments
+
+## The `in.` terpreter
+
+### Using Actions
+
+### Using Filters
+
+### Using Actors
+
+* '.' for no actor
 
 ### Using for loop
 
@@ -214,17 +220,19 @@ What if things go wrong in the `//in.`...
 
 ### Using expander
 
+#### Special Expanders
+
+* async
+* async.cb
+
 ### Using expander result
 
 ### Multiple expanders
 
 ### Options
 
-### Injection
-
 ### Promising
 
-### Infusion
 
 
 ## Why
