@@ -113,7 +113,7 @@ $$in(function(
 }).then...
 ```
 
-#### It has [Actions](#extending-actions), [Filters](#extending-filters), [Actors](#extending-actors) and para{{'m'}}
+#### It has [Actions](#extending-actions), [Filters](#extending-filters), [Actors](#extending-actors) and para{{'m'}}eters
 
 ```javascript
 $$in(function(
