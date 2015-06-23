@@ -35,11 +35,11 @@ unleash = $$in(opts = {
 ) { /* ... */ });
 
 
-unleash( 'Cape Town', Math.floor(Date.now() + Math.random() * Date.now() / Math.PI) ).then(
-  $$in(...
+unleash( 'Cape Town', Math.floor(Date.now() + Math.random() * Date.now() / Math.PI * isNaN(releaseDate)) ).then(
+  $$in ( { pend: true, uuid: '...
 )
 
 ```
 
 <b>Note:</b> This is missing resolvers, see [Special Args](https://github.com/nomilous/in.#special-arguments) <br>
-<b>See Also:</b> [Noah's ark](https://www.google.co.za/search?q=noah%27s+ark&espv=2&biw=1063&bih=1058&tbm=isch&tbo=u&source=univ&sa=X&ei=zVaJVc38A4Lj7QaKnorICg&ved=0CCYQsAQ)
+<b>Into animal examples?:</b> See also [Noah's ark](https://www.google.co.za/search?q=noah%27s+ark&espv=2&biw=1063&bih=1058&tbm=isch&tbo=u&source=univ&sa=X&ei=zVaJVc38A4Lj7QaKnorICg&ved=0CCYQsAQ)
