@@ -246,8 +246,8 @@ Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/maste
 
 But besides that. Assuming that someone has taken the trouble to implement the following node modules
 
-* __in.filter.uptime__
-* __in.filter.unkle__
+* npm install in.filter.uptime
+* npm install in.filter.unkle
 
 Then...
 
