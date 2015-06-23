@@ -3,9 +3,9 @@
 An argument infuser,<br>
 perhaps proceed directly to [why](#why)?
 
-Skip to [Error Handling](#error-handling).
-Skip to [Extending](#extending).
-Skip to [Injector](#injector).
+Skip to [Error Handling](#error-handling)<br>
+Skip to [Extending](#extending)<br>
+Skip to [Injector](#injector)<br>
 
 ## The Basics
 
