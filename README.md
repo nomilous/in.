@@ -240,7 +240,9 @@ See also [Using Expanders](#using-expanders)
 
 Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...<br>
 
-But besides that. Assuming that someone has taken the trouble to implement the modules `in.filter.uptime` and `in.filter.unkle` (search npm 'in.')<br>
+But besides that. Assuming that someone has taken the trouble to implement the modules `in.filter.uptime` and `in.filter.unkle`.
+
+(search npm 'in.')
 
 ```javascript
 
