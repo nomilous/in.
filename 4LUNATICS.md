@@ -41,7 +41,7 @@ unleash( 'Cape Town', Math.floor(
   * isNaN(release.date) ? Math.random() : release.date
 )).then(
 
-  $$in( { pend: true, uuid: '...
+  $$in( { pend: true, welcome: true, uuid: '...
 
 )
 
