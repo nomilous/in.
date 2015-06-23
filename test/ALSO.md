@@ -2,7 +2,7 @@
 
 ### What?
 
-`(this) // in. $ /usr/local/bin/being < /dev/imagination | /usr/sbin/culture`
+`function(this) // in. $ /usr/local/bin/being < /dev/imagination | /usr/sbin/culture`
 
 ### How?
 
