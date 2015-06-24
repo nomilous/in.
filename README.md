@@ -165,6 +165,38 @@ loadJsonFrom('www.arg1.com/spokes').then...
 
 `resolve` is a special argument. There are [others](#special-arguments).
 
+#### (TODO) It has a faux scope
+
+This does not work.
+
+```javascript
+var scopeVar = 'unaccessable in expander';
+$$in(function(arg, // in. {{scopeVar}}
+                               //
+                              // var out of scope
+```
+
+This does.
+
+```javascript
+function scopeFunction() { return $$in.promise(     //...
+$$in({fn: scopeFunction}, function(arg, // in. {{$fn()}} //...
+                                                  //
+                                                 // desision pending:
+                                                //
+                                               // $.fn? or $fn, 
+                                              // or reserve $ for asyncers (**)
+                                             // and use @fn ( or @.fn
+                                            // ... be easier ) 
+                                           //
+                                          // ** it has occurred to me that {{fn()}}
+                                         //     can easily be asyncronously enabled
+                                        //      
+                                       //       if it returned a promise(
+                                      //         
+                                     //         then...
+```
+
 
 #### It is deeply integratable
 
