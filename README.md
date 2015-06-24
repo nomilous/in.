@@ -288,6 +288,8 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 .then($$in(function(result, Bob) { // in.as.unkle {{ is ( 'your\'s' ) }}`'
 
     // TODO: un-'currently unkle will be injected into result'
-    
+
 })).then...
 ```
+
+`result` is a special argument. There are [others](#special-arguments).
