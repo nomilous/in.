@@ -8,8 +8,6 @@ An argument infuser.
 * [Next](#next)
 * [Why?](#why)
 
-Also, 'look [out.](https://github.com/nomilous/out.)'
-
 ## The Basics
 
 `npm install in. --save`
@@ -291,6 +289,8 @@ Search npm for
 * [Filters](https://www.npmjs.com/search?q=in.filter)
 * [Expanders](https://www.npmjs.com/search?q=in.expander)
 * [Lovers](https://www.npmjs.com/search?q=in.love)
+
+Also, 'look [out.](https://github.com/nomilous/out.)'
 
 ## Why
 
