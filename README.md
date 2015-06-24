@@ -275,9 +275,19 @@ Pause.
 
 Silence.
 
-"Maaagh"
+"Um. I could take both."
 
-"Lets just use the syringe...
+"Assuming the blue pill's like taking nothing anyway."
+
+More silence.
+
+"Good point."
+
+"Trinity!"
+
+"What?"
+
+"We're gonna need a bigger glass of water."
 
 # Injector
 
