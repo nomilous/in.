@@ -10,9 +10,9 @@ $$in.expanders.japan = function(delay) {
 
     setTimeout(function Because_You_ll_Know(when, youre, big, In, Japan) {
         resolve([
+          'Big in Japan-tonight',
           'Big in Japan-be-tight',
-          'Big in Japan ooh the eastern sea\'s so blue',
-          'Big in Japan-alright'
+          'Big in Japan ooh the eastern sea\'s so blue'
         ])
     }, delay);
 
@@ -20,7 +20,16 @@ $$in.expanders.japan = function(delay) {
 }
 
 $$in(function(
+
    Big, // in. {{expand.japan(100)}}
     In // in. {{console.log line for line in Big}}
-){/* Japan */});
 
+){}).then( Japan = $$in({
+
+    home: process.env.HOME,
+    player: process.env.MP3_PLAYER
+    
+  },
+  function(big){ // in. $ {{player}} {{home}}/music/Alphaville/Big\ In\ Japan.mp3
+  }
+)
