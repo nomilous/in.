@@ -272,8 +272,8 @@ See also [Using Expanders](#using-expanders)
 
 #### Special Expanders
 
-* async() For promises.
-* callback() For node thingies. ([unimplemented](https://www.youtube.com/watch?v=aocK0TMiZKk?in.as.hello=1))
+* async() for promises.
+* callback() for node thingies. ([unimplemented](https://www.youtube.com/watch?v=aocK0TMiZKk?in.as.hello=1))
 
 ### Using expander result
 
