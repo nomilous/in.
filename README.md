@@ -259,9 +259,9 @@ See also [Using Expanders](#using-expanders)
 
 "After this there is no turning back."
 
-"You take the [red pill](http://objective.red) - The story ends. You wake up in your bed and believe whatever you want to believe."
+"<b>You take the [red pill](http://objective.red)</b> - The story ends. You wake up in your bed and believe whatever you want to believe."
 
-"You take the [blue pill](http://objective.blue)" - You stay in wonderland. And I show you how deep the rabbit hole goes."
+"<b>You take the [blue pill](http://objective.blue)</b>" - You stay in wonderland. And I show you how deep the rabbit hole goes."
 
 "Hang-on..."
 
