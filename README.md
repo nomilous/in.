@@ -8,6 +8,8 @@ An argument infuser.
 * [Next](#next)
 * [Why?](#why)
 
+Also, 'look [out.](https://github.com/nomilous/out.)'
+
 ## The Basics
 
 `npm install in. --save`
