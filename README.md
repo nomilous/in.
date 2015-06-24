@@ -14,11 +14,11 @@ An argument infuser.
 
 #### It uses eval
 
-Sorry about that. (see [the interpreter](#the-interpreter))
+Sorry about that? (see [the interpreter](#the-interpreter))
 
 #### It [pollutes](#extending) the global namespace
 
-Sorry about that. (see [extending](#extending))
+Sorry about that? (see [extending](#extending))
 
 ```javascript
 In = require('in.');
