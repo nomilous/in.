@@ -24,7 +24,7 @@ $$in(function(
    Japan, // in. {{expand.japan(100)}}
    ooh   // in. {{console.log 'when you\'re', big for big in Japan}}
 
-){}).then( Japan = $$in({
+){}).then( $$in({
 
     home: process.env.HOME,
     player: process.env.MP3_PLAYER
