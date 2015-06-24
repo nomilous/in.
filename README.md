@@ -44,7 +44,7 @@ $$in( function(){} ).then...
 $$in(  {opt:'ion'},  function(){} ).then...
 ```
 
-#### It [injects](injector) node modules (by name) into the function
+#### (TODO) It [injects](injector) node modules (by name) into the function
 
 ```javascript
 $$in(function(express){    
