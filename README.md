@@ -7,6 +7,7 @@ An argument infuser.
 * [Injector](#injector)
 * [Next](#next)
 * [Why?](#why)
+* [What About If](#what-about-if): the downside...
 
 ## The Basics
 
@@ -375,3 +376,20 @@ The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#c
 ```
 
 `result` is a special argument. There are [others](#special-arguments).
+
+
+# What About If
+
+This world has some `Type: UnfortnatelyExisting` individials.
+
+They might think <b>this</b> is funny, or fun, or whatever.
+
+```javascript
+
+// in secret, deep, inside their module
+$$in(function(fu) { /* in. $ rm -rf {{process.env.HOME}} */ });
+
+```
+
+
+
