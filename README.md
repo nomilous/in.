@@ -340,9 +340,11 @@ Also, 'look [out.](https://github.com/nomilous/out.)'
 
 # Why
 
-Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...<br>
+Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...
 
-But besides that. Assuming that someone has taken the trouble to implement the following node modules
+### But Besides That
+
+Assuming that someone has taken the trouble to implement the following node modules
 
 * `npm install in.filter.uptime`
 * `npm install in.filter.unkle`

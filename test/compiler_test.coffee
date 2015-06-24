@@ -101,7 +101,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                     (e) -> done e
                 )
 
-        it.only 'supports expansion passages',
+        it 'supports expansion passages',
 
             (done, In, Compiler) ->
 
@@ -140,10 +140,10 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                 )
 
 
-        it.only 'supports passing expanders to expanders'
+        it 'supports passing expanders to expanders'
 
 
-        it.only 'pipelines wher passing with firstN args not a function'
+        it 'pipelines wher passing with firstN args not a function'
 
 
 
