@@ -35,7 +35,7 @@ unleash = $$in(opts = {
 ) { /* ... */ });
 
 
-unleash( 'Cape Town', Math.floor // Building 11, Room 919
+unleash( 'Cape Town', /* Building. 11, Room. 919 */ Math. floor
 
   ( Date.now() + Math.random() 
   * Date.now() / Math.PI 
