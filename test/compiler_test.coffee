@@ -1,4 +1,4 @@
-objective 'Compile embedded in{{fusions}}', (should) ->
+objective 'Compile embedded in. {{fusions}}', (should) ->
 
     beforeEach ->
 
@@ -32,7 +32,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
 
     context 'expanders', ->
 
-        xit 'calls the specified external expander',
+        it 'calls the specified external expander',
 
             (done, In, Compiler) ->
 
@@ -48,10 +48,13 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                 @accum = {previousArg: 'VALUE'};
                 
                 Compiler.perform(@opts, @arg, @accum, @expansion)
-                .then (res) ->
+                .then( 
+                    (res) ->
+                        res.should.eql [1, 2, 3]
+                        done()
 
-                    res.should.eql [1, 2, 3]
-                    done()
+                    failed = done
+                )
 
         it 'provides the expander result for further expansion by coffee script snippet',
 
@@ -69,21 +72,21 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                     res.should.eql [1, 2, 'THREE']
                     done()
 
-        xit 'supports multiple sequencial expanders',
+        it 'supports multiple sequencial expanders',
 
             (done, In, Compiler) ->
 
                 mock(global.$$in.expanders).does
 
-                    ex1: (arg) -> then: (r) -> r [arg, 'a', 'b', 'c']
-                    ex2: (arg) -> then: (r) -> r [arg, 1, 2, 3]
+                    ex1: (conf, arg) -> then: (r) -> r [arg, 'a', 'b', 'c']
+                    ex2: (conf, arg) -> then: (r) -> r [arg, 1, 2, 3]
                     # ex3: 
                     #     deeper: (arg) -> then: (r) -> r [arg, 'do', 're', 'me']
-                    async: (arg) -> then: (r) -> r [arg, 'alpha', 'beta', 'um?']
+                    async: (conf, arg) -> then: (r) -> r [arg, 'alpha', 'beta', 'um?']
 
 
                 global.$$in.expanders.ex3 = 
-                    deeper: (arg) -> then: (r) -> r [arg, 'do', 're', 'me']
+                    deeper: (conf, arg) -> then: (r) -> r [arg, 'do', 're', 'me']
 
 
                 @expansion = eval: '[expand.ex1(\'arg1\'), expand.ex2(\'arg2\'), expand.ex3.deeper(\'arg3\'), async(\'one\')]'
@@ -105,19 +108,19 @@ objective 'Compile embedded in{{fusions}}', (should) ->
 
             (done, In, Compiler) ->
 
-                trace.filter = true
+                # trace.filter = true
 
                 otherArgs = ''
 
                 mock(global.$$in.expanders).does
 
-                    A: (arg, i) -> $$in.promise (resolve) ->
+                    A: (conf, arg, i) -> $$in.promise (resolve) ->
 
                         otherArgs += arg
                         ++a.i for a in i.anArray
                         resolve(i);
 
-                    I: (arg) -> $$in.promise (resolve) -> 
+                    I: (conf, arg) -> $$in.promise (resolve) ->
 
                         otherArgs += arg
                         resolve anArray: [{i:1}, {i:2}, {i:3}]
@@ -140,10 +143,38 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                 )
 
 
-        it 'supports passing expanders to expanders'
+        it.only 'supports passing expanders to expanders'
 
 
-        it 'pipelines wher passing with firstN args not a function'
+        it 'pipelines when passing with firstN args not a function'
+
+
+        it 'puts the expansion results on the action arg',
+
+            thought: 'Might be usefull. Dunno. No harm in it'
+
+            (done, In, Compiler) ->
+
+                mock(global.$$in.expanders).does
+
+                    thing1: -> [1, 2, 3]
+
+                    thing2: (conf) -> 
+
+                        ['a' + conf.arg.$e[0][0], 
+                         'b' + conf.arg.$e[0][1],
+                         'c' + conf.arg.$e[0][2]]
+
+                @expansion.eval = 'expand.thing2(expand.thing1())'
+                Compiler.perform @opts, @arg, @accum, @expansion
+                .then =>
+                    @arg.$e.should.eql [ 
+                        [ 1, 2, 3 ],
+                        [ 'a1', 'b2', 'c3' ],
+                    ]
+                    done()
+
+
 
 
 
