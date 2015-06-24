@@ -32,7 +32,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
 
     context 'expanders', ->
 
-        it 'calls the specified external expander',
+        xit 'calls the specified external expander',
 
             (done, In, Compiler) ->
 
@@ -69,7 +69,7 @@ objective 'Compile embedded in{{fusions}}', (should) ->
                     res.should.eql [1, 2, 'THREE']
                     done()
 
-        it 'supports multiple sequencial expanders',
+        xit 'supports multiple sequencial expanders',
 
             (done, In, Compiler) ->
 

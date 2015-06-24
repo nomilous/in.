@@ -1,6 +1,6 @@
 objective 'Error handling', ->
 
-    it.only 'exits with errno if no handler',
+    it 'exits with errno if no handler',
 
         (In, done) ->
 
@@ -16,3 +16,31 @@ objective 'Error handling', ->
                     throw new InfusionError('Oh! No!', errno: 42)
 
                 }} ###
+
+
+    it 'calls optional error handler', 
+
+        (In, done) ->
+
+            $$in
+
+                onError: (e) ->
+
+                    e.errno.should.match 42
+                    done()
+
+                (arg) ->
+
+                    ### in(arg). {{
+
+                        throw new InfusionError('Oh! No!', errno: 42)
+
+                    }} ###
+
+
+    it 'injects the error if (e)'
+
+    it 'injects the error if (err)'
+
+    it 'injects the error if (error)'
+
