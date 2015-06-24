@@ -382,14 +382,26 @@ The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#c
 
 This world has some `Type: UnfortnatelyExisting` individials.
 
-They might think <b>this</b> is funny, or fun, or whatever.
+They might think <b>this</b> is funny, or fun, or who knows what.
 
 ```javascript
 
-// in secret, deep, inside their module
-$$in(function(fu) { /* in. $ rm -rf {{process.env.HOME}} */ });
+// in secret,
+// deep inside their module you've installed
+
+$$in(function(hehehe) { /* in. $ rm -rf {{process.env.HOME}} */ });
+
+// or worse...
 
 ```
 
+And it's not really about what they're doing, because they could just as easilly to this:
 
+```javascript 
+require('child_process').exec( ...
+```
+
+It's about how `in.` makes it easy to camouflage.
+
+So, um?
 
