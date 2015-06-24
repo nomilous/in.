@@ -287,7 +287,7 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 ```javascript
 .then($$in(function(result, Bob) { // in.as.unkle {{ is ( 'your\'s' ) }}`'
 
-    // TODO: un-'currently unkle will be injected into result'
+    // TODO: un-'currently unkle will be injected into result (i think)'
 
 })).then...
 ```
