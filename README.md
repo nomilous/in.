@@ -164,6 +164,16 @@ loadJsonFrom('www.arg1.com/spokes').then...
 
 `resolve` is a special argument. There are [others](#special-arguments).
 
+
+#### It is deeply integratable
+
+```javascript
+$$in({onInject: function(){}}, function() {});
+```
+
+See [hameln](https://github.com/nomilous/hameln)
+
+
 #### It supports coffeescript
 
 Coffee does not allow comments among the arguments. So the infusers can be specified inside the function.
@@ -261,7 +271,7 @@ $$in(function(uptime) { // in.as.uptime $ uptime
     /* and so forth...
 ```
 
-[$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Filter](#creating-filters) for formatting into probably json to be injected into the function argument completely devoid of all further effort ever ([possible exageration?](#in)).<br>
+[$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Filter](#creating-filters) for formatting into probably json to be injected into the function argument completely devoid of all further effort ever. ([possible exageration?](#in))<br>
 <br>
 And then... `bob, // in.as.unkle {{ is ( 'your\'s' ) }}`'
 
