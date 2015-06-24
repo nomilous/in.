@@ -280,9 +280,7 @@ See also [Using Expanders](#using-expanders)
 
 Pause.
 
-"Um"
-
-"Trinity!"
+"Trinity!?"
 
 "Can you remember which pill's which?"
 
