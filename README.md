@@ -1,4 +1,4 @@
-# in[.](https://www.youtube.com/watch?v=zUDDiWtFtEM)*
+# in[.](https://www.youtube.com/watch?v=zUDDiWtFtEM)
 
 An argument infuser.
 
@@ -6,6 +6,7 @@ An argument infuser.
 * [Extending](#extending)
 * [Injector](#injector)
 * [Why?](#why)
+* [Next](#next)
 
 ## The Basics
 
