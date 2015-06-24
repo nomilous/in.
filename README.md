@@ -12,6 +12,10 @@ An argument infuser.
 
 `npm install in. --save`
 
+#### It uses eval
+
+Sorry about that. (see [the interpreter](#the-interpreter))
+
 #### It [pollutes](#extending) the global namespace
 
 Sorry about that. (see [extending](#extending))
@@ -252,7 +256,7 @@ See also [Using Expanders](#using-expanders)
 
 ## Special Arguments
 
-## The in.terpreter
+## The Interpreter
 
 ### Using Actions
 
