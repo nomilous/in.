@@ -251,6 +251,10 @@ See also [Using Actors](#using-actors)
 
 See also [Using Expanders](#using-expanders)
 
+"Unfortunately, no-one can be <b>told</b> what an expander is, you have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself."
+
+"This is your last chance."
+
 
 # Injector
 
@@ -272,7 +276,9 @@ See also [Using Expanders](#using-expanders)
 
 ### Using previous argument
 
-### Using expander
+### Using Expanders
+
+
 
 #### Special Expanders
 
@@ -287,7 +293,7 @@ See also [Using Expanders](#using-expanders)
 
 ### Promising
 
-## Next
+# Next
 
 Search npm for
 
@@ -298,7 +304,7 @@ Search npm for
 
 Also, 'look [out.](https://github.com/nomilous/out.)'
 
-## Why
+# Why
 
 Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...<br>
 
