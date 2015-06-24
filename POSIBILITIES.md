@@ -6,7 +6,7 @@ $$in({
 }, 
 function(
                              // 
-                            // require('in.actor.postgres') // does not exist
+                            // require('in.actor.postgres') does not exist
                            //
   newCustomers, // in. postgres.tableName where new = true
   results,     // in. {{async(processNew(customer)) for customer in newCustomers}} 
