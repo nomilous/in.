@@ -6,8 +6,8 @@ An argument infuser.
 * [Extending](#extending)
 * [Injector](#injector)
 * [Next](#next)
-* [Why?](#why)
-* [What About If](#what-about-if): the downside...
+* [Why](#why)
+* What About If... [the downside](#what-about-if)
 
 ## The Basics
 
