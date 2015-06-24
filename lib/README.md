@@ -8,5 +8,3 @@
 * * into in.js - now with arg1~[action,action,action]
 * ** into action.js - with expanded arg with possibly multiple actions
 * *** loop actions into SPECIFIED actor and resolve array of results
-
-* **** 
