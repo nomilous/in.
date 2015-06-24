@@ -4,6 +4,8 @@ require('../');
 
 $$in.expanders.japan = function(delay) {
 
+  // reutrn $$in(function(resolve) {...(pending)
+
   return $$in.promise(function(resolve) {
 
     setTimeout(function Because_You_ll_Know(when, youre, big, In, Japan) {

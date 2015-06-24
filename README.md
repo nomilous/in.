@@ -203,6 +203,19 @@ $$in({fn: scopeFunction}, function(arg, // in. {{asyncdList = $fn()}} //...
                                      //         then...
 ```
 
+#### (TODO) It will run the function
+
+```javascript
+$$in( function (arg, // in. {{ function() { ...
+```
+
+#### (TODO) It will handle the returned promise.
+
+```javascript
+$$in( function (arg, // in. {{ $$in( function(arg, // in. {{ ... 
+```
+todo - easilly pend, maybe $$in pends and $in runs
+
 
 #### It is deeply integratable
 
