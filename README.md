@@ -1,11 +1,11 @@
-# in.
+# in[.](https://www.youtube.com/watch?v=zUDDiWtFtEM)
 
-An argument infuser.<br>
-<br>
-Skip to [Error Handling](#error-handling)<br>
-Skip to [Extending](#extending)<br>
-Skip to [Injector](#injector)<br>
-Skip to [Why?](#why)<br>
+An argument infuser.
+
+* [Error Handling](#error-handling)
+* [Extending](#extending)
+* [Injector](#injector)
+* [Why?](#why)
 
 ## The Basics
 
