@@ -346,6 +346,7 @@ Search npm for
 * [Actors](https://www.npmjs.com/search?q=in.actor)
 * [Filters](https://www.npmjs.com/search?q=in.filter)
 * [Expanders](https://www.npmjs.com/search?q=in.expander)
+* [Jokes](https://www.npmjs.com/search?q=in.jokes)
 * [Lovers](https://www.npmjs.com/search?q=in.love)
 
 Also, 'look [out.](https://github.com/nomilous/out.)'
