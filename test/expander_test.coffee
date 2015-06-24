@@ -13,7 +13,7 @@ objective 'Expand infuser arguments', ->
             actions: [
                 action: 'as'
                 actor: 'shell'
-                params: 'echo {{opts.value}}'
+                expansion: 'echo {{opts.value}}'
             ]
 
     it 'creates the arg context',
@@ -51,10 +51,10 @@ objective 'Expand infuser arguments', ->
                 then: (resolver) -> resolver('w')
 
 
-            @arg.actions[0].params = 'hello {{w}} {{o}}{{r}}{{l}}{{d}}'
+            @arg.actions[0].expansion = 'hello {{w}} {{o}}{{r}}{{l}}{{d}}'
             Expander.perform(@opts, @accum, @arg).then =>
 
-                @arg.actions[0].params.should.equal 'hello w oRLd'
+                @arg.actions[0].expansion.should.equal 'hello w oRLd'
                 @arg.actions.length.should.equal 1
                 done()
 
@@ -71,19 +71,19 @@ objective 'Expand infuser arguments', ->
                 expansion.eval.should.equal 'bit of code'
                 then: (resolve) -> resolve ['one', 'two', 'three']
 
-            @arg.actions[0].params = 'testing, testing {{bit of code}} {{another bit of code}}'
+            @arg.actions[0].expansion = 'testing, testing {{bit of code}} {{another bit of code}}'
 
             Expander.perform(@opts, @accum, @arg).then =>
 
                 @arg.actions.length.should.equal 3 * 3
-                @arg.actions[0].params.should.equal 'testing, testing one A'
-                @arg.actions[1].params.should.equal 'testing, testing two A'
-                @arg.actions[2].params.should.equal 'testing, testing three A'
-                @arg.actions[3].params.should.equal 'testing, testing one B'
-                @arg.actions[4].params.should.equal 'testing, testing two B'
-                @arg.actions[5].params.should.equal 'testing, testing three B'
-                @arg.actions[6].params.should.equal 'testing, testing one C'
-                @arg.actions[7].params.should.equal 'testing, testing two C'
-                @arg.actions[8].params.should.equal 'testing, testing three C'
+                @arg.actions[0].expansion.should.equal 'testing, testing one A'
+                @arg.actions[1].expansion.should.equal 'testing, testing two A'
+                @arg.actions[2].expansion.should.equal 'testing, testing three A'
+                @arg.actions[3].expansion.should.equal 'testing, testing one B'
+                @arg.actions[4].expansion.should.equal 'testing, testing two B'
+                @arg.actions[5].expansion.should.equal 'testing, testing three B'
+                @arg.actions[6].expansion.should.equal 'testing, testing one C'
+                @arg.actions[7].expansion.should.equal 'testing, testing two C'
+                @arg.actions[8].expansion.should.equal 'testing, testing three C'
                 done()
 

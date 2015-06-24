@@ -13,22 +13,22 @@ objective 'Format infuser', ->
 
     it 'sets the actor to none if it does not exist', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', in: 'in.action moon-dancer p a r r a m s'
+        Format.perform {}, {}, arg = name: 'name', in: 'in.action moon-dancer ex pans ion'
         arg.actions[0].actor.should.equal 'none'
 
 
     it 'extracts the action and actor and parameters', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', in: 'in.action actor p a r r a m s'
+        Format.perform {}, {}, arg = name: 'name', in: 'in.action actor ex pans ion'
         arg.should.eql
             name: 'name'
-            in: 'in.action actor p a r r a m s'
+            in: 'in.action actor ex pans ion'
             value: undefined
             actions: [
                 action: 'action'
                 filters: []
                 actor: 'actor'
-                params: 'p a r r a m s'
+                expansion: 'ex pans ion'
             ]
 
     it 'extracts the action and actor', (Format) ->
@@ -42,7 +42,7 @@ objective 'Format infuser', ->
                 action: 'action'
                 filters: []
                 actor: 'actor'
-                params: undefined
+                expansion: undefined
             ]
 
     it 'extracts the action', (Format) ->
@@ -56,7 +56,7 @@ objective 'Format infuser', ->
                 action: 'action'
                 filters: []
                 actor: 'none'
-                params: undefined
+                expansion: undefined
             ]
 
     it 'extracts the action and filter and actor and params', (Format) ->
@@ -70,7 +70,7 @@ objective 'Format infuser', ->
                 action: 'action'
                 filters: ['filter']
                 actor: 'actor'
-                params: 'params'
+                expansion: 'params'
             ]
 
     it 'extracts the action and filter and actor', (Format) ->
@@ -84,7 +84,7 @@ objective 'Format infuser', ->
                 action: 'action'
                 filters: ['filter1', 'filter2']
                 actor: 'actor'
-                params: undefined
+                expansion: undefined
             ]
 
     it 'extracts the action and filter', (Format) ->
@@ -98,7 +98,7 @@ objective 'Format infuser', ->
                 action: 'action'
                 filters: ['filter1', 'filter2']
                 actor: 'none'
-                params: undefined
+                expansion: undefined
             ]
 
     it 'returns a promise', (Format, Expander, done) ->

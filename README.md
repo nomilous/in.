@@ -207,7 +207,7 @@ $$in( function (arg, // in. {{ $$in( function(arg, // in. {{ ...
 todo - easilly pend, maybe $$in pends and $in runs
 
 
-#### It is deeply integratable
+#### (TODO) It is deeply integratable
 
 ```javascript
 $$in(  {onInject: function(){}} , function() {});

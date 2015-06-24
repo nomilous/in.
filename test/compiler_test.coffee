@@ -143,7 +143,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                 )
 
 
-        it.only 'supports passing expanders to expanders'
+        it 'supports passing expanders to expanders'
 
 
         it 'pipelines when passing with firstN args not a function'
