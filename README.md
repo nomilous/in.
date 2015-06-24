@@ -401,7 +401,7 @@ And it's not really about what they're doing, because they could just as easilly
 require('child_process').exec( ...
 ```
 
-It's about how `in.` makes it easy to camouflage.
+It's about how `in.` makes it so easy to camouflage.
 
-So, um?
+So, [um?](https://github.com/nomilous/in./issues/1)
 
