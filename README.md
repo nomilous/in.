@@ -5,8 +5,8 @@ An argument infuser.
 * [Error Handling](#error-handling)
 * [Extending](#extending)
 * [Injector](#injector)
-* [Why?](#why)
 * [Next](#next)
+* [Why?](#why)
 
 ## The Basics
 
@@ -249,7 +249,14 @@ See also [Using Expanders](#using-expanders)
 
 ### Promising
 
+## Next
 
+Search npm for
+
+* [Actors](https://www.npmjs.com/search?q=in.actor)
+* [Filters](https://www.npmjs.com/search?q=in.filter)
+* [Expanders](https://www.npmjs.com/search?q=in.expander)
+* [Lovers](https://www.npmjs.com/search?q=in.love)
 
 ## Why
 
@@ -276,13 +283,4 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 <br>
 And then... `bob, // in.as.unkle {{ is ( 'your\'s' ) }}`'
 
-## Next
-
-Search npm for
-
-* [Actors](https://www.npmjs.com/search?q=in.actor)
-* [Filters](https://www.npmjs.com/search?q=in.filter)
-* [Expanders](https://www.npmjs.com/search?q=in.expander)
-* [Lovers](https://www.npmjs.com/search?q=in.love)
-* `}`
 
