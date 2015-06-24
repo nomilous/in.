@@ -97,17 +97,6 @@ $$in(function(
 ```
 `e` is a special argument. There are [others](#special-arguments).
 
-
-#### (TODO) (Perhaps remove this doc fragment, a deviation) For incompatible module names
-
-```javascript
-$$in(function(
-
-    io // in. {{require('socket.io-client')}}
-
-){}).then...
-```
-
 #### The moustache interpreter is coffee-script
 
 It [expands](#expanders) on `for` loops.
