@@ -15,12 +15,12 @@ An argument infuser.
 
 #### It uses eval
 
-Just thought you should know. 
+Just thought you should know.<br>
 (see [the interpreter](#the-interpreter))
 
 #### It [pollutes](#extending) the global namespace
 
-Just thought you should know.
+Just thought you should know.<br>
 (see [extending](#extending))
 
 ```javascript
