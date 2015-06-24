@@ -5,7 +5,7 @@ require('../');
 $$in.expanders.japan = function(delay) {
   $$in.promise(function(resolve) {
 
-    setTimeout(function Because_You_ll_Know(when, youre, big, in, Japan) {
+    setTimeout(function Because_You_ll_Know(when, youre, big, In, Japan) {
         resolve([
           'Big in Japan-be-tight',
           'Big in Japan ooh the eastern sea\'s so blue',
