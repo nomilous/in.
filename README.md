@@ -142,6 +142,16 @@ $$in(function(
 
 ```
 
+#### (TODO) Some [Actors](#creating-actors) support pipes
+
+```javascript
+$$in(function(pipe) { // in.pipe.tcpdump2json $ tcpdump -i en0
+  pipe.on('data', function(jsonFrame) {
+    // ...
+  })
+})
+```
+
 
 #### (TODO) It can pend the function
 
@@ -249,6 +259,8 @@ See also [Using Filters](#using-filters)
 ## Creating Actors
 
 See also [Using Actors](#using-actors)
+
+* Actor.$$can...
 
 ## Creating Expanders
 
