@@ -20,13 +20,12 @@ Just thought you should know.<br>
 
 #### It [pollutes](#extending) the global namespace
 
-Just thought you should know.<br>
-(see [extending](#extending))
-
 ```javascript
 In = require('in.');
 $$in() === In;
 ```
+Just thought you should know.<br>
+(see [extending](#extending))
 
 #### It returns a [promise](#promising)
 
