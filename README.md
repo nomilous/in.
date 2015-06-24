@@ -255,6 +255,29 @@ See also [Using Expanders](#using-expanders)
 
 "This is your last chance."
 
+"After this there is no turning back."
+
+"You take the [red pill](http://objective.red) - The story ends. You wake up in your bed and believe whatever you want to believe."
+
+"You take the [blue pill](http://objective.blue)" - You stay in wonderland. And I show you how deep the rabbit hole goes."
+
+"Hang-on..."
+
+"It might be the other way round?"
+
+Pause.
+
+"Um"
+
+"Trinity!"
+
+"Can you remember which pill's which?"
+
+Silence.
+
+"Maaagh"
+
+"Lets just use the syringe...
 
 # Injector
 
