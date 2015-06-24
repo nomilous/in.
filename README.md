@@ -129,7 +129,9 @@ $$in(function(
 ){}).then...
 ```
 
-#### It has asynchronous [Expanders](#creating-expanders)
+#### (TODO) It has asynchronous [Expanders](#creating-expanders)
+
+todo 'direct access to previous args as if in scope'
 
 ```javascript
 $$in(function(
