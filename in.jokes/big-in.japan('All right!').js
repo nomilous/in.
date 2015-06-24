@@ -12,7 +12,7 @@ $$in.expanders.japan = function(delay) {
         resolve([
           'Big in Japan-tonight',
           'Big in Japan-be-tight',
-          'Big in Japan ooh the eastern sea\'s so blue'
+          'Big in Japan ooh the eastern sea\'s so .blue'
         ])
     }, delay);
 
