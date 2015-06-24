@@ -2,25 +2,17 @@
 
 require('../');
 
-$$in.expanders.japan = function(delay, possibly) { // in.as.possibly in a later version
-                                                  // seems a bit excessive tho...
+$$in.expanders.japan = function(delay) {
   $$in.promise(function(resolve) {
 
-    setTimeout(function Because_You_ll_Know( when ) { // in.as.you.re {{big('in Japan!'}}
-                                                     // 
-                                                    // nope... this injection does
-                                                   //          not happn (yet?)
-                                                  //                     (impossible?)
-                                                 //                      i('suspect so')
-                                                // 
-                                               // unless...  
+    setTimeout(function Because_You_ll_Know(when, youre, big, in, Japan) {
         resolve([
           'Big in Japan-be-tight',
           'Big in Japan ooh the eastern sea\'s so blue',
           'Big in Japan-alright'
         ])
-
     }, delay);
+
   })
 }
 
