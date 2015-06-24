@@ -201,7 +201,7 @@ $$in({fn: scopeFunction}, function(arg, // in. {{asyncdList = $fn()}} //...
 #### It is deeply integratable
 
 ```javascript
-$$in({onInject: function(){}}, function() {});
+$$in(  {onInject: function(){}} , function() {});
 ```
 
 See [hameln](https://github.com/nomilous/hameln)
