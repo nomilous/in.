@@ -24,7 +24,6 @@ Just thought you should know.<br>
 In = require('in.');
 $$in() === In;
 ```
-Just thought you should know.<br>
 (see [extending](#extending))
 
 #### It returns a [promise](#promising)
