@@ -13,9 +13,6 @@ $$in(function(youToo, /* in.as
 ```
 
 #### How?
-`from, // out. of the `[blue](http://objective.blue)<br>
-<br>
-<br>
 <br>
 (evil giggle)<br>
 <br>
