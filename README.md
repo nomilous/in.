@@ -346,6 +346,8 @@ Search npm for
 
 # Why
 
+[top](#in)
+
 Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...
 
 ### But Besides That
@@ -385,7 +387,7 @@ The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#c
 
 # What About If
 
-[top](#in)
+[&#9650;](#in)
 
 This world has some `Type: UnfortnatelyExisting` individials.
 
