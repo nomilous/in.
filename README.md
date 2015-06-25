@@ -2,7 +2,7 @@
 
 An argument infuser.
 
-* The Basics
+* __The Basics__
 * [Error Handling](#error-handling)
 * [Extending](#extending)
 * [Injector](#injector)
