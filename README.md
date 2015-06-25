@@ -227,7 +227,7 @@ $$in( function (arg, // in. {{ function() { ...
 But actually, the {{moustash}} interpreter is [coffee-script](http://coffeescript.org/) (For it's for looping powers). So it would really look like this:
 
 ```javascript
-$$in( function (arg, /* in. {{ (args...) -> console.log args }} */
+$$in( function (agrName, /* in. {{ -> console.log arg.name }} */
 ```
 
 Perhaps a flag will be added to set using js instead. But maybe not. Because putting a bunch of code into the infuser is not the point.

@@ -3,16 +3,6 @@
 we're up to something...
 
 #### What?
-
-```javascript
-
-$$in(function(youToo, /* in.as
-.participant $ /usr/local/bin/being < /dev/imagination | objective | /usr/sbin/culture
-*/ resolve) { resolve( youToo['?'] = 'y/n' ); }).then...
-
-```
-
-#### How?
 <br>
 (evil giggle)<br>
 <br>
