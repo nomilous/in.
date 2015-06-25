@@ -438,12 +438,12 @@ recurse = $$in(
 },
 
 function(
-  lead,  // in.as.atom {{fusion(82)}}
-  gold, // in.as.atom {{async(alchemy(lead, -3))}}
-  out  // out.as.atom...
+  Pb,   // in.as.atom {{fusion(82)}}
+  Au,  // in.as.atom {{async(alchemy(Pb, -3))}}
+  out // out.as.atom...
 ){
 
-  recurse(out(gold));
+  recurse(out(Au));
 
 });
 
