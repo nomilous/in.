@@ -3,6 +3,8 @@
 An argument infuser.
 
 * __The Basics__
+* [Infuser Composition](#infuser-composition)
+* [Going Deeper](#going-deeper)
 * [Error Handling](#error-handling)
 * [Extending](#extending)
 * [Injector](#injector)
@@ -114,6 +116,10 @@ $$in(function(
               // todo: these are strings... (not ideal)
 }).then...
 ```
+todo 'enable js in the expanders'
+
+
+## Infuser Composition
 
 #### It has [Actions](#creating-actions), [Filters](#creating-filters), [Actors](#creating-actors) and para{{'m'}}eters
 
@@ -204,6 +210,8 @@ $$in({fn: scopeFunction}, function(arg, // in. {{asyncdList = $fn()}} //...
                                       //         
                                      //         then...
 ```
+
+## Going Deeper
 
 #### (TODO) It will run the function
 
