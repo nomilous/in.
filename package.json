@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/nomilous/in.#readme",
   "devDependencies": {
-    "objective": "0.0.25",
+    "objective": "0.0.26",
     "should": "^7.0.1"
   },
   "dependencies": {
