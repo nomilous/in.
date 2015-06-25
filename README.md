@@ -1,6 +1,6 @@
 # in[.](https://www.youtube.com/watch?v=zUDDiWtFtEM)
 
-An argument infuser.
+An argument __infuser__.
 
 * [Error Handling](#error-handling)
 * [Extending](#extending)
@@ -15,8 +15,7 @@ An argument infuser.
 
 #### It uses eval
 
-Just thought you should know.<br>
-(see [the interpreter](#the-interpreter))
+See [unfortunately...](#unfortunately)
 
 #### It [pollutes](#extending) the global namespace
 
@@ -24,7 +23,7 @@ Just thought you should know.<br>
 In = require('in.');
 $$in() === In;
 ```
-(see [extending](#extending))
+See [extending](#extending)
 
 #### It returns a [promise](#promising)
 
@@ -240,6 +239,9 @@ $$in (arg1, arg2) ->
 
 ```
 
+# Unfortunately
+
+""No one can be __told__ what an __infuser__ is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself.""
 
 # Error Handling
 
@@ -265,42 +267,6 @@ See also [Using Actors](#using-actors)
 ## Creating Expanders
 
 See also [Using Expanders](#using-expanders)
-
-"Unfortunately, no-one can be <b>told</b> what an expander is, you have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself."
-
-"This is your last chance."
-
-"After this there is no turning back."
-
-"<b>You take the [red pill](http://objective.red)</b> - The story ends. You wake up in your bed and believe whatever you want to believe."
-
-"<b>You take the [blue pill](http://objective.blue)</b>" - You stay in wonderland. And I show you how deep the rabbit hole goes."
-
-"Hang-on..."
-
-"It might be the other way round?"
-
-Pause.
-
-"Trinity!?"
-
-"Can you remember which pill's which?"
-
-Silence.
-
-"Um. I could take both."
-
-"Assuming the blue pill's like taking nothing anyway."
-
-More silence.
-
-"Good point."
-
-"Trinity!"
-
-"What?"
-
-"We're gonna need a bigger glass of water."
 
 # Injector
 
