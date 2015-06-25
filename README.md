@@ -2,8 +2,6 @@
 
 An argument infuser.
 
-### toc
-
 * __The Basics__
 * [Infuser Composition](#infuser-composition)
 * [Going Deeper](#going-deeper)
@@ -122,6 +120,8 @@ todo 'enable js in the expanders'
 
 
 ## Infuser Composition
+
+[top](#in)
 
 #### It has [Actions](#creating-actions), [Filters](#creating-filters), [Actors](#creating-actors) and para{{'m'}}eters
 
