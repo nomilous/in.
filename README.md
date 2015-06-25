@@ -224,6 +224,16 @@ $$in({fn: scopeFunction}, function(arg, // in. {{asyncdList = $fn()}} //...
 $$in( function (arg, // in. {{ function() { ...
 ```
 
+But actually, the {{moustash}} interpreter is [coffee-script](http://coffeescript.org/) for it's for looping powers. So it would really look like this:
+
+```javascript
+$$in( function (arg, /* in. {{ (args...) -> console.log args }} */
+```
+
+Perhaps a flag will be added to set using js instead. But maybe not. Because putting a bunch of code into the infuser is not the point.
+
+
+
 #### (TODO) It will handle the returned promise.
 
 ```javascript
