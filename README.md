@@ -443,7 +443,7 @@ function(
   out // out.as.atom to ...
 ){
 
-  recurse(out(Au));
+  return recurse(out(Au));
 
 });
 
