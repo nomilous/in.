@@ -369,13 +369,13 @@ $$in(function(uptime) { // in.as.uptime $ uptime
     
     /* and so forth... */
 
-}).then...
+}).then.....
 ```
 
 The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Filter](#creating-filters) for formatting into probably json to be injected into the function argument completely devoid of all further effort ever. ([possible exageration?](#in))
 
 ```javascript
-.then($$in(function(result, Bob) { // in.as.unkle {{ is ( 'your\'s' ) }}`'
+.....then($$in(function(result, Bob) { // in.as.unkle {{ is ( 'your\'s' ) }}`'
 
     // TODO: un-'currently unkle will be injected into result (i think)'
 
