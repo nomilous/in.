@@ -1,8 +1,7 @@
 ## Also, 
 
 we're up to something...
-
-#### What?
+<br>
 <br>
 (evil giggle)<br>
 <br>
