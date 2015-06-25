@@ -421,7 +421,8 @@ So, [um?](https://github.com/nomilous/in./issues/1)
 $$in(
 
 {
-  bond: function() { /* return promise */ }
+  fusion: function() { /* return promise */ }
+  bond: function() {}
 },
 
 function Water(
