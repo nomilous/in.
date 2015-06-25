@@ -272,7 +272,7 @@ What if things go wrong in the `//in.`...
 
 # Extending
 
-[top](#in)
+[&#9650;](#in)
 
 ## Creating Actions
 
@@ -337,12 +337,12 @@ See also [Using Expanders](#using-expanders)
 
 Search npm for
 
-* Actors [&#9654;](https://www.npmjs.com/search?q=in.actor)
-* Filters [__&#9654;__](https://www.npmjs.com/search?q=in.filter)
-* Expanders [__&#9654;__](https://www.npmjs.com/search?q=in.expander)
-* Jokes [__&#9654;__](https://www.npmjs.com/search?q=in.jokes)
-* Lovers [__&#9654;__](https://www.npmjs.com/search?q=in.love)
-* Look `out.` ahead... [__&#9654;__](https://github.com/nomilous/out.) 
+* [&#9654;](https://www.npmjs.com/search?q=in.actor) Actors
+* [__&#9654;__](https://www.npmjs.com/search?q=in.filter) Filters
+* [__&#9654;__](https://www.npmjs.com/search?q=in.expander) Expanders
+* [__&#9654;__](https://www.npmjs.com/search?q=in.jokes) Jokes
+* [__&#9654;__](https://www.npmjs.com/search?q=in.love) Lovers
+* [__&#9654;__](https://github.com/nomilous/out.) Look `out.` ahead...
 
 # Why
 
