@@ -11,6 +11,7 @@ An argument infuser.
 * [Next](#next)
 * [Why](#why)
 * What About If... [the downside](#the-downside)
+* [And Finally](#and-finally)
 
 ## The Basics
 
@@ -413,4 +414,31 @@ require('child_process').exec( ...
 It's about how `in.` makes it so easy to camouflage.
 
 So, [um?](https://github.com/nomilous/in./issues/1)
+
+# And Finally
+
+```javascript
+$$in(
+
+{
+  bond: function() { /* return promise */ }
+},
+
+function Water(
+
+  o,    // in.as.atom {{fusion(8)}}
+  h2,  // in.as.atom {{fusion(1) for i in [0,1]}}
+  h2o // in.as.molecule {{async(bond([o, h2[0], h2[1]]))}}
+
+){
+
+    setInterval(function Drip(){
+
+      console.log(h2o);
+
+    }, 3456);
+});
+
+```
+
 
