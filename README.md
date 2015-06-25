@@ -224,7 +224,6 @@ todo - easilly pend, maybe $$in pends and $in runs
 $$in( function (fn, // in.as.function {{  function(...  }}
 ```
 
-
 #### (TODO) It is deeply integratable
 
 ```javascript
