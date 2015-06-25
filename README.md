@@ -2,6 +2,7 @@
 
 An argument infuser.
 
+* The Basics
 * [Error Handling](#error-handling)
 * [Extending](#extending)
 * [Injector](#injector)
@@ -13,11 +14,11 @@ An argument infuser.
 
 `npm install in. --save`
 
-#### It uses eval
+#### It uses eval!
 
 See [unfortunately](#unfortunately)
 
-#### It [pollutes](#extending) the global namespace
+#### It pollutes the global namespace!
 
 ```javascript
 In = require('in.');
