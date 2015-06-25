@@ -417,6 +417,8 @@ So, [um?](https://github.com/nomilous/in./issues/1)
 
 # And Finally
 
+[&#9650;](#in)
+
 ```javascript
 $$in(
 
@@ -439,5 +441,5 @@ function Water(
 
 ```
 
-[&#9650;](#in)
+&#9654;
 
