@@ -215,6 +215,8 @@ $$in({fn: scopeFunction}, function(arg, // in. {{asyncdList = $fn()}} //...
 
 ## Going Deeper
 
+[top](#in)
+
 #### (TODO) It will run the function
 
 ```javascript
@@ -263,10 +265,14 @@ No one can be told what an `infuser` is. You have to [see it](https://github.com
 
 # Error Handling
 
+[top](#in)
+
 What if things go wrong in the `//in.`...
 
 
 # Extending
+
+[top](#in)
 
 ## Creating Actions
 
@@ -287,6 +293,8 @@ See also [Using Actors](#using-actors)
 See also [Using Expanders](#using-expanders)
 
 # Injector
+
+[top](#in)
 
 ## Special Arguments
 
@@ -324,6 +332,8 @@ See also [Using Expanders](#using-expanders)
 ### Promising
 
 # Next
+
+[top](#in)
 
 Search npm for
 
@@ -374,6 +384,8 @@ The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#c
 
 
 # What About If
+
+[top](#in)
 
 This world has some `Type: UnfortnatelyExisting` individials.
 
