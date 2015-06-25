@@ -224,7 +224,7 @@ $$in({fn: scopeFunction}, function(arg, // in. {{asyncdList = $fn()}} //...
 $$in( function (arg, // in. {{ function() { ...
 ```
 
-But actually, the {{moustash}} interpreter is [coffee-script](http://coffeescript.org/) for it's for looping powers. So it would really look like this:
+But actually, the {{moustash}} interpreter is [coffee-script](http://coffeescript.org/) (For it's for looping powers). So it would really look like this:
 
 ```javascript
 $$in( function (arg, /* in. {{ (args...) -> console.log args }} */
