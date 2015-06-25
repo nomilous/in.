@@ -218,6 +218,12 @@ $$in( function (arg, // in. {{ $$in( function(arg, // in. {{ ...
 ```
 todo - easilly pend, maybe $$in pends and $in runs
 
+#### (TODO) It can inject the unrun function
+
+```javascript
+$$in( function (fn, // in.as.function {{  function(...  }}
+```
+
 
 #### (TODO) It is deeply integratable
 
