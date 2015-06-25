@@ -2,6 +2,8 @@
 
 An argument infuser.
 
+### toc
+
 * __The Basics__
 * [Infuser Composition](#infuser-composition)
 * [Going Deeper](#going-deeper)
