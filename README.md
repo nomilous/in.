@@ -10,7 +10,7 @@ An argument infuser.
 * [Injector](#injector)
 * [Next](#next)
 * [Why](#why)
-* What About If... [the downside](#what-about-if)
+* What About If... [the downside](#the-downside)
 
 ## The Basics
 
@@ -385,7 +385,7 @@ The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#c
 `result` is a special argument. There are [others](#special-arguments).
 
 
-# What About If
+# The Downside
 
 [&#9650;](#in)
 
