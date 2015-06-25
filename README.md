@@ -335,14 +335,14 @@ See also [Using Expanders](#using-expanders)
 
 [&#9650;](#in)
 
-Search npm for
-
-* [&#9654;](https://www.npmjs.com/search?q=in.actor) Actors
-* [__&#9654;__](https://www.npmjs.com/search?q=in.filter) Filters
-* [__&#9654;__](https://www.npmjs.com/search?q=in.expander) Expanders
-* [__&#9654;__](https://www.npmjs.com/search?q=in.jokes) Jokes
-* [__&#9654;__](https://www.npmjs.com/search?q=in.love) Lovers
-* [__&#9654;__](https://github.com/nomilous/out.) Look `out.` ahead...
+Search npm for<br>
+<br>
+[&#9654;](https://www.npmjs.com/search?q=in.actor) Actors<br>
+[&#9654;](https://www.npmjs.com/search?q=in.filter) Filters<br>
+[&#9654;](https://www.npmjs.com/search?q=in.expander) Expanders<br>
+[&#9654;](https://www.npmjs.com/search?q=in.jokes) Jokes<br>
+[&#9654;](https://www.npmjs.com/search?q=in.love) Lovers<br>
+[&#9654;](https://github.com/nomilous/out.) Look `out.` ahead...<br>
 
 # Why
 
