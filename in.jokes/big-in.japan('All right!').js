@@ -8,14 +8,15 @@ $$in.expanders.japan = function(delay) {
 
   return $$in.promise(function(resolve) {
 
-    setTimeout(function Because_You_ll_Know(when, youre, big, In, Japan) {
+    setTimeout(function it( takes, time, to, get, big, In, Japan ) {
+
         resolve([
           'Big in Japan-tonight',
           'Big in Japan-be-tight',
           'Big in Japan ooh the eastern sea\'s so .blue'
         ])
-    }, delay);
 
+    }, delay);
   })
 }
 
@@ -30,6 +31,6 @@ $$in(function(
     player: process.env.MP3_PLAYER
 
   },
-  function(big){ // in. $ {{player}} {{home}}/music/Alphaville/Big\ In\ Japan.mp3
+  function(play){ // in. $ {{player}} {{home}}/music/Alphaville/Big\ In\ Japan.mp3
   }
 )

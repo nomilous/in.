@@ -239,9 +239,9 @@ $$in (arg1, arg2) ->
 
 ```
 
-# Unfortunately
+#### Unfortunately
 
-""No one can be __told__ what an __infuser__ is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself.""
+No one can be __told__ what an __infuser__ is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself...
 
 # Error Handling
 
