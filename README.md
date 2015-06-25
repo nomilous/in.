@@ -15,7 +15,7 @@ An argument infuser.
 
 #### It uses eval
 
-See [unfortunately...](#unfortunately)
+See [unfortunately](#unfortunately)
 
 #### It [pollutes](#extending) the global namespace
 
@@ -241,7 +241,7 @@ $$in (arg1, arg2) ->
 
 #### Unfortunately
 
-No one can be told what an `argument infuser` is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself...
+No one can be told what an `infuser` is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself...
 
 # Error Handling
 
