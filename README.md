@@ -45,6 +45,8 @@ $$in(  {opt:'ion'},  function(){} ).then...
 
 #### (TODO) It [injects](injector) node modules (by name) into the function
 
+maybe not... don't gain much
+
 ```javascript
 $$in(function(express){    
     
