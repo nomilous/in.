@@ -420,22 +420,20 @@ So, [um?](https://github.com/nomilous/in./issues/1)
 [&#9650;](#in)
 
 ```javascript
-$$in(
+recurse = $$in(
 
 {
-  fusion: function() { /* return promise */ }
-  bond: function() {}
+  fusion: function(protons) { /* return promise */ }
+  alchemy: function(atom, change) {}
 },
 
-function Water(
-
-  o,    // in.as.atom {{fusion(8)}}
-  h2,  // in.as.atom {{fusion(1) for i in [0,1]}}
-  h2o // in.as.molecule {{async(bond([o, h2[0], h2[1]]))}}
-
+function(
+  lead,  // in.as.atom {{fusion(82)}}
+  gold, // in.as.atom {{async(alchemy(lead, -3))}}
+  out  // out.as.atom...
 ){
 
-    setInterval(function Drip(){ console.log(h2o) }, 4321);
+  recurse(out(gold));
 
 });
 
