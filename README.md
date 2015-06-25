@@ -121,7 +121,7 @@ todo 'enable js in the expanders'
 
 ## Infuser Composition
 
-[top](#in)
+[&#9650;](#in)
 
 #### It has [Actions](#creating-actions), [Filters](#creating-filters), [Actors](#creating-actors) and para{{'m'}}eters
 
@@ -215,7 +215,7 @@ $$in({fn: scopeFunction}, function(arg, // in. {{asyncdList = $fn()}} //...
 
 ## Going Deeper
 
-[top](#in)
+[&#9650;](#in)
 
 #### (TODO) It will run the function
 
@@ -265,7 +265,7 @@ No one can be told what an `infuser` is. You have to [see it](https://github.com
 
 # Error Handling
 
-[top](#in)
+[&#9650;](#in)
 
 What if things go wrong in the `//in.`...
 
@@ -294,7 +294,7 @@ See also [Using Expanders](#using-expanders)
 
 # Injector
 
-[top](#in)
+[&#9650;](#in)
 
 ## Special Arguments
 
@@ -333,20 +333,20 @@ See also [Using Expanders](#using-expanders)
 
 # Next
 
-[top](#in)
+[&#9650;](#in)
 
 Search npm for
 
-* [Actors](https://www.npmjs.com/search?q=in.actor)
-* [Filters](https://www.npmjs.com/search?q=in.filter)
-* [Expanders](https://www.npmjs.com/search?q=in.expander)
-* [Jokes](https://www.npmjs.com/search?q=in.jokes)
-* [Lovers](https://www.npmjs.com/search?q=in.love)
-* Look [out.](https://github.com/nomilous/out.) ahead.
+* Actors [&#9654;](https://www.npmjs.com/search?q=in.actor)
+* Filters [__&#9654;__](https://www.npmjs.com/search?q=in.filter)
+* Expanders [__&#9654;__](https://www.npmjs.com/search?q=in.expander)
+* Jokes [__&#9654;__](https://www.npmjs.com/search?q=in.jokes)
+* Lovers [__&#9654;__](https://www.npmjs.com/search?q=in.love)
+* Look `out.` ahead... [__&#9654;__](https://github.com/nomilous/out.) 
 
 # Why
 
-[top](#in)
+[&#9650;](#in)
 
 Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...
 
@@ -387,7 +387,7 @@ The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#c
 
 # What About If
 
-[&#9650;](#in)__&#9654;__
+[&#9650;](#in)
 
 This world has some `Type: UnfortnatelyExisting` individials.
 
