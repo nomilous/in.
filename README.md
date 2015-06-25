@@ -1,6 +1,6 @@
 # in[.](https://www.youtube.com/watch?v=zUDDiWtFtEM)
 
-An argument __infuser__.
+An argument infuser.
 
 * [Error Handling](#error-handling)
 * [Extending](#extending)
@@ -241,7 +241,7 @@ $$in (arg1, arg2) ->
 
 #### Unfortunately
 
-No one can be __told__ what an __infuser__ is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself...
+No one can be told what an `argument infuser` is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself...
 
 # Error Handling
 
