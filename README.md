@@ -156,7 +156,7 @@ $$in(function(
 #### (TODO) Some [Actors](#creating-actors) support pipes
 
 ```javascript
-$$in(function(pipe) { // in.pipe.tcpdump2json $ tcpdump -i en0
+$$in(function(pipe) { // in.as.pipe.tcpdump2json $ tcpdump -i en0
   pipe.on('data', function(jsonFrame) {
     // ...
   })
@@ -182,7 +182,7 @@ loadJsonFrom('www.arg1.com/spokes').then...
 
 `resolve` is a special argument. There are [others](#special-arguments).
 
-#### (TODO) It has a faux scope
+#### It has a faux scope
 
 This does not work.
 
@@ -196,23 +196,21 @@ $$in(function(arg, // in. {{scopeVar}}
 This does.
 
 ```javascript
-function scopeFunction() { return $$in.promise(     //...
-$$in({fn: scopeFunction}, function(arg, // in. {{asyncdList = $fn()}} //...
-                                                  //
-                                                 // desision pending:
-                                                //
-                                               // $.fn? or $fn, 
-                                              // or reserve $ for asyncers (**)
-                                             // and use @fn ( or @.fn
-                                            // ... be easier ) 
-                                           //
-                                          // ** it has occurred to me that {{fn()}}
-                                         //     can easily be asyncronously enabled
-                                        //      
-                                       //       if it returned a promise(
-                                      //         
-                                     //         then...
+var scopeVar = 'unaccessable in expander';
+$$in({scopeVar: scopeVar}, function(arg, // in. {{scopeVar}}
 ```
+
+#### It has access to previous argument values.
+
+```javascript
+$$in(function(
+
+  arg1,  // in. {{[1,2,3]}}
+  arg2, // in. {{i for i in arg1}}
+
+){});
+```
+
 
 ## Going Deeper
 

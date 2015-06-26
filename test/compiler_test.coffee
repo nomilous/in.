@@ -44,7 +44,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                         arg2.should.equal 'VALUE'
                         then: (resolver) -> resolver([1, 2, 3]);
                         
-                @expansion = eval: 'expand.thing(\'arg value\', $p.previousArg)'
+                @expansion = eval: 'expand.thing(\'arg value\', previousArg)'
                 @accum = {previousArg: 'VALUE'};
                 
                 Compiler.perform(@opts, @arg, @accum, @expansion)
@@ -143,10 +143,60 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                 )
 
 
-        it 'supports passing expanders to expanders'
+        it 'supports passing opt variables to expanders as if in scope', 
+
+            (done, In, Compiler) ->
+
+                mock(global.$$in.expanders).does
+
+                    fn: (conf, optFn, arg) -> $$in.promise (resolve) ->
+
+                        optFn(arg).then resolve
+
+                @expansion = eval: 'expand.fn(optFn, \'arg\')'
+
+                @opts.optFn = (arg) -> $$in.promise (resolve) ->
+
+                    resolve(arg + arg);
+
+                Compiler.perform(@opts, @arg, @accum, @expansion)
+
+                .then(
+                    (res) ->
+                        res.should.equal 'argarg'
+                        done()
+                    (err) ->
+                        console.log ERR: err
+                        done err
+                )
 
 
-        it 'pipelines when passing with firstN args not a function'
+        it 'supports passing previous arg to expanders as if in scope',
+
+            (done, In, Compiler) ->
+
+                mock(global.$$in.expanders).does
+
+                    fn: (conf, argFn, arg) -> $$in.promise (resolve) ->
+
+                        argFn(arg).then resolve
+
+                @expansion = eval: 'expand.fn(argFn, \'arg\')'
+
+                @accum = argFn: (arg) -> $$in.promise (resolve) ->
+
+                    resolve(arg + arg);
+
+                Compiler.perform(@opts, @arg, @accum, @expansion)
+
+                .then(
+                    (res) ->
+                        res.should.equal 'argarg'
+                        done()
+                    (err) ->
+                        console.log ERR: err
+                        done err
+                )      
 
 
         it 'puts the expansion results on the action arg',
@@ -175,7 +225,24 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                     done()
 
 
+        it 'allows access to previous args as if in scope',
 
+            (done, In, Compiler) ->
+
+                @accum = array: [1, 2, 3]
+
+                @expansion = eval: 'i for i in array'
+
+                Compiler.perform(@opts, @arg, @accum, @expansion)
+
+                .then(
+                    (res) ->
+                        res.should.eql [1,2,3]
+                        done()
+                    (err) ->
+                        console.log ERR: err
+                        done err
+                ) 
 
 
 
@@ -186,7 +253,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
             (done, In, Compiler) ->
 
                 @opts = vvv: [1, 3, 3]
-                @expansion = eval: '{v:i} for i in $o.vvv'
+                @expansion = eval: '{v:i} for i in vvv'
                 Compiler.perform(@opts, @arg, @accum, @expansion)
                 .then (res) =>
                     @arg.asArray.should.equal true
