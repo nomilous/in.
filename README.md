@@ -82,7 +82,7 @@ $$in(function(
 ){    
     
     txt === 'here is some text';
-    num === '3'; // todo - make actually number
+    num === 3;
 
 }).then...
 ```
@@ -113,11 +113,10 @@ $$in(function(
     array // in. {{i for i in [0..9]}}
 
 ){
-    array === ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-              // todo: these are strings... (not ideal)
+    array === [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 }).then...
 ```
-todo 'enable js in the expanders'
 
 
 ## Infuser Composition
@@ -135,8 +134,6 @@ $$in(function(
 ```
 
 #### (TODO) It has asynchronous [Expanders](#creating-expanders)
-
-todo 'direct access to previous args as if in scope'
 
 ```javascript
 $$in(function(
