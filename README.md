@@ -184,7 +184,7 @@ loadJsonFrom('www.arg1.com/spokes').then...
 
 #### It has a faux scope
 
-This does not work.
+__This does not work.__
 
 ```javascript
 var scopeVar = 'unaccessable in expander';
@@ -193,7 +193,7 @@ $$in(function(arg, // in. {{scopeVar}}
                               // var out of scope
 ```
 
-This does.
+__This does.__
 
 ```javascript
 var scopeVar = 'unaccessable in expander';
@@ -204,10 +204,8 @@ $$in({scopeVar: scopeVar}, function(arg, // in. {{scopeVar}}
 
 ```javascript
 $$in(function(
-
   arg1,  // in. {{[1,2,3]}}
   arg2, // in. {{i for i in arg1}}
-
 ){});
 ```
 
