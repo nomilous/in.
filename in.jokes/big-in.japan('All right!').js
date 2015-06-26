@@ -23,7 +23,7 @@ $$in.expanders.japan = function(delay) {
 $$in(function(
 
   Japan, // in. {{expand.japan(100)}}
-  ooh   // in. {{console.log "when you're #{big}" for big in $p.Japan}}
+  ooh   // in. {{console.log "when you're #{Big}" for Big in Japan}}
 
 ){}).then($$in({
 
@@ -31,6 +31,6 @@ $$in(function(
     player: process.env.MP3_PLAYER
 
   },
-  function(play){ // in. $ {{$p.player}} {{$p.home}}/music/Alphaville/Big\ In\ Japan.mp3
+  function(play){ // in. $ {{player}} {{home}}/music/Alphaville/Big\ In\ Japan.mp3
   }
 ))
