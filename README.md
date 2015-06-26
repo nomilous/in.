@@ -109,12 +109,9 @@ It [expands](#expanders) on `for` loops.
 
 ```javascript
 $$in(function(
-
     array // in. {{i for i in [0..9]}}
-
 ){
     array === [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 }).then...
 ```
 
