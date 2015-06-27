@@ -4,14 +4,14 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
         @opts = value: 'VALUE 1'
         @arg = context: {}
-        @accum = {}
+        @inArgs = {}
         @expansion = eval: 'opts.value'
 
     it 'returns the result of the expansion eval',
 
         (done, Compiler) ->
 
-            Compiler.perform @opts, @arg, @accum, @expansion
+            Compiler.perform @opts, @arg, @inArgs, @expansion
             .then (res) ->
 
                 res.should.equal 'VALUE 1'
@@ -22,7 +22,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
         (done, Compiler) ->
 
             @expansion = eval: 'expand.thing() and expand.thisToo()'
-            Compiler.perform(@opts, @arg, @accum, @expansion)
+            Compiler.perform(@opts, @arg, @inArgs, @expansion)
             .then( 
                 (res) ->
                 (err) ->
@@ -45,9 +45,9 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                         then: (resolver) -> resolver([1, 2, 3]);
                         
                 @expansion = eval: 'expand.thing(\'arg value\', previousArg)'
-                @accum = {previousArg: 'VALUE'};
+                @inArgs = {previousArg: 'VALUE'};
                 
-                Compiler.perform(@opts, @arg, @accum, @expansion)
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
                 .then( 
                     (res) ->
                         res.should.eql [1, 2, 3]
@@ -67,7 +67,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                 @expansion = eval: 'thing.a for thing in expand.thirdPartyExpander(\'arg\')'
                 
-                Compiler.perform(@opts, @arg, @accum, @expansion)
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
                 .then (res) ->
                     res.should.eql [1, 2, 'THREE']
                     done()
@@ -91,7 +91,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                 @expansion = eval: '[expand.ex1(\'arg1\'), expand.ex2(\'arg2\'), expand.ex3.deeper(\'arg3\'), async(\'one\')]'
 
-                Compiler.perform(@opts, @arg, @accum, @expansion)
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
                 .then( 
                     (res) ->
                         
@@ -129,7 +129,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                 @expansion = eval: '++a.i for a in expand.A(\'loop\', expand.I(\'stem \')).anArray'
 
 
-                Compiler.perform(@opts, @arg, @accum, @expansion)
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
                 .then(
                     (res) ->
                         otherArgs.should.equal 'stem loop'
@@ -157,7 +157,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                     resolve(arg + arg);
 
-                Compiler.perform(@opts, @arg, @accum, @expansion)
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
 
                 .then(
                     (res) ->
@@ -181,11 +181,11 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                 @expansion = eval: 'expand.fn(argFn, \'arg\')'
 
-                @accum = argFn: (arg) -> $$in.promise (resolve) ->
+                @inArgs = argFn: (arg) -> $$in.promise (resolve) ->
 
                     resolve(arg + arg);
 
-                Compiler.perform(@opts, @arg, @accum, @expansion)
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
 
                 .then(
                     (res) ->
@@ -214,7 +214,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                          'c' + conf.arg.$e[0][2]]
 
                 @expansion.eval = 'expand.thing2(expand.thing1())'
-                Compiler.perform @opts, @arg, @accum, @expansion
+                Compiler.perform @opts, @arg, @inArgs, @expansion
                 .then =>
                     @arg.$e.should.eql [ 
                         [ 1, 2, 3 ],
@@ -227,11 +227,11 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
             (done, In, Compiler) ->
 
-                @accum = array: [1, 2, 3]
+                @inArgs = array: [1, 2, 3]
 
                 @expansion = eval: 'i for i in array'
 
-                Compiler.perform(@opts, @arg, @accum, @expansion)
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
 
                 .then(
                     (res) ->
@@ -252,7 +252,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                 @opts = vvv: [1, 3, 3]
                 @expansion = eval: '{v:i} for i in vvv'
-                Compiler.perform(@opts, @arg, @accum, @expansion)
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
                 .then (res) =>
                     @arg.asArray.should.equal true
                     # console.log res

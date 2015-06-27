@@ -5,7 +5,7 @@ objective 'Expand infuser arguments', ->
     beforeEach ->
 
         @opts = value: 1
-        @accum = {}
+        @inArgs = {}
         @arg = 
             name: 'arg1'
             value: undefined
@@ -21,7 +21,7 @@ objective 'Expand infuser arguments', ->
         (done, Expander, Compiler) ->
 
             Compiler.stub perform: -> then: (resolver) -> resolver()
-            Expander.perform(@opts, @accum, @arg).then =>
+            Expander.perform(@opts, @inArgs, @arg).then =>
                 @arg.context.should.eql {}
                 done()
 
@@ -52,7 +52,7 @@ objective 'Expand infuser arguments', ->
 
 
             @arg.actions[0].expansion = 'hello {{w}} {{o}}{{r}}{{l}}{{d}}'
-            Expander.perform(@opts, @accum, @arg).then =>
+            Expander.perform(@opts, @inArgs, @arg).then =>
 
                 @arg.actions[0].expansion.should.equal 'hello w oRLd'
                 @arg.actions.length.should.equal 1
@@ -73,7 +73,7 @@ objective 'Expand infuser arguments', ->
 
             @arg.actions[0].expansion = 'testing, testing {{bit of code}} {{another bit of code}}'
 
-            Expander.perform(@opts, @accum, @arg).then =>
+            Expander.perform(@opts, @inArgs, @arg).then =>
 
                 @arg.actions.length.should.equal 3 * 3
                 @arg.actions[0].expansion.should.equal 'testing, testing one A'

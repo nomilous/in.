@@ -7,7 +7,7 @@ objective 'Call infusion actor', (should) ->
             reject: (e) -> # console.log(e);
             nofity: ->
         @opts = {}
-        @accum = {}
+        @inArgs = {}
         @arg = 
             actions: [
                 action: 'action'
@@ -34,7 +34,7 @@ objective 'Call infusion actor', (should) ->
                 e.toString().should.match /InfusionError\: pipe must be first adapter/
                 done()
 
-            Action.perform @defer, @opts, @accum, @arg
+            Action.perform @defer, @opts, @inArgs, @arg
 
 
     it 'checks the actor for adapter support',
@@ -49,7 +49,7 @@ objective 'Call infusion actor', (should) ->
                 done()
                 true
 
-            Action.perform @defer, @opts, @accum, @arg
+            Action.perform @defer, @opts, @inArgs, @arg
 
 
     it 'calls the action actor',
@@ -58,14 +58,14 @@ objective 'Call infusion actor', (should) ->
 
             @arg.actions[0].adapters = ['pipe']
 
-            global.$$in.actors.actor = (opts, accumulate, actionArg, actorPath) ->
+            global.$$in.actors.actor = (opts, inArgs, actionArg, actorPath) ->
 
                 actionArg.adapters.should.eql ['pipe']
                 done()
 
             global.$$in.actors.actor.$$can = () -> true
 
-            Action.perform @defer, @opts, @accum, @arg
+            Action.perform @defer, @opts, @inArgs, @arg
 
 
     it 'matters not how deep the rabbit hole goes',
@@ -74,14 +74,14 @@ objective 'Call infusion actor', (should) ->
 
             @arg.actions[0].actor = 'actor.can.do.multiple.things'
 
-            global.$$in.actors.actor = (opts, accumulate, actionArg, actorPath) ->
+            global.$$in.actors.actor = (opts, inArgs, actionArg, actorPath) ->
 
                 actorPath.should.eql ['can', 'do', 'multiple', 'things']
                 done()
 
             global.$$in.actors.actor.$$can = () -> true
 
-            Action.perform @defer, @opts, @accum, @arg
+            Action.perform @defer, @opts, @inArgs, @arg
 
 
     context 'promise', ->
@@ -103,7 +103,7 @@ objective 'Call infusion actor', (should) ->
                     res.should.eql ['RESULT']
                     done()
 
-                Action.perform @defer, @opts, @accum, @arg
+                Action.perform @defer, @opts, @inArgs, @arg
 
 
         xit 'resolves with what the actor resolves with if actor returns a promise',
@@ -118,7 +118,7 @@ objective 'Call infusion actor', (should) ->
                     $$in.promise (resolve) ->
                         resolve('RESULT')
 
-                Action.perform @defer, @opts, @accum, @arg
+                Action.perform @defer, @opts, @inArgs, @arg
 
 
     context 'expansion', ->
@@ -155,7 +155,7 @@ objective 'Call infusion actor', (should) ->
                 global.$$in.actors.ACTOR1.$$can = -> true
 
                 @arg.asArray = true
-                Action.perform @defer, @opts, @accum, @arg
+                Action.perform @defer, @opts, @inArgs, @arg
 
 
         xit 'passes result through the infusers expansion handler if defined',
@@ -178,7 +178,7 @@ objective 'Call infusion actor', (should) ->
                     return 'REFORMATTED BY EXPANSION HANDLER'
 
                 @arg.asArray = true
-                Action.perform @defer, @opts, @accum, @arg
+                Action.perform @defer, @opts, @inArgs, @arg
 
 
 

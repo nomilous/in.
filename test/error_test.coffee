@@ -17,6 +17,8 @@ objective 'Error handling', ->
 
                 }} ###
 
+            .catch ->
+
 
     it 'calls optional error handler', 
 
@@ -37,10 +39,55 @@ objective 'Error handling', ->
 
                     }} ###
 
+            .catch ->
 
-    it 'injects the error if (e)'
 
-    it 'injects the error if (err)'
+    it 'injects the error if (e)',
 
-    it 'injects the error if (error)'
+        (In, done) ->
+
+            $$in (arg, e) ->
+
+                ### in(arg). {{
+
+                    throw new InfusionError 'Oh! No!'
+
+                }} ###
+
+                e.toString().should.match /Oh/
+                done()
+
+
+
+
+    it 'injects the error if (err)',
+
+        (In, done) ->
+
+            $$in (arg, err) ->
+
+                ### in(arg). {{
+
+                    throw new InfusionError 'Oh! No!'
+
+                }} ###
+
+                err.toString().should.match /Oh/
+                done()
+
+
+    it 'injects the error if (error)',
+
+        (In, done) ->
+
+            $$in (arg, error) ->
+
+                ### in(arg). {{
+
+                    throw new InfusionError 'Oh! No!'
+
+                }} ###
+
+                error.toString().should.match /Oh/
+                done()
 

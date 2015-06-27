@@ -24,15 +24,15 @@ xobjective('In', function(should) {
         defer.resolve();
       });
       Format.does(
-        function perform(opts, accum, arg){
+        function perform(opts, inArgs, arg){
           arg.name.should.equal('arg1');
           return {then: function(resolver) {resolver(arg)}}
         },
-        function perform(opts, accum, arg){
+        function perform(opts, inArgs, arg){
           arg.name.should.equal('arg2');
           return {then: function(resolver) {resolver(arg)}}
         },
-        function perform(opts, accum, arg){
+        function perform(opts, inArgs, arg){
           arg.name.should.equal('arg3');
           return {then: function(resolver) {resolver(arg)}}
         }
@@ -50,7 +50,7 @@ xobjective('In', function(should) {
   context('action', function(In, Format, Action, Injector) {
 
     it('calls action.perform with each argument', function(done) {
-      Format.stub(function perform(opts, accum, arg) {
+      Format.stub(function perform(opts, inArgs, arg) {
         return {then: function(resolver) {resolver(arg)}}
       });
       Action.does(

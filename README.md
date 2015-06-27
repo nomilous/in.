@@ -251,7 +251,12 @@ $$in( function (fn, // in.as.function {{  function(...  }}
 #### (TODO) It is deeply integratable
 
 ```javascript
-$$in(  {onInject: function(){}} , function() {});
+$$in({
+  onInject: function(arg, done){
+    arg.value = 1;
+    done(err = null);
+  }
+}, function(one, One) {});
 ```
 
 See [hameln](https://github.com/nomilous/hameln)
