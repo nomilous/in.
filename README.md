@@ -341,7 +341,7 @@ See also [Using Expanders](#using-expanders)
 
 [&#9650;](#in)
 
-__unfortunately npm's search ignores the dots - this section of docs is therefore not valid__
+__unfortunately npm's search ignores the dots - this section is therefore not valid__
 
 Search npm for<br>
 <br>
