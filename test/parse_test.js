@@ -54,6 +54,21 @@ objective('Parse function args', function(Parse, should) {
     args[1].infuse.should.equal('in.cognito')
   })
 
+
+  it('does the same for out', function() {
+
+    fn = function(
+        arg1 // out.action1 actor1 kljanasf sadf asdf
+      , arg2 // out.action2 actor2 as;dfjkn lkjfsad ds80783§123$%#^!#$
+      , arg3) { // out.someone being difficult
+    }
+
+    args = Parse({}, fn);
+    args[0].infuse.should.eql('out.action1 actor1 kljanasf sadf asdf')
+    args[1].infuse.should.eql('out.action2 actor2 as;dfjkn lkjfsad ds80783§123$%#^!#$')
+    args[2].infuse.should.eql('out.someone being difficult')
+  })
+
   context("coffee script can't put comments in (h,ere) ->", function() {
 
     it('can post assign infusers from within function body', function() {
@@ -64,6 +79,7 @@ objective('Parse function args', function(Parse, should) {
         /* in(arg2).action actor D */
       }
       args = Parse({}, fn);
+
       args.should.eql([
         { name: 'arg1', infuse: 'in.action actor A' },
         { name: 'arg2', infuse: 'in.action actor D' },
@@ -71,5 +87,24 @@ objective('Parse function args', function(Parse, should) {
       ])
 
     });
+
+    it('does the same for out', function() {
+      fn = function(arg1, arg2, arg3) {
+        /* out(arg1).action actor A */
+        /* out(arg0).action actor B */ //ignored!
+        /* out(arg3).action actor C */
+        /* out(arg2).action actor D */
+      }
+      args = Parse({}, fn);
+
+      args.should.eql([
+        { name: 'arg1', infuse: 'out.action actor A' },
+        { name: 'arg2', infuse: 'out.action actor D' },
+        { name: 'arg3', infuse: 'out.action actor C' }
+      ])
+
+    });
+
   })
+
 });
