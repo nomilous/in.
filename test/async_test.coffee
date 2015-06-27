@@ -46,4 +46,20 @@ objective 'Async expander', ->
             Async {}, 'Arg1', 'Arg2', fn
 
 
-    it 'errors on reject'
+
+
+    it 'rejects on error',
+
+        (done, In, Async) ->
+
+            fn1 = (arg1) -> $$in.promise (r, reject) -> reject new Error 'Oh! No!'
+
+            fn2 = (arg1) -> $$in.promise (r, reject) -> done new Error 'Should not run'
+
+            Async {}, fn1, fn2
+
+            .catch (e) ->
+
+                e.toString().should.match /Oh/
+                done()
+
