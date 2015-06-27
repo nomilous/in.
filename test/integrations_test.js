@@ -7,7 +7,7 @@ xobjective('ensure it all works', function(should) {
   context('general functionality', function() {
 
     before(flush)
-    before(function(){
+    xbefore(function(){
       delete $$in.actors.none
       delete $$in.adapters.none
     });

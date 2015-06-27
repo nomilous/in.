@@ -130,10 +130,10 @@ objective 'Call infusion actor', (should) ->
                 action: 'ACTION1'
                 actor: 'ACTOR1'
                 adapters: []
-            global.$$in.actions = ACTION1: ACTOR1: -> 'RESULT'
+            # global.$$in.actions = ACTION1: ACTOR1: -> 'RESULT'
 
 
-        it 'supports multiple actions in the same arg',
+        xit 'supports multiple actions in the same arg',
 
             why: """Formatter can expand.
                     eg. // in.as shell cat {{file for file in expand.dir('/etc/bind/zones/db.*')}}
@@ -146,7 +146,8 @@ objective 'Call infusion actor', (should) ->
                     res.should.eql [['RESULT', 'RESULT']]
                     done()
 
-                global.$$in.actors = ACTOR1: -> 
+                global.$$in.actors ||= {}
+                global.$$in.actors.ACTOR1 = -> 
                     $$in.promise (resolve) ->
                         resolve('RESULT')
 
