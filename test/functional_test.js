@@ -1,4 +1,4 @@
-xobjective('ensure it all works', function(should) {
+objective('ensure it all works', function(should) {
 
   before(function(){
     mock('dir', require('in.expander.dir'));
@@ -7,19 +7,21 @@ xobjective('ensure it all works', function(should) {
   context('general functionality', function() {
 
     before(flush)
-    xbefore(function(){
+    before(function(){
       delete $$in.actors.none
       delete $$in.adapters.none
+
     });
 
-    it('runs end to end with nothing to do', function(done, In) {
+    it.only('runs end to end with nothing to do', function(done, In) {
+
       In(function(
         arg1, // in. moo
         arg2  // in. {{i for i in [1..3]}}
       ){
         // arg.should.equal('moo');
-        console.log({A1:arg1});
-        console.log({A2:arg2});
+        // console.log({A1:arg1});
+        // console.log({A2:arg2});
 
         // return 1arg;
       }).then(
@@ -33,7 +35,7 @@ xobjective('ensure it all works', function(should) {
   })
 
 
-  context('in.expander.dir', function() {
+  xcontext('in.expander.dir', function() {
 
       it ('is called on expand.dir', function(In, dir, done) {
 
