@@ -129,9 +129,11 @@ No one can be told what an `infuser` is. You have to [see it](https://github.com
 
 ```javascript
 $$in(function(
+    arg1 // in.as.json $ cat /file.json
+    /*     <action>.<adapter1>.<adapter2...> <actor> para{{'m'}}eters
+            in.as  .json                        $    cat /file.json
 
-    arg // in.<action>.<adapter1>.<adapter2...> <actor> para{{'m'}}eters
-
+                                        $ is alias for shell actor */
 ){}).then...
 ```
 
