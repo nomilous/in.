@@ -4,7 +4,7 @@ objective 'Call infusion actor', (should) ->
 
         @defer = 
             resolve: ->
-            reject: (e) -> console.log(e);
+            reject: (e) -> # console.log(e);
             nofity: ->
         @opts = {}
         @accum = {}
@@ -13,10 +13,11 @@ objective 'Call infusion actor', (should) ->
                 action: 'action'
                 adapters: []
                 actor: 'actor'
-                params: ''
+                expansion: ''
+                value: ''
             ]
 
-        global.$$in.actors = actor: ->
+        global.$$in.actors = actor: ->  
         global.$$in.actors.actor.$$can = ->
         global.$$in.adapters.pipe = ->
 

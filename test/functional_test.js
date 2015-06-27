@@ -1,4 +1,4 @@
-objective('ensure it all works', function(should) {
+xobjective('ensure it all works', function(should) {
 
   before(function(){
     mock('dir', require('in.expander.dir'));
@@ -6,31 +6,24 @@ objective('ensure it all works', function(should) {
 
   context('general functionality', function() {
 
-    before(flush)
-    before(function(){
-      delete $$in.actors.none
-      delete $$in.adapters.none
+    // before(flush)
+    // before(function(){
+    //   delete $$in.actors.none
+    //   delete $$in.adapters.none
 
-    });
+    // });
 
-    it.only('runs end to end with nothing to do', function(done, In) {
+    it('runs end to end with nothing to do', function(done, In) {
 
       In(function(
         arg1, // in. moo
         arg2  // in. {{i for i in [1..3]}}
       ){
-        // arg.should.equal('moo');
-        // console.log({A1:arg1});
-        // console.log({A2:arg2});
-
-        // return 1arg;
-      }).then(
-        function(arg) {
-          // arg.should.equal('moo');
-          // done();
-        }
-      )
-    })
+        arg1.should.equal('moo');
+        arg2.should.eql([1,2,3]);
+        done()
+      });
+    });
 
   })
 
