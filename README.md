@@ -129,8 +129,12 @@ No one can be told what an `infuser` is. You have to [see it](https://github.com
 
 ```javascript
 $$in(function(
+
     arg1 // in.as.json $ cat /file.json
+
+
     /*     <action>.<adapter1>.<adapter2...> <actor> para{{'m'}}eters
+
             in.as  .json                        $    cat /file.json
 
                                         $ is alias for shell actor */
@@ -336,6 +340,8 @@ See also [Using Expanders](#using-expanders)
 # Next
 
 [&#9650;](#in)
+
+__unfortunately npm's search ignores the dots - this section of docs is therefore not valid__
 
 Search npm for<br>
 <br>
