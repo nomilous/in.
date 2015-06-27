@@ -120,6 +120,11 @@ $$in(function(
 
 [&#9650;](#in)
 
+#### Unfortunately
+
+No one can be told what an `infuser` is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself...
+
+
 #### It has [Actions](#creating-actions), [Adapters](#creating-adapters), [Actors](#creating-actors) and para{{'m'}}eters
 
 ```javascript
@@ -259,10 +264,6 @@ $$in (arg1, arg2) ->
 .then (result) ->
 
 ```
-
-#### Unfortunately
-
-No one can be told what an `infuser` is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself...
 
 # Error Handling
 
