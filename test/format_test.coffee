@@ -27,7 +27,7 @@ objective 'Format infuser', ->
             value: undefined
             actions: [
                 action: ['in', 'as']
-                filters: []
+                adapters: []
                 actor: 'actor'
                 expansion: 'ex pans ion'
             ]
@@ -41,7 +41,7 @@ objective 'Format infuser', ->
             value: undefined
             actions: [
                 action: ['in', 'as']
-                filters: []
+                adapters: []
                 actor: 'actor'
                 expansion: undefined
             ]
@@ -55,49 +55,49 @@ objective 'Format infuser', ->
             value: undefined
             actions: [
                 action: ['in', 'as']
-                filters: []
+                adapters: []
                 actor: 'none'
                 expansion: undefined
             ]
 
-    it 'extracts the action and filter and actor and params', (Format) ->
+    it 'extracts the action and adapter and actor and params', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.filter actor params'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.adapter actor params'
         arg.should.eql
             name: 'name'
-            infuse: 'in.as.filter actor params'
+            infuse: 'in.as.adapter actor params'
             value: undefined
             actions: [
                 action: ['in', 'as']
-                filters: ['filter']
+                adapters: ['adapter']
                 actor: 'actor'
                 expansion: 'params'
             ]
 
-    it 'extracts the action and filter and actor', (Format) ->
+    it 'extracts the action and adapters and actor', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.filter1.filter2 actor'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.adapter1.adapter2 actor'
         arg.should.eql
             name: 'name'
-            infuse: 'in.as.filter1.filter2 actor'
+            infuse: 'in.as.adapter1.adapter2 actor'
             value: undefined
             actions: [
                 action: ['in', 'as']
-                filters: ['filter1', 'filter2']
+                adapters: ['adapter1', 'adapter2']
                 actor: 'actor'
                 expansion: undefined
             ]
 
-    it 'extracts the action and filter', (Format) ->
+    it 'extracts the action and adapters', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.filter1.filter2'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.adapter1.adapter2'
         arg.should.eql
             name: 'name'
-            infuse: 'in.as.filter1.filter2'
+            infuse: 'in.as.adapter1.adapter2'
             value: undefined
             actions: [
                 action: ['in', 'as']
-                filters: ['filter1', 'filter2']
+                adapters: ['adapter1', 'adapter2']
                 actor: 'none'
                 expansion: undefined
             ]

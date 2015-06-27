@@ -1,7 +1,5 @@
 objective 'Call infusion actor', (should) ->
 
-    trace.filter = true
-
     beforeEach ->
 
         @defer = 
@@ -13,40 +11,40 @@ objective 'Call infusion actor', (should) ->
         @arg = 
             actions: [
                 action: 'action'
-                filters: []
+                adapters: []
                 actor: 'actor'
                 params: ''
             ]
 
         global.$$in.actors = actor: ->
         global.$$in.actors.actor.$$can = ->
-        global.$$in.filters.pipe = ->
+        global.$$in.adapters.pipe = ->
 
-    it 'rejects with error if pipe is not first filter',
+    it 'rejects with error if pipe is not first adapter',
 
-        # filters process right to left
+        # adapters process right to left
 
         (done, Action) ->
 
             global.$$in.actors = actor: done
-            @arg.actions[0].filters = ['json', 'pipe']
+            @arg.actions[0].adapters = ['json', 'pipe']
             @defer.reject = (e) ->
 
-                e.toString().should.match /InfusionError\: pipe must be first filter/
+                e.toString().should.match /InfusionError\: pipe must be first adapter/
                 done()
 
             Action.perform @defer, @opts, @accum, @arg
 
 
-    it 'checks the actor for filter support',
+    it 'checks the actor for adapter support',
 
         (done, Action) ->
 
-            @arg.actions[0].filters = ['pipe']
+            @arg.actions[0].adapters = ['pipe']
 
             global.$$in.actors.actor.$$can = (doStuff) ->
 
-                doStuff.filters.should.eql ['pipe']
+                doStuff.adapters.should.eql ['pipe']
                 done()
                 true
 
@@ -57,11 +55,11 @@ objective 'Call infusion actor', (should) ->
 
         (done, Action) ->
 
-            @arg.actions[0].filters = ['pipe']
+            @arg.actions[0].adapters = ['pipe']
 
             global.$$in.actors.actor = (opts, accumulate, actionArg, actorPath) ->
 
-                actionArg.filters.should.eql ['pipe']
+                actionArg.adapters.should.eql ['pipe']
                 done()
 
             global.$$in.actors.actor.$$can = () -> true
@@ -131,7 +129,7 @@ objective 'Call infusion actor', (should) ->
             @arg.actions[1] = 
                 action: 'ACTION1'
                 actor: 'ACTOR1'
-                filters: []
+                adapters: []
             global.$$in.actions = ACTION1: ACTOR1: -> 'RESULT'
 
 

@@ -108,8 +108,6 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
             (done, In, Compiler) ->
 
-                # trace.filter = true
-
                 otherArgs = ''
 
                 mock(global.$$in.expanders).does

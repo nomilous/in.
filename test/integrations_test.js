@@ -1,7 +1,5 @@
 xobjective('ensure it all works', function(should) {
 
-  trace.filter = false
-
   before(function(){
     mock('dir', require('in.expander.dir'));
   });
@@ -11,7 +9,7 @@ xobjective('ensure it all works', function(should) {
     before(flush)
     before(function(){
       delete $$in.actors.none
-      delete $$in.filters.none
+      delete $$in.adapters.none
     });
 
     it('runs end to end with nothing to do', function(done, In) {

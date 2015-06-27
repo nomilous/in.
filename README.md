@@ -120,12 +120,12 @@ $$in(function(
 
 [&#9650;](#in)
 
-#### It has [Actions](#creating-actions), [Filters](#creating-filters), [Actors](#creating-actors) and para{{'m'}}eters
+#### It has [Actions](#creating-actions), [Adapters](#creating-adapters), [Actors](#creating-actors) and para{{'m'}}eters
 
 ```javascript
 $$in(function(
 
-    arg // in.<action>.<filter1>.<filter2...> <actor> para{{'m'}}eters
+    arg // in.<action>.<adapter1>.<adapter2...> <actor> para{{'m'}}eters
 
 ){}).then...
 ```
@@ -141,8 +141,8 @@ $$in(function(
 ){}).then...
 
 // dir is the only baked-in expander,
-// and json is the only baked in filter
-// $$in.filters.myFiltrationSystem = function( ...see lib/none/filter or npm in.filter.json
+// and json is the only baked in adapter
+// $$in.adapterss.myFiltrationSystem = function( ...see lib/none/adapter or npm in.adapter.json
 // $$in.expanders.myExpander = function( ...see npm in.expander.dir
 
 ```
@@ -279,9 +279,9 @@ What if things go wrong in the `//in.`...
 
 See also [Using Actions](#using-actions)
 
-## Creating Filters
+## Creating Adapters
 
-See also [Using Filters](#using-filters)
+See also [Using Adapters](#using-adapters)
 
 ## Creating Actors
 
@@ -303,7 +303,7 @@ See also [Using Expanders](#using-expanders)
 
 ### Using Actions
 
-### Using Filters
+### Using Adapters
 
 ### Using Actors
 
@@ -339,7 +339,7 @@ See also [Using Expanders](#using-expanders)
 Search npm for<br>
 <br>
 [&#9654;](https://www.npmjs.com/search?q=in.actor) Actors<br>
-[&#9654;](https://www.npmjs.com/search?q=in.filter) Filters<br>
+[&#9654;](https://www.npmjs.com/search?q=in.adapter) Adapters<br>
 [&#9654;](https://www.npmjs.com/search?q=in.expander) Expanders<br>
 [&#9654;](https://www.npmjs.com/search?q=in.jokes) Jokes<br>
 [&#9654;](https://www.npmjs.com/search?q=in.love) Lovers<br>
@@ -355,16 +355,16 @@ Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/maste
 
 Assuming that someone has taken the trouble to implement the following node modules
 
-* `npm install in.filter.uptime`
-* `npm install in.filter.unkle`
+* `npm install in.adapter.uptime`
+* `npm install in.adapter.unkle`
 
 Then...
 
 ```javascript
 
 require('in.');
-require('in.filter.uptime');
-require('in.filter.unkle');
+require('in.adapter.uptime');
+require('in.adapter.unkle');
 
 $$in(function(uptime) { // in.as.uptime $ uptime
     
@@ -373,7 +373,7 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 }).then.....
 ```
 
-The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Filter](#creating-filters) for formatting into probably json to be injected into the function argument completely devoid of all further effort ever. ([possible exageration?](#in))
+The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Adapter](#creating-adapters) for formatting into probably json to be injected into the function argument completely devoid of all further effort ever. ([possible exageration?](#in))
 
 ```javascript
 .....then($$in(function(result, Bob) { // in.as.unkle {{ is ( 'your\'s' ) }}`'

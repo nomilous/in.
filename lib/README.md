@@ -1,7 +1,7 @@
 * * in.js - setup, default
 * ** into parser.js - extract the necesseries from function.toString
 * * into in.js - loop over args
-* ** into format.js - arrange, and default the arg~[filters,actor,params,actions]
+* ** into format.js - arrange, and default the arg~[adapters,actor,params,actions]
 * *** into expander.js - for each arg, expand...
 * **** into compiler.js - ...and compile {{bits}}
 * ***** if the compiler returns an array the argument is expanded into multiple actions
