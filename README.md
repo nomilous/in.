@@ -320,12 +320,10 @@ See also [Using Expanders](#using-expanders)
 
 ### Using Expanders
 
-
-
 #### Special Expanders
 
 * `async()` for promises.
-* `callback()` for node thingies. ([unimplemented](https://www.youtube.com/watch?v=aocK0TMiZKk?in.as.hello=1))
+* `callback()` for node callbacks.
 
 ### Using expander result
 

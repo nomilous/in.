@@ -45,3 +45,5 @@ objective 'Async expander', ->
 
             Async {}, 'Arg1', 'Arg2', fn
 
+
+    it 'errors on reject'
