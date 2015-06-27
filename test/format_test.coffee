@@ -6,26 +6,27 @@ objective 'Format infuser', ->
         global.$$in.actors.none = ->
         global.$$in.actors.actor = ->
 
-    it 'defaults to module', (Format) ->
+    xit 'defaults to module', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name'
-        arg.in.should.equal 'in.module name'
+        arg.infuse.should.equal 'in.module name'
 
     it 'sets the actor to none if it does not exist', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', in: 'in.action moon-dancer ex pans ion'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.is moon-dancer ex pans ion'
         arg.actions[0].actor.should.equal 'none'
 
 
     it 'extracts the action and actor and parameters', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', in: 'in.action actor ex pans ion'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as actor ex pans ion'
+
         arg.should.eql
             name: 'name'
-            in: 'in.action actor ex pans ion'
+            infuse: 'in.as actor ex pans ion'
             value: undefined
             actions: [
-                action: 'action'
+                action: ['in', 'as']
                 filters: []
                 actor: 'actor'
                 expansion: 'ex pans ion'
@@ -33,13 +34,13 @@ objective 'Format infuser', ->
 
     it 'extracts the action and actor', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', in: 'in.action actor'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as actor'
         arg.should.eql
             name: 'name'
-            in: 'in.action actor'
+            infuse: 'in.as actor'
             value: undefined
             actions: [
-                action: 'action'
+                action: ['in', 'as']
                 filters: []
                 actor: 'actor'
                 expansion: undefined
@@ -47,13 +48,13 @@ objective 'Format infuser', ->
 
     it 'extracts the action', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', in: 'in.action'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as'
         arg.should.eql
             name: 'name'
-            in: 'in.action'
+            infuse: 'in.as'
             value: undefined
             actions: [
-                action: 'action'
+                action: ['in', 'as']
                 filters: []
                 actor: 'none'
                 expansion: undefined
@@ -61,13 +62,13 @@ objective 'Format infuser', ->
 
     it 'extracts the action and filter and actor and params', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', in: 'in.action.filter actor params'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.filter actor params'
         arg.should.eql
             name: 'name'
-            in: 'in.action.filter actor params'
+            infuse: 'in.as.filter actor params'
             value: undefined
             actions: [
-                action: 'action'
+                action: ['in', 'as']
                 filters: ['filter']
                 actor: 'actor'
                 expansion: 'params'
@@ -75,13 +76,13 @@ objective 'Format infuser', ->
 
     it 'extracts the action and filter and actor', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', in: 'in.action.filter1.filter2 actor'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.filter1.filter2 actor'
         arg.should.eql
             name: 'name'
-            in: 'in.action.filter1.filter2 actor'
+            infuse: 'in.as.filter1.filter2 actor'
             value: undefined
             actions: [
-                action: 'action'
+                action: ['in', 'as']
                 filters: ['filter1', 'filter2']
                 actor: 'actor'
                 expansion: undefined
@@ -89,13 +90,13 @@ objective 'Format infuser', ->
 
     it 'extracts the action and filter', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', in: 'in.action.filter1.filter2'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.filter1.filter2'
         arg.should.eql
             name: 'name'
-            in: 'in.action.filter1.filter2'
+            infuse: 'in.as.filter1.filter2'
             value: undefined
             actions: [
-                action: 'action'
+                action: ['in', 'as']
                 filters: ['filter1', 'filter2']
                 actor: 'none'
                 expansion: undefined
@@ -103,7 +104,7 @@ objective 'Format infuser', ->
 
     it 'returns a promise', (Format, Expander, done) ->
 
-        Format.perform({}, {}, arg = name: 'name', in: 'in.action')
+        Format.perform({}, {}, arg = name: 'name', infuse: 'in.as')
         .then done, done
 
 
@@ -117,4 +118,4 @@ objective 'Format infuser', ->
 
             return then: done
 
-        Format.perform 'OPTS', 'ACCUM', arg = {name: 'name', in: 'in.action'}
+        Format.perform 'OPTS', 'ACCUM', arg = {name: 'name', infuse: 'in.as'}

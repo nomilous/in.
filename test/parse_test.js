@@ -24,7 +24,7 @@ objective('Parse function args', function(Parse, should) {
     fn = function( /*mor junk*/ arg) {// in.action actor bl(a,b)lah
     }
     args = Parse({}, fn);
-    args[0].in.should.eql('in.action actor bl(a,b)lah')
+    args[0].infuse.should.eql('in.action actor bl(a,b)lah')
 
   });
 
@@ -35,9 +35,9 @@ objective('Parse function args', function(Parse, should) {
       , arg3) { // in.someone being difficult
     }
     args = Parse({}, fn);
-    args[0].in.should.eql('in.action1 actor1 kljanasf sadf asdf')
-    args[1].in.should.eql('in.action2 actor2 as;dfjkn lkjfsad ds80783§123$%#^!#$')
-    args[2].in.should.eql('in.someone being difficult')
+    args[0].infuse.should.eql('in.action1 actor1 kljanasf sadf asdf')
+    args[1].infuse.should.eql('in.action2 actor2 as;dfjkn lkjfsad ds80783§123$%#^!#$')
+    args[2].infuse.should.eql('in.someone being difficult')
   });
 
   it('carries new lines for special people', function() {
@@ -49,9 +49,9 @@ objective('Parse function args', function(Parse, should) {
       arg2 // in.cognito
     ) {};
     args = Parse({}, fn);
-    args[0].in.should.match(/\n/)
-    args[0].in.should.match(/please/)
-    args[1].in.should.equal('in.cognito')
+    args[0].infuse.should.match(/\n/)
+    args[0].infuse.should.match(/please/)
+    args[1].infuse.should.equal('in.cognito')
   })
 
   context("coffee script can't put comments in (h,ere) ->", function() {
@@ -65,9 +65,9 @@ objective('Parse function args', function(Parse, should) {
       }
       args = Parse({}, fn);
       args.should.eql([
-        { name: 'arg1', in: 'in.action actor A' },
-        { name: 'arg2', in: 'in.action actor D' },
-        { name: 'arg3', in: 'in.action actor C' }
+        { name: 'arg1', infuse: 'in.action actor A' },
+        { name: 'arg2', infuse: 'in.action actor D' },
+        { name: 'arg3', infuse: 'in.action actor C' }
       ])
 
     });
