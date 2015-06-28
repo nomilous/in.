@@ -215,8 +215,10 @@ $$in(function(arg, // in. {{scopeVar}}
 __This does.__
 
 ```javascript
-var scopeVar = 'unaccessable in expander';
-$$in({scopeVar: scopeVar}, function(arg, // in. {{scopeVar}}
+var scope = {
+  scopeVar: 'accessable in expander'
+}
+$$in(scope, function(arg, // in. {{scopeVar}}
 ```
 
 #### It has access to previous argument values.
