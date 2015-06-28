@@ -73,7 +73,7 @@ $$in(function(
 }).then...
 ```
 
-#### It [interprets](#interpreter) moustaches
+#### It [interprets](#the-moustach-interpreter) moustaches
 
 ```javascript
 $$in(function(
@@ -311,7 +311,11 @@ See also [Using Expanders](#using-expanders)
 
 ## Special Arguments
 
-## The Interpreter
+## The Moustach Interpreter
+
+### General Usage
+
+
 
 ### Using Actions
 
@@ -355,7 +359,6 @@ Search npm for<br>
 [&#9654;](https://www.npmjs.com/search?q=in.expander) Expanders<br>
 [&#9654;](https://www.npmjs.com/search?q=in.jokes) Jokes<br>
 [&#9654;](https://www.npmjs.com/search?q=in.love) Lovers<br>
-[&#9654;](https://github.com/nomilous/out.) Look `out.` ahead...<br>
 
 # Why
 
