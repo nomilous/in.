@@ -2,9 +2,9 @@ objective 'Expand infuser arguments', ->
 
     trace.filter = true
 
-    beforeEach ->
+    beforeEach (Expander) ->
 
-        @opts = value: 1
+        @opts = value: 1, caller: {}
         @inArgs = {}
         @arg = 
             name: 'arg1'
@@ -16,17 +16,7 @@ objective 'Expand infuser arguments', ->
                 expansion: 'echo {{opts.value}}'
             ]
 
-    it 'creates the arg context',
-
-        (done, Expander, Compiler) ->
-
-            Compiler.stub perform: -> then: (resolver) -> resolver()
-            Expander.perform(@opts, @inArgs, @arg).then =>
-                @arg.context.should.eql {}
-                done()
-
-
-    it 'calls the compiler for each {{tib}}',
+    it 'calls the compiler for each {{moustach}}',
 
         (done, Expander, Compiler) ->
 
