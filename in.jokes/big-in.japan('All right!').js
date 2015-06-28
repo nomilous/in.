@@ -32,5 +32,9 @@ $$in(japan, function(
 
 .then(
   $$in(japan, function(play){ // in. $ {{player}} {{home}}/music/Alphaville/Big\ In\ Japan.mp3
+    
+    // TODO: happens first... fix
+    console.log(play)
+
   })
 );
