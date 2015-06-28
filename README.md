@@ -301,6 +301,23 @@ What if things go wrong in the `//in.`...
 
 [&#9650;](#in)
 
+### Resolving in the argument chain.
+
+```javascript
+$$in(function(
+  ar,  // in. {{[1..9]}}
+  ps, // in. {{notify("got #{ar.length} elements")}}
+  ok // in. {{resolve(ar)}}
+){ /* this funcition body will still run,
+    * but the resolved result will have passed into .then() already
+    */ })
+.then(
+  function(array) {},
+  function(error) {},
+  function(notice) {}
+);
+
+```
 
 
 # Extending

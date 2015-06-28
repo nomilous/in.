@@ -13,7 +13,14 @@ objective('ensure it all works', function(should) {
 
   context('general functionality', function() {
 
-    it('runs', function(done, In) {
+    it('runs the empty function', function(done, In) {
+
+      In(function(){
+        done()
+      });
+    });
+
+    it('runs the infused function', function(done, In) {
 
       In(function(
         arg1, // in. moo
@@ -23,6 +30,16 @@ objective('ensure it all works', function(should) {
         arg2.should.eql([1,2,3]);
         done()
       });
+    });
+
+    it('accepts a scope', function(done, In) {
+
+      scope = { someFn: function() {return [1, 2, 3]} }
+      In(scope, function(array) { // in. {{someFn()}}
+        array.should.eql([1, 2, 3]);
+        done()
+      })
+
     });
 
   });
@@ -82,8 +99,25 @@ objective('ensure it all works', function(should) {
       )
     })
 
-  })
 
+    it('puts the promise resolver and rejector and notifier into moustach scope', function(done, In) {
+
+      In(function(
+        array, // in. {{[1,2,3]}}
+        ps,   // in. {{notify array.length}}
+        done // in. {{resolve array}}
+      ){}).then(
+        function(result){
+          result.should.eql [1,2,3]
+          done()
+        },
+        function(){},
+        function(m) {
+          // console.log(m);
+        }
+      )
+    })
+  })
 
 
   context('injecting functions', function() {
