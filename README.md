@@ -156,10 +156,7 @@ $$in(function(
 $$in(function(pipe) { // in.as.pipe.tcpdump2json $ tcpdump -i en0
   pipe.on('data', function(frame) {
     console.log(frame.source.ip);
-    // the 'in.adapter.tcpdump2json' module might not exist.
-    // it might not need to exist if the shell tool does:
-    //   in.as.pipe.json $ tcpdump -i en0 | tcpdump2json
-    //
+    // the 'in.adapter.tcpdump2json' module might not exist?
   })
 })
 ```
