@@ -31,16 +31,17 @@ $$in() === In;
 ```
 See [extending](#extending)
 
-#### It returns a [promise](#promising)
-
-```javascript
-$$in().then( function(result){} );
-```
-
 #### It runs the function passed
 
 ```javascript
-$$in( function(){} ).then...
+$$in( function(){} )
+```
+
+#### It provides a [promise](#promising)
+
+```javascript
+$$in(function(resolve){ resolve('result') })
+.then(function(result){})
 ```
 
 #### It accepts [options](#options)
@@ -298,6 +299,8 @@ What if things go wrong in the `//in.`...
 # Promising
 
 [&#9650;](#in)
+
+
 
 # Extending
 

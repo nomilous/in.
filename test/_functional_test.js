@@ -1,4 +1,11 @@
-xobjective('ensure it all works', function(should) {
+objective('ensure it all works', function(should) {
+
+  before(flush)
+  before(function(){
+    delete $$in.actors
+    delete $$in.adapters
+
+  });
 
   before(function(){
     mock('dir', require('in.expander.dir'));
@@ -6,14 +13,7 @@ xobjective('ensure it all works', function(should) {
 
   context('general functionality', function() {
 
-    // before(flush)
-    // before(function(){
-    //   delete $$in.actors.none
-    //   delete $$in.adapters.none
-
-    // });
-
-    it('runs end to end', function(done, In) {
+    it('runs', function(done, In) {
 
       In(function(
         arg1, // in. moo
@@ -24,6 +24,69 @@ xobjective('ensure it all works', function(should) {
         done()
       });
     });
+
+  });
+
+  context('using the promise', function() {
+
+    it('provides promise resolver into the function', function(done, In) {
+
+      In(function(resolve) {
+        resolve('result');
+      }).then(function(result) {
+        result.should.equal('result');
+        done();
+      })
+    })
+
+    it('provides promise rejector into the function', function(done, In) {
+
+      In(function(reject) {
+        reject(new Error('Oh! No!'));
+      }).then(
+        function(result) {
+        },
+        function(error) {
+          error.toString.should.match(/Oh/);
+          done();
+        }
+      )
+    })
+
+    it('provides promise notifier into the function', function(done, In) {
+
+      In(function(notify) {
+        notify('helloo')
+      }).then(
+        function(result) {
+        },
+        function(error) {
+        },
+        function(message) {
+          message.should.equal('helloo');
+          done();
+        }
+      )
+    })
+
+    it('rejects if the function throws after injection', function(done, In) {
+
+      In(function(){
+        throw new Error('Oh! No!')
+      }).then(
+        function(result){},
+        function(error) {
+          error.toString.should.match(/Oh/);
+          done()
+        }
+      )
+    })
+
+  })
+
+
+
+  context('injecting functions', function() {
 
     it('does not run the function if in.as.function', function(done, In) {
 
@@ -117,7 +180,7 @@ xobjective('ensure it all works', function(should) {
         function(
           files // in. {{i for i in [0..10]}}
         ){
-          console.log(files)
+          // console.log(files)
           // files.should.eql ['file1', 'file2']
           done()
         }
