@@ -181,7 +181,7 @@ loadJson().then...
 
 #### It automatically pends the function if naked args are present.
 
-`url` is a naked argument. No `in.` specified.
+`url` is a naked argument - no `in.` specified.
 
 ```javascript
 require('in.actor.web'); // actor might not exist yet?
@@ -199,6 +199,7 @@ loadJsonFrom('www.my-json.com')
   json.b;
 })
 .catch(function(e) {})
+```
 
 #### It has a faux scope
 
