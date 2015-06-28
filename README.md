@@ -94,12 +94,14 @@ $$in(function(
 ```javascript
 $$in(function(
     e,
-    nothing, // in.as something as {{1}}
-    somthing // in. {{throw new Error('No such thing.')}}
+    nothing,  // in.as something as {{1}}
+    somthing, // in. {{throw new Error('No such thing.')}}
+    one       // in. {{ 1 }}
 ){
     e.toString() === 'Error: No such thing.';
-    nothing === 'something as 1'; // happened before the error
+    nothing === 'something as 1'; // populated before the error
     somthing === undefined;
+    one === undefined; // not populated, after error
 
 }).then...
 ```
