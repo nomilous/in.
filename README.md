@@ -207,7 +207,7 @@ loadJsonFrom('www.my-json.com')
 })
 .catch(function(e) {})
 ```
-Note: [special arguments](#special-arguments) are not naked even if no `in.`
+Note: [special arguments](#special-arguments) are not naked even if no `in.` specified.
 
 #### It has a faux scope
 
