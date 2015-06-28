@@ -73,7 +73,7 @@ $$in(function(
 }).then...
 ```
 
-#### It [interprets](#the-moustach-interpreter) moustaches
+#### It [interprets](#the-interpreter) moustaches
 
 ```javascript
 $$in(function(
@@ -311,9 +311,9 @@ See also [Using Expanders](#using-expanders)
 
 ## Special Arguments
 
-## The Moustach Interpreter
+## The Interpreter
 
-### General Usage
+### Using Moustaches
 
 
 
