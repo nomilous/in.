@@ -255,7 +255,10 @@ $$in( function (agrName, /* in.as.js {{ function() { console.log(arg.name); } }}
 #### It will use the returned promise to populate the argument asynchronously.
 
 ```javascript
-$$in( function (array, // in. {{ -> $$in.promise (resolve, reject) -> resolve [1, 2, 3] }}
+$$in( function (array, // in. {{ $$in (resolve) -> resolve [1, 2, 3] }}
+```
+```javascript
+$$in( function (array, // in.as.js {{ $$in(function(resolve) { resolve([1, 2, 3]) }) }}
 ```
 
 
