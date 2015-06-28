@@ -28,7 +28,9 @@ $$in(japan, function(
   Japan, // in. {{getBig(100)}}
   ooh   // in. {{console.log "when you're #{Big}" for Big in Japan}}
 
-){}).then(
+){})
+
+.then(
   $$in(japan, function(play){ // in. $ {{player}} {{home}}/music/Alphaville/Big\ In\ Japan.mp3
   })
 );
