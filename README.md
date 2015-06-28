@@ -166,8 +166,12 @@ $$in(function(
 
 ```javascript
 $$in(function(pipe) { // in.as.pipe.tcpdump2json $ tcpdump -i en0
-  pipe.on('data', function(jsonFrame) {
-    // ...
+  pipe.on('data', function(frame) {
+    console.log(frame.source.ip);
+    // the 'in.adapter.tcpdump2json' module might not exist.
+    // it might not need to exist the shell tool does:
+    //   in.as.pipe.json $ tcpdump -i en0 | tcpdump2json
+    //
   })
 })
 ```
@@ -176,17 +180,16 @@ $$in(function(pipe) { // in.as.pipe.tcpdump2json $ tcpdump -i en0
 #### (TODO) It can pend the function
 
 ```javascript
+
 loadJsonFrom = $$in({pend: true}, function(
   arg1,
   arg2, // in.as.json web.get {{arg1}}
   resolve
-){resolve(arg2)});
+){ resolve(arg2) });
 
 loadJsonFrom('www.arg1.com/spokes').then...
 
-// actor: 'web.*' has not been implemented
-// $$in.actors.web(...) {...} 
-// see lib/none/actor.js or npm in.actor.shell
+// 'in.actor.web' module might not exist.
 ```
 
 `resolve` is a special argument. There are [others](#special-arguments).

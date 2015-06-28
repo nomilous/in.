@@ -119,6 +119,82 @@ objective('ensure it all works', function(should) {
     })
   })
 
+  context('pending functions for promise chaining', function() {
+
+    it('pends the function by flag', function(done, In) {
+
+      var run = false;
+      var pend = In({pend: true}, function(resolve, arg1, arg2) { // in. ARG2
+        run = true;
+        resolve(arg1 + arg2);
+      })
+
+      setTimeout(function() {
+        run.should.equal(false);
+
+        pend('ARG1').then(function(result) {
+          result.should.equal('ARG1ARG2');
+          done();
+        })
+      }, 10)
+    })
+
+    it("pends the function by 'res' in args", function(done, In) {
+
+      var run = false;
+      var pend = In(function(res, resolve, arg2) { // in. ARG2
+        run = true;
+        resolve(res + arg2);
+      })
+
+      setTimeout(function() {
+        run.should.equal(false);
+
+        pend('ARG1').then(function(result) {
+          result.should.equal('ARG1ARG2');
+          done();
+        })
+      }, 10)
+    })
+
+    it("pends the function by 'result' in args", function(done, In) {
+
+      var run = false;
+      var pend = In(function(result, resolve, arg2) { // in. ARG2
+        run = true;
+        resolve(result + arg2);
+      })
+
+      setTimeout(function() {
+        run.should.equal(false);
+
+        pend('ARG1').then(function(result) {
+          result.should.equal('ARG1ARG2');
+          done();
+        })
+      }, 10)
+    })
+
+    it("pends the function by 'results' in args", function(done, In) {
+
+      var run = false;
+      var pend = In(function(results, resolve, arg2) { // in. ARG2
+        run = true;
+        resolve(results + arg2);
+      })
+
+      setTimeout(function() {
+        run.should.equal(false);
+
+        pend('ARG1').then(function(result) {
+          result.should.equal('ARG1ARG2');
+          done();
+        })
+      }, 10)
+    })
+
+  })
+
 
   context('injecting functions', function() {
 
@@ -128,6 +204,7 @@ objective('ensure it all works', function(should) {
         fn, // in.as.function {{-> throw new Error('Not run')}}
         err
       ){
+        console.log(err);
         should.not.exist(err);
         try {
           fn()

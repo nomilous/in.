@@ -20,7 +20,7 @@ var japan = { // moustache scope / opts
 
     });
   },
-  
+
   home: process.env.HOME,
   player: process.env.MP3_PLAYER
 }
@@ -46,7 +46,7 @@ $$in(japan, function(
     // TODO: - how to get err into $$in above as error
     //       - or is that a bad idea?
     //         - rather fall to catch...
-    //       
+    //
   }
 
 );
