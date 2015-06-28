@@ -79,6 +79,18 @@ $$in(function(
 }).then...
 ```
 
+#### The moustache interpreter is coffee-script
+
+It [expands](#expanders) on `for` loops.
+
+```javascript
+$$in(function(
+    array // in. {{i for i in [0..9]}}
+){
+    array === [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+}).then...
+```
+
 
 #### It has access to previous argument values.
 
@@ -106,18 +118,6 @@ $$in(function(
 }).then...
 ```
 [e](http://wonderingminstrels.blogspot.com/2002/12/if-everything-happens-that-can-be-done.html) is a special argument. There are [others](#special-arguments).
-
-#### The moustache interpreter is coffee-script
-
-It [expands](#expanders) on `for` loops.
-
-```javascript
-$$in(function(
-    array // in. {{i for i in [0..9]}}
-){
-    array === [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-}).then...
-```
 
 
 ## Infuser Composition
