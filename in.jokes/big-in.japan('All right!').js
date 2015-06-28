@@ -5,7 +5,7 @@ require('../');
 var japan = { // moustache scope / opts
 
   getBig: function(delay) {
-    
+
     return $$in(function(resolve, reject, notify) {
 
       setTimeout(function it( takes, time, to, get, big, In, Japan ) {
@@ -20,6 +20,7 @@ var japan = { // moustache scope / opts
 
     });
   },
+  
   home: process.env.HOME,
   player: process.env.MP3_PLAYER
 }
