@@ -4,7 +4,7 @@ require('../');
 
 var japan = { // moustache scope / opts
   getBig: function(delay) {
-    return $$in.promise(function(resolve) {
+    return $$in(function(resolve, reject, notify) {
 
       setTimeout(function it( takes, time, to, get, big, In, Japan ) {
 
@@ -25,17 +25,11 @@ var japan = { // moustache scope / opts
 
 $$in(japan, function(
 
-  Japan, // in. {{getBig(100)}}
-  ooh   // in. {{console.log "when you're #{Big}" for Big in Japan}}
+  Japan, // in. {{ getBig(100) }}
+  ooh,  // in. {{ console.log "when you're #{Big}" for Big in Japan }}
+  the  // in. {{ resolve "eastern sea's so .blue" }}
 
-){
-
-  // TODO: resolve, reject, notify from returned promise injected
-  // resolve()
-
-})
-
-.then(
+){}).then(
                           // TODO: - presence of result pends run,
                          //        - result populated from previous function resolve
                         //
