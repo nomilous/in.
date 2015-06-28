@@ -95,13 +95,13 @@ $$in(function(
 
 ```javascript
 $$in(function(
-    nothing, // in.as something as {{1}}
-    somthingElse, // in. {{throw new Error('No such thing.')}}
+    nothing,   // in.as something as {{1}}
+    somthing, // in. {{throw new Error('No such thing.')}}
     e
 ){
-    e.toString() === 'Error: No such thing.'
-    somthingElse === null
-    somthing === 1 // happened before the error
+    e.toString() === 'Error: No such thing.';
+    somthing === undefinedl
+    nothing === 'something as 1' // happened before the error
 
 }).then...
 ```
