@@ -273,10 +273,9 @@ $$in( function (fn, // in.as.js.function {{ function() {} }}
 ```javascript
 $$in({
   onInject: function(arg, done){
-    setTimeout(function is(Async) {
-      var err = null;
+    setTimeout(function() {
       if (arg.name == 'one') arg.value = 1;
-      done(err);
+      done(err = null);
     }, 42);
   }
 }, function(one, two, three) {
