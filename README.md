@@ -224,7 +224,7 @@ $$in(function(
 #### (TODO) It will run the function
 
 ```javascript
-$$in( function (arg, // in. {{ function() { ...
+$$in( function (argName, // in. {{ function() { console.log(arg.name); } }}
 ```
 
 But actually, the {{moustash}} interpreter is [coffee-script](http://coffeescript.org/) (For it's for looping powers). So it would really look like this:
@@ -232,9 +232,6 @@ But actually, the {{moustash}} interpreter is [coffee-script](http://coffeescrip
 ```javascript
 $$in( function (agrName, /* in. {{ -> console.log arg.name }} */
 ```
-
-Perhaps a flag will be added to set using js instead. But maybe not. Because putting a bunch of code into the infuser is not the point.
-
 
 
 #### (TODO) It will handle the returned promise.
