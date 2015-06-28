@@ -181,7 +181,7 @@ $$in(function(pipe) { // in.as.pipe.tcpdump2json $ tcpdump -i en0
 
 ```javascript
 
-loadJsonFrom = $$in({pend: true}, function(
+loadJsonFrom = $$in.pend(function(
   arg1,
   arg2, // in.as.json web.get {{arg1}}
   resolve
@@ -191,8 +191,18 @@ loadJsonFrom('www.arg1.com/spokes').then...
 
 // 'in.actor.web' module might not exist.
 ```
-
 `resolve` is a special argument. There are [others](#special-arguments).
+
+#### It automatically pends the function on certain args.
+
+If `results` or `result` is in the args $$in returns the pended function.
+
+```javascript
+fn = $$in(function(result) {})
+fn('result').then...
+```
+It does this for [promise](#promising) chaining.
+
 
 #### It has a faux scope
 

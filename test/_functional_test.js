@@ -139,7 +139,7 @@ objective('ensure it all works', function(should) {
       }, 10)
     })
 
-    it("pends the function by 'res' in args", function(done, In) {
+    xit("pends the function by 'res' in args", function(done, In) {
 
       var run = false;
       var pend = In(function(res, resolve, arg2) { // in. ARG2
@@ -200,7 +200,7 @@ objective('ensure it all works', function(should) {
 
     it('intersperces arguments filling the un-infused arguments', function(done, In) {
 
-      var pend = $$in({pend: true}, function(
+      var pend = $$in.pend(function(
         arg1,
         arg2, // in. 2
         arg3,
