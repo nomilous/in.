@@ -3,7 +3,7 @@ objective 'Format infuser', ->
     beforeEach (In, Expander) ->
 
         Expander.stub perform: -> then: (resolve) -> resolve()
-        global.$$in.actors.none = ->
+        global.$$in.actors.default = ->
         global.$$in.actors.actor = ->
 
     xit 'defaults to module', (Format) ->
@@ -11,16 +11,16 @@ objective 'Format infuser', ->
         Format.perform {}, {}, arg = name: 'name'
         arg.infuse.should.equal 'in.module name'
 
-    it 'sets the actor to none if it does not exist (for in)', (Format) ->
+    it 'sets the actor to default if it does not exist (for in)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'in.as moon-dancer ex pans ion'
-        arg.actions[0].actor.should.equal 'none'
+        arg.actions[0].actor.should.equal 'default'
 
 
-    it 'sets the actor to none if it does not exist (for out)', (Format) ->
+    it 'sets the actor to default if it does not exist (for out)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'out.as moon-dancer ex pans ion'
-        arg.actions[0].actor.should.equal 'none'
+        arg.actions[0].actor.should.equal 'default'
 
 
     it 'extracts the action and actor and parameters (for in)', (Format) ->
@@ -31,6 +31,7 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'in.as actor ex pans ion'
             value: undefined
+            asArray: false
             actions: [
                 action: ['in', 'as']
                 adapters: []
@@ -46,6 +47,7 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'out.as actor ex pans ion'
             value: undefined
+            asArray: false
             actions: [
                 action: ['out', 'as']
                 adapters: []
@@ -60,6 +62,7 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'in.as actor'
             value: undefined
+            asArray: false
             actions: [
                 action: ['in', 'as']
                 adapters: []
@@ -74,6 +77,7 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'out.as actor'
             value: undefined
+            asArray: false
             actions: [
                 action: ['out', 'as']
                 adapters: []
@@ -88,10 +92,11 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'in.as'
             value: undefined
+            asArray: false
             actions: [
                 action: ['in', 'as']
                 adapters: []
-                actor: 'none'
+                actor: 'default'
                 expansion: undefined
             ]
 
@@ -102,10 +107,11 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'out.as'
             value: undefined
+            asArray: false
             actions: [
                 action: ['out', 'as']
                 adapters: []
-                actor: 'none'
+                actor: 'default'
                 expansion: undefined
             ]
 
@@ -116,6 +122,7 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'in.as.adapter actor params'
             value: undefined
+            asArray: false
             actions: [
                 action: ['in', 'as']
                 adapters: ['adapter']
@@ -130,6 +137,7 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'out.as.adapter actor params'
             value: undefined
+            asArray: false
             actions: [
                 action: ['out', 'as']
                 adapters: ['adapter']
@@ -144,6 +152,7 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'in.as.adapter1.adapter2 actor'
             value: undefined
+            asArray: false
             actions: [
                 action: ['in', 'as']
                 adapters: ['adapter1', 'adapter2']
@@ -158,6 +167,7 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'out.as.adapter1.adapter2 actor'
             value: undefined
+            asArray: false
             actions: [
                 action: ['out', 'as']
                 adapters: ['adapter1', 'adapter2']
@@ -172,10 +182,11 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'in.as.adapter1.adapter2'
             value: undefined
+            asArray: false
             actions: [
                 action: ['in', 'as']
                 adapters: ['adapter1', 'adapter2']
-                actor: 'none'
+                actor: 'default'
                 expansion: undefined
             ]
 
@@ -186,10 +197,11 @@ objective 'Format infuser', ->
             name: 'name'
             infuse: 'out.as.adapter1.adapter2'
             value: undefined
+            asArray: false
             actions: [
                 action: ['out', 'as']
                 adapters: ['adapter1', 'adapter2']
-                actor: 'none'
+                actor: 'default'
                 expansion: undefined
             ]
 

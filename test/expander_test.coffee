@@ -59,7 +59,7 @@ objective 'Expand infuser arguments', ->
                 done()
 
 
-    it 'expands if the compiler returns an array',
+    it 'expands if the compiler returns an array and sets the asArray flag',
 
         (done, Expander, Compiler) ->
 
@@ -74,6 +74,8 @@ objective 'Expand infuser arguments', ->
             @arg.actions[0].expansion = 'testing, testing {{bit of code}} {{another bit of code}}'
 
             Expander.perform(@opts, @inArgs, @arg).then =>
+
+                @arg.asArray.should.equal true
 
                 @arg.actions.length.should.equal 3 * 3
                 @arg.actions[0].expansion.should.equal 'testing, testing one A'

@@ -45,7 +45,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                         then: (resolver) -> resolver([1, 2, 3]);
                         
                 @expansion = eval: 'expand.thing(\'arg value\', previousArg)'
-                @inArgs = {previousArg: 'VALUE'};
+                @inArgs = {previousArg: value: 'VALUE'};
                 
                 Compiler.perform(@opts, @arg, @inArgs, @expansion)
                 .then( 
@@ -181,7 +181,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                 @expansion = eval: 'expand.fn(argFn, \'arg\')'
 
-                @inArgs = argFn: (arg) -> $$in.promise (resolve) ->
+                @inArgs = argFn: value: (arg) -> $$in.promise (resolve) ->
 
                     resolve(arg + arg);
 
@@ -227,7 +227,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
             (done, In, Compiler) ->
 
-                @inArgs = array: [1, 2, 3]
+                @inArgs = array: value: [1, 2, 3]
 
                 @expansion = eval: 'i for i in array'
 
@@ -240,21 +240,72 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                     (err) ->
                         console.log ERR: err
                         done err
-                ) 
+                )
 
 
+    context 'functions', ->
 
-    context 'array flag', ->
-
-        it 'is set if "for" appears in eval',
+        it 'runs the function',
 
             (done, In, Compiler) ->
 
-                @opts = vvv: [1, 3, 3]
-                @expansion = eval: '{v:i} for i in vvv'
+                @expansion = eval: '-> 1'
+
+                @arg = actions: [adapters: []]
+
                 Compiler.perform(@opts, @arg, @inArgs, @expansion)
-                .then (res) =>
-                    @arg.asArray.should.equal true
-                    # console.log res
+
+                .then (res) ->
+
+                    res.should.equal 1
                     done()
+
+
+        it 'uses the promise resolve',
+
+            (done, In, Compiler) ->
+
+                @expansion = eval: '-> $$in.promise (resolve) -> resolve 1'
+
+                @arg = actions: [adapters: []]
+
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
+
+                .then (res) ->
+
+                    res.should.equal 1
+                    done()
+
+        it 'uses the promise reject',
+
+            (done, In, Compiler) ->
+
+                @expansion = eval: '-> $$in.promise (r, reject) -> reject new Error "Oh! No!"'
+
+                @arg = actions: [adapters: []]
+
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
+
+                .catch (e) ->
+
+                    e.toString().should.match /Oh/
+                    done()
+
+
+        it 'does not run the function if function adapter is present',
+
+            (done, In, Compiler) ->
+
+                @expansion = eval: '-> "RESULT"'
+
+                @arg = actions: [adapters: ['adapter1','function', 'adapter3']]
+
+                Compiler.perform(@opts, @arg, @inArgs, @expansion)
+
+                .then (res) ->
+
+                    res().should.equal 'RESULT'
+                    done()
+
+
 

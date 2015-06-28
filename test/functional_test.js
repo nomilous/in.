@@ -13,7 +13,7 @@ xobjective('ensure it all works', function(should) {
 
     // });
 
-    it('runs end to end with nothing to do', function(done, In) {
+    it('runs end to end', function(done, In) {
 
       In(function(
         arg1, // in. moo
@@ -21,6 +21,45 @@ xobjective('ensure it all works', function(should) {
       ){
         arg1.should.equal('moo');
         arg2.should.eql([1,2,3]);
+        done()
+      });
+    });
+
+    it('does not run the function if in.as.function', function(done, In) {
+
+      In(function(
+        fn, // in.as.function {{-> throw new Error('Not run')}}
+        err
+      ){
+        should.not.exist(err);
+        try {
+          fn()
+        } catch (e) {
+          e.toString().should.match(/Not run/);
+          done()
+        }
+      });
+    });
+
+    it('does run the function if not in.as.function', function(done, In) {
+
+      In(function(
+        arg1, // in. {{-> throw new Error('Was run')}}
+        err
+      ){
+        should.not.exist(arg1);
+        err.toString().should.match(/Was run/);
+        done()
+      });
+    });
+
+    it('it uses the functions promise', function(done, In) {
+
+      In(function(
+        arg1, // in. {{ -> $$in.promise (resolve) -> resolve [1,2,3]}}
+        err
+      ){
+        arg1.should.eql [1, 2, 3]
         done()
       });
     });
