@@ -51,26 +51,14 @@ $$in(
 $$in(  {opt:'ion'},  function(){} ).then...
 ```
 
-#### (TODO) It [injects](injector) node modules (by name) into the function
-
-maybe not... don't gain much
-
-```javascript
-$$in(function(express){    
-    
-    app = express();
-
-}).then...
-```
-
 #### It [injects](injector) arguments from their comments
 
-Using the `in.` operator.
+__Using the `in.` operator.__
 
 ```javascript
 $$in(function(
     txt // in. here is some text
-){    
+){
     
     txt === 'here is some text';
 
