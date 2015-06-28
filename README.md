@@ -140,21 +140,14 @@ $$in(function(
 ){}).then...
 ```
 
-#### (TODO) It has asynchronous [Expanders](#creating-expanders)
+#### (TODO) It has [Expanders](#creating-expanders)
 
 ```javascript
 $$in(function(
 
-    bunchOFjsons, // in.as.json $ cat {{expand.dir('/my/*.json')}}
-    ointment     // in.as.myFiltrationSystem {{expand.myExpander(bunchOFjson)}}
+    bunchOFjsons // in.as.json $ cat {{expand.dir('/my/*.json')}}
 
 ){}).then...
-
-// dir is the only baked-in expander,
-// and json is the only baked in adapter
-// $$in.adapterss.myFiltrationSystem = function( ...see lib/none/adapter or npm in.adapter.json
-// $$in.expanders.myExpander = function( ...see npm in.expander.dir
-
 ```
 
 #### (TODO) Some [Actors](#creating-actors) support pipes
