@@ -2,13 +2,11 @@
 
 require('../');
 
-$$in.expanders.japan = function(delay) {
+var japan = { // moustache scope / opts
+  getBig: function(delay) {
+    return $$in.promise(function(resolve) {
 
-  // reutrn $$in(function(resolve) {...(pending)
-
-  return $$in.promise(function(resolve) {
-
-    setTimeout(function it( takes, time, to, get, big, In, Japan ) {
+      setTimeout(function it( takes, time, to, get, big, In, Japan ) {
 
         resolve([
           'Big in Japan-tonight',
@@ -16,21 +14,21 @@ $$in.expanders.japan = function(delay) {
           'Big in Japan ooh the eastern sea\'s so .blue'
         ])
 
-    }, delay);
-  })
+      }, delay);
+
+    });
+  },
+  home: process.env.HOME,
+  player: process.env.MP3_PLAYER
 }
 
-$$in(function(
 
-  Japan, // in. {{expand.japan(100)}}
+$$in(japan, function(
+
+  Japan, // in. {{getBig(100)}}
   ooh   // in. {{console.log "when you're #{Big}" for Big in Japan}}
 
-){}).then($$in({
-
-    home: process.env.HOME,
-    player: process.env.MP3_PLAYER
-
-  },
-  function(play){ // in. $ {{player}} {{home}}/music/Alphaville/Big\ In\ Japan.mp3
-  }
-))
+){}).then(
+  $$in(japan, function(play){ // in. $ {{player}} {{home}}/music/Alphaville/Big\ In\ Japan.mp3
+  })
+);
