@@ -164,7 +164,7 @@ $$in(function(pipe) { // in.as.pipe.tcpdump2json $ tcpdump -i en0
   pipe.on('data', function(frame) {
     console.log(frame.source.ip);
     // the 'in.adapter.tcpdump2json' module might not exist.
-    // it might not need to exist the shell tool does:
+    // it might not need to exist if the shell tool does:
     //   in.as.pipe.json $ tcpdump -i en0 | tcpdump2json
     //
   })
@@ -207,6 +207,7 @@ loadJsonFrom('www.my-json.com')
 })
 .catch(function(e) {})
 ```
+Note: [special arguments](#special-arguments) are not naked even if no `in.`
 
 #### It has a faux scope
 

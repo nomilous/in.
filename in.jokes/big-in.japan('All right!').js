@@ -4,22 +4,17 @@ require('../');
 
 var japan = { // moustache scope / opts
 
-  getBig: function(delay) {
+  getBig: $$in(function Japan(delay, resolve, reject, notify) {
 
-    return $$in(function(resolve, reject, notify) {
+    setTimeout(function it( takes, time, to, get, big, In, Japan ) {
+      resolve([
+        'Big in Japan-tonight',
+        'Big in Japan-be-tight',
+        'Big in Japan ooh the eastern sea\'s so .blue'
+      ])
+    }, delay);
 
-      setTimeout(function it( takes, time, to, get, big, In, Japan ) {
-
-        resolve([
-          'Big in Japan-tonight',
-          'Big in Japan-be-tight',
-          'Big in Japan ooh the eastern sea\'s so .blue'
-        ])
-
-      }, delay);
-
-    });
-  },
+  }),
 
   home: process.env.HOME,
   player: process.env.MP3_PLAYER
@@ -28,14 +23,12 @@ var japan = { // moustache scope / opts
 
 $$in(japan, function(
 
-  Japan, // in. {{ getBig(100) }}
+  Japan, // in. {{ getBig(1000) }}
   ooh,  // in. {{ console.log "when you're #{Big}" for Big in Japan }}
   the  // in. {{ resolve "eastern sea's so .blue" }}
 
 ){}).then(
-                          // TODO: - presence of result pends run,
-                         //        - result populated from previous function resolve
-                        //
+
   $$in(japan, function(result, play){ // in. $ {{player}} {{home}}/music/Alphaville/Big\ In\ Japan.mp3
     
     console.log(play)
