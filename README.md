@@ -73,7 +73,7 @@ $$in(function(
 }).then...
 ```
 
-#### It [interprets](#the-interpreter) moustaches
+#### It [interprets](#using-moustaches) moustaches
 
 ```javascript
 $$in(function(
@@ -313,10 +313,6 @@ See also [Using Expanders](#using-expanders)
 
 ## The Interpreter
 
-### Using Moustaches
-
-
-
 ### Using Actions
 
 ### Using Adapters
@@ -325,11 +321,13 @@ See also [Using Expanders](#using-expanders)
 
 * '.' for no actor
 
-### Using for loop
+### Using Moustaches
 
-### Using options
+### Using Options
 
-### Using previous argument
+### Using Previous Argument
+
+### Using for Loop
 
 ### Using Expanders
 
