@@ -91,7 +91,7 @@ $$in(function(
 }).then...
 ```
 
-#### (TODO) It provides the [error](#error-handling)
+#### It provides the [error](#error-handling)
 
 ```javascript
 $$in(function(
