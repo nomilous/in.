@@ -100,7 +100,7 @@ $$in(function(
     e
 ){
     e.toString() === 'Error: No such thing.';
-    somthing === undefinedl
+    somthing === undefined;
     nothing === 'something as 1' // happened before the error
 
 }).then...
