@@ -3,7 +3,9 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
     beforeEach ->
 
         @opts = value: 'VALUE 1'
-        @arg = context: {}
+        @arg = 
+            context: {}
+            actions: [adapters: []]
         @inArgs = {}
         @expansion = eval: 'opts.value'
 
@@ -251,7 +253,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                 @expansion = eval: '-> 1'
 
-                @arg = actions: [adapters: []]
+                # @arg = actions: [adapters: []]
 
                 Compiler.perform(@opts, @arg, @inArgs, @expansion)
 
@@ -259,6 +261,10 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                     res.should.equal 1
                     done()
+
+                .catch (e) ->
+
+                    console.log e
 
 
         it 'uses the promise resolve',
@@ -306,6 +312,24 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                     res().should.equal 'RESULT'
                     done()
+
+
+    it 'can interpret js in the moustach',
+
+        (done, In, Compiler) ->
+
+            @expansion = eval: 'function() { return 1; }'
+
+            @arg = actions: [adapters: ['adapter1','function', 'js', 'adapter3']]
+
+            Compiler.perform(@opts, @arg, @inArgs, @expansion)
+
+            .then (res) ->
+
+                res().should.equal 1
+                done()
+
+
 
 
 

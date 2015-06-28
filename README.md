@@ -227,11 +227,18 @@ $$in(function(
 $$in( function (argName, // in. {{ function() { console.log(arg.name); } }}
 ```
 
-But actually, the {{moustash}} interpreter is [coffee-script](http://coffeescript.org/) (For it's for looping powers). So it would really look like this:
+Recalling the {{moustash}} interpreter is [coffee-script](http://coffeescript.org/) - it would need to be like this:
 
 ```javascript
 $$in( function (agrName, /* in. {{ -> console.log arg.name }} */
 ```
+
+OR
+
+```javascript
+$$in( function (agrName, /* in.as.js {{ function() { console.log(arg.name); } }} */
+```
+
 
 
 #### (TODO) It will handle the returned promise.
