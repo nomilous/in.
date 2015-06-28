@@ -21,7 +21,7 @@ An argument infuser.
 
 #### It uses eval
 
-See [unfortunately](#unfortunately)
+Hmmmm...
 
 #### It pollutes the global namespace
 
@@ -123,11 +123,6 @@ $$in(function(
 ## Infuser Composition
 
 [&#9650;](#in)
-
-#### Unfortunately
-
-No one can be told what an `infuser` is. You have to [see it](https://github.com/nomilous/in./blob/master/in.jokes/big-in.japan('All%20right!').js) for yourself...
-
 
 #### It has [Actions](#creating-actions), [Adapters](#creating-adapters), [Actors](#creating-actors) and para{{'m'}}eters
 
@@ -232,7 +227,6 @@ var scope = {
 }
 $$in(scope, function(arg, // in. {{scopeVar}}
 ```
-
 
 ## Going Deeper
 
