@@ -177,7 +177,7 @@ $$in(function(pipe) { // in.as.pipe.tcpdump2json $ tcpdump -i en0
 ```
 
 
-#### (TODO) It can pend the function
+#### It can pend the function
 
 ```javascript
 

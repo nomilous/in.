@@ -15,31 +15,7 @@ objective 'Inject processed args into function', ->
                 arg1: value: 1
                 arg2: value: 2
                 arg3: value: 3
-                []
                 fn
-
-    it 'injectes otherArgs into the gaps',
-
-        (done, Injector) ->
-
-            fn = (arg1, other1, arg2, other2, arg3, other3) ->
-
-                console.log arguments
-
-                [arg1, arg2, arg3].should.eql [1,2,3]
-                [other1, other2, other3].should.eql ['a','b','c']
-                done()
-
-            Injector.perform {}, 
-                arg1: value: 1
-                other1: {}
-                arg2: value: 2
-                other2: {}
-                arg3: value: 3
-                other3: {}
-                ['a', 'b', 'c']
-                fn
-
 
 
     it 'calls onInject with each arg',
@@ -62,7 +38,6 @@ objective 'Inject processed args into function', ->
                 arg1: value: 1
                 arg2: value: 2
                 arg3: value: 3
-                []
                 fn
 
 
@@ -85,7 +60,6 @@ objective 'Inject processed args into function', ->
                 arg1: value: 1
                 arg2: value: 2
                 arg3: value: 3
-                []
                 fn
 
             .catch ->
@@ -107,5 +81,4 @@ objective 'Inject processed args into function', ->
             Injector.perform opts, 
                 e: {}
                 arg1: value: 2
-                []
                 fn

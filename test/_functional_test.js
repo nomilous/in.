@@ -196,6 +196,33 @@ objective('ensure it all works', function(should) {
   })
 
 
+  context('other args', function() {
+
+    it('intersperces arguments filling the un-infused arguments', function(done, In) {
+
+      var pend = $$in({pend: true}, function(
+        arg1,
+        arg2, // in. 2
+        arg3,
+        resolve,
+        arg4, // in. 4
+        arg5
+      ) {
+
+        resolve([arg1, arg2, arg3, arg4, arg5])
+
+      });
+
+      pend(1, 3, 5).then(function(result) {
+        result.should.eql([1, '2', 3, '4' ,5]);
+        done()
+      });
+
+    })
+
+  })
+
+
   context('injecting functions', function() {
 
     it('does not run the function if in.as.function', function(done, In) {
@@ -204,7 +231,6 @@ objective('ensure it all works', function(should) {
         fn, // in.as.function {{-> throw new Error('Not run')}}
         err
       ){
-        console.log(err);
         should.not.exist(err);
         try {
           fn()
