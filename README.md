@@ -221,13 +221,13 @@ $$in(function(
 
 [&#9650;](#in)
 
-#### (TODO) It will run the function
+#### It will run the function
 
 ```javascript
 $$in( function (argName, // in. {{ function() { console.log(arg.name); } }}
 ```
 
-Recalling the {{moustash}} interpreter is [coffee-script](http://coffeescript.org/) - it would need to be like this:
+Recalling the {{moustash}} interpreter is [coffee-script](http://coffeescript.org/) - it would actually need to be like this:
 
 ```javascript
 $$in( function (agrName, /* in. {{ -> console.log arg.name }} */
@@ -240,29 +240,33 @@ $$in( function (agrName, /* in.as.js {{ function() { console.log(arg.name); } }}
 ```
 
 
-
-#### (TODO) It will handle the returned promise.
-
-```javascript
-$$in( function (arg, // in. {{ $$in( function(arg, // in. {{ ... 
-```
-todo - easilly pend, maybe $$in pends and $in runs
-
-#### (TODO) It can inject the unrun function
+#### It will use the returned promise to populate the argument asynchronously.
 
 ```javascript
-$$in( function (fn, // in.as.function {{  function(...  }}
+$$in( function (array, // in. {{ -> $$in.promise (resolve, reject) -> resolve [1, 2, 3] }}
 ```
 
-#### (TODO) It is deeply integratable
+
+#### It can inject the function without running it
+
+```javascript
+$$in( function (fn, // in.as.js.function {{ function() {} }}
+```
+
+#### It is integratable
 
 ```javascript
 $$in({
   onInject: function(arg, done){
-    arg.value = 1;
-    done(err = null);
+    setTimeout(function is(Async) {
+      var err = null;
+      if (arg.name == 'one') arg.value = 1;
+      done(err);
+    }, 42);
   }
-}, function(one, One) {});
+}, function(one, two, three) {
+  console.log(one);
+});
 ```
 
 See [hameln](https://github.com/nomilous/hameln)
