@@ -93,17 +93,17 @@ $$in(function(
 
 ```javascript
 $$in(function(
-    somthing, // in. {{this}}
+    nothing, // in.as something as {{1}}
     somthingElse, // in. {{throw new Error('No such thing.')}}
     e
 ){
     e.toString() === 'Error: No such thing.'
     somthingElse === null
-    somthing === (dunno, haven't really thought about this and that)
+    somthing === 1 // happened before the error
 
 }).then...
 ```
-`e` is a special argument. There are [others](#special-arguments).
+[e](http://wonderingminstrels.blogspot.com/2002/12/if-everything-happens-that-can-be-done.html) is a special argument. There are [others](#special-arguments).
 
 #### The moustache interpreter is coffee-script
 
@@ -268,7 +268,6 @@ $$in({
   console.log(one);
 });
 ```
-
 See [hameln](https://github.com/nomilous/hameln)
 
 
