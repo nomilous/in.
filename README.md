@@ -438,13 +438,13 @@ So, [um?](https://github.com/nomilous/in./issues/1)
 recurse = $$in(
 
 {
-  fusion: function(protons) { /* return promise */ }
-  alchemy: function(atom, change) {}
+  fusion: function(protonCount) { /* return promise */ }
+  alchemy: function(atom, change) { /* return promise */ }
 },
 
 function(
-  Pb,   // in.as.atom {{fusion(82)}}
-  Au,  // in.as.atom {{async(alchemy(Pb, -3))}}
+  Pb,   // in.as.atom {{ fusion(82) }}
+  Au,  // in.as.atom {{ alchemy(Pb, -3) }}
   out // out.as.atom to ...
 ){
 
