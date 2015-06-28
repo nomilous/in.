@@ -282,6 +282,9 @@ $$in (arg1, arg2) ->
 
 What if things go wrong in the `//in.`...
 
+# Options
+
+# Promising
 
 # Extending
 
@@ -336,13 +339,9 @@ See also [Using Expanders](#using-expanders)
 * `async()` for promises.
 * `callback()` for node callbacks.
 
-### Using expander result
+### Using Expander Result
 
-### Multiple expanders
-
-### Options
-
-### Promising
+### Multiple Expanders
 
 # Next
 
