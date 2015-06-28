@@ -282,8 +282,6 @@ $$in({
   console.log(one);
 });
 ```
-See [hameln](https://github.com/nomilous/hameln)
-
 
 #### It supports coffeescript
 
