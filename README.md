@@ -201,10 +201,12 @@ loadJsonFrom = $$in(function(
 ) {});
 
 loadJsonFrom('www.my-json.com')
+
 .then(function(json) {
   json.a;
   json.b;
 })
+
 .catch(function(e) {})
 ```
 Note: [special arguments](#special-arguments) are not naked even if no `in.` specified.
