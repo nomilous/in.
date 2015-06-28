@@ -164,10 +164,10 @@ $$in(function(pipe) { // in.as.pipe.tcpdump2json $ tcpdump -i en0
 })
 ```
 
-
 #### It can pend the function
 
 ```javascript
+require('in.actor.web'); // actor might not exist yet?
 
 loadJson = $$in.pend(function(
   arg1, // in.as.json web.get www.my-json.com/arg1.json
@@ -176,21 +176,29 @@ loadJson = $$in.pend(function(
 ){ resolve({one: arg1, two: arg2})});
 
 loadJson().then...
-
-// 'in.actor.web' module might not exist.
 ```
 `resolve` is a special argument. There are [others](#special-arguments).
 
-#### (TODO) It automatically pends the function if uninfused args are present.
+#### It automatically pends the function if naked args are present.
 
-repeat the loadJson example
+`url` is a naked argument. No `in.` specified.
 
 ```javascript
-fn = $$in(function(result) {})
-fn('result').then...
-```
-It does this for [promise](#promising) chaining.
+require('in.actor.web'); // actor might not exist yet?
 
+loadJsonFrom = $$in(function(
+  url,
+  a,     // in.as.json web.get {{url}}/a.json
+  b,    // in.as.json web.get {{url}}/b.json
+  end  // in. {{ resolve({a: a, b: b}) }}
+) {});
+
+loadJsonFrom('www.my-json.com')
+.then(function(json) {
+  json.a;
+  json.b;
+})
+.catch(function(e) {})
 
 #### It has a faux scope
 
