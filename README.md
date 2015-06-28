@@ -6,6 +6,8 @@ An argument infuser.
 * [Infuser Composition](#infuser-composition)
 * [Going Deeper](#going-deeper)
 * [Error Handling](#error-handling)
+* [Options](#options)
+* [Promising](#promising)
 * [Extending](#extending)
 * [Injector](#injector)
 * [Next](#next)
@@ -284,7 +286,11 @@ What if things go wrong in the `//in.`...
 
 # Options
 
+[&#9650;](#in)
+
 # Promising
+
+[&#9650;](#in)
 
 # Extending
 
