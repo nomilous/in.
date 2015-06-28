@@ -79,6 +79,16 @@ $$in(function(
 }).then...
 ```
 
+
+#### It has access to previous argument values.
+
+```javascript
+$$in(function(
+  array, // in. {{ [1,2,3] }}
+  hello // in. hello {{i++ for i in array}}
+){});
+```
+
 #### It provides the [error](#error-handling)
 
 ```javascript
@@ -219,15 +229,6 @@ var scope = {
   scopeVar: 'accessable in expander'
 }
 $$in(scope, function(arg, // in. {{scopeVar}}
-```
-
-#### It has access to previous argument values.
-
-```javascript
-$$in(function(
-  arg1,  // in. {{[1,2,3]}}
-  arg2, // in. {{i for i in arg1}}
-){});
 ```
 
 
