@@ -265,10 +265,8 @@ $$in( function (fn, // in.as.js.function {{ function() {} }}
 ```javascript
 var opts = {
   $$onInject: function(arg, done){
-    setTimeout(function() {
-      if (arg.name == 'one') arg.value = 1;
-      done(err = null);
-    }, 42);
+    if (arg.name == 'one') arg.value = 1;
+    done(err = null);
   }
 }
 
