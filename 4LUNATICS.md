@@ -44,7 +44,7 @@ unleash( 'Cape Town', /* Building. 11, Room. 919 */ Math. floor
 
 ).then(
 
-  $$in( { pend: true, welcome: true, uuid: '...
+  $$in( { welcome: true, uuid: '...
 
 )
 
