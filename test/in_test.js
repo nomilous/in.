@@ -1,4 +1,4 @@
-xobjective('In', function(should) {
+objective('In', function(should) {
 
   // trace.filter = true;
 
@@ -7,14 +7,17 @@ xobjective('In', function(should) {
     why: "Extenders need only define global.$$in.<action>.<actor>" +
          "to integrate their argument infuser."
 
-  }, function() {
+  }, function(In) {
     should.exist($$in);
   });
 
-  it('returns a promise', function() {});
+  it('returns a promise', function(done, In) {
+    In(function(){}).then.should.be.an.instanceof(Function)
+    done()
+  });
 
 
-  context('formatting', function(In, Format, Action,  Injector) {
+  xcontext('formatting', function(In, Format, Action,  Injector) {
 
     it('calls format.perform with each argument', function(done) {
 
@@ -47,7 +50,9 @@ xobjective('In', function(should) {
   });
 
   
-  context('action', function(In, Format, Action, Injector) {
+  xcontext('action', function(In, Format, Action, Injector) {
+
+    trace.filter = true;
 
     it('calls action.perform with each argument', function(done) {
       Format.stub(function perform(opts, inArgs, arg) {

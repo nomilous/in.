@@ -6,11 +6,6 @@ objective 'Format infuser', ->
         global.$$in.actors.default = ->
         global.$$in.actors.actor = ->
 
-    xit 'defaults to module', (Format) ->
-
-        Format.perform {}, {}, arg = name: 'name'
-        arg.infuse.should.equal 'in.module name'
-
     it 'sets the actor to default if it does not exist (for in)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'in.as moon-dancer ex pans ion'

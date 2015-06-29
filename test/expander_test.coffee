@@ -48,6 +48,21 @@ objective 'Expand infuser arguments', ->
                 @arg.actions.length.should.equal 1
                 done()
 
+    it 'supports multiline expansions',
+
+        (done, Expander, Compiler) ->
+
+            Compiler.does perform: (opts, arg, args, expansion) ->
+
+                expansion.eval.trim().should.equal 'bit of code'
+                done()
+                then: -> 
+
+            @arg.actions[0].expansion = 'testing, testing  \n {{\n\nbit of code\n\n}} \n'
+
+            Expander.perform(@opts, @inArgs, @arg)
+
+
 
     it 'expands if the compiler returns an array and sets the asArray flag',
 

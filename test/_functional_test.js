@@ -42,6 +42,39 @@ objective('ensure it all works', function(should) {
 
     });
 
+    it('supports multiple lines internally', function(done, In) {
+
+      In(function(arg1) { 
+
+        /* in(arg1).as.js.function {{
+          function() {
+            return 1;
+          }
+        }} */
+
+        arg1().should.equal(1);
+        done()
+
+      })
+
+    })
+
+    it('supports multiple lines in arg braces', function(done, In) {
+
+      In(function(
+        arg1 /* in.as.js.function {{
+          function() {
+            return 1;
+          }
+        }} */) {
+
+        arg1().should.equal(1);
+        done()
+
+      })
+
+    })
+
   });
 
   context('using the promise', function() {
