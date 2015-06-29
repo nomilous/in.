@@ -11,7 +11,7 @@ objective 'Inject processed args into function', ->
                 arg3.should.equal 3
                 done()
 
-            Injector.perform {}, 
+            Injector.perform {},
                 arg1: value: 1
                 arg2: value: 2
                 arg3: value: 3

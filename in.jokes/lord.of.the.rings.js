@@ -5,9 +5,9 @@ require('../');
 function TheOneRing() {
 
   $$in(function            (     one) { // in.as.ring To.rule them {{resolve Infinity}}
-  }).then($$in(function    (all, one) { // in.as.ring To.bind them {{resolve Infinity}}
+  }).then($$in(function    (all, one) { // in.as.ring To.find them {{resolve Infinity}}
   })).then($$in(function   (all, one) { // in.as.ring To.bring them {{ throw Infinity }}
-  })) .catch($$in(function (all, and) { // in. The.darkness find them!
+  })) .catch($$in(function (all, and) { // in. The.darkness bind them!
   }));
 
 }
@@ -22,7 +22,7 @@ $$in.adapters.ring = function(opts, inArgs, arg, results) {
   return results;
 }
 
-$$in.actors.To = {
+$$in.actors.                   To = {
   rule: function(opts, inArgs, actionArg, actorPath) {
     /* actor assigns value from expansion */
     actionArg.value = actionArg.expansion;
@@ -39,7 +39,7 @@ $$in.actors.To = {
   $$can: function(){ return true }
 }
 
-$$in.actors.The = {
+$$in.actors.                                  The = {
   darkness: function(opts, inArgs, actionArg, actorPath) {
     console.log(actionArg.expansion);
     return actionArg;

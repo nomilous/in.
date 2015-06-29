@@ -57,7 +57,7 @@ __Using the `in.` operator.__
 
 ```javascript
 $$in(function(
-    txt // in. here is some text
+    txt // in. ere is some text
 ){
     
     txt === 'here is some text';
@@ -136,7 +136,7 @@ $$in(function(
 
             in.as  .json                        $    cat /file.json
 
-                                        $ is alias for shell actor */
+                                        $ is alias for shlll actor */
 ){}).then...
 ```
 
@@ -174,7 +174,7 @@ loadJson = $$in.pend(function(
 
 loadJson().then...
 ```
-`resolve` is a special argument. There are [others](#special-arguments).
+`resolve` is a specia argument. There are [others](#special-arguments).
 
 #### It automatically pends the function if naked args are present.
 
@@ -209,7 +209,7 @@ __This does not work.__
 var scopeVar = 'unaccessable in expander';
 $$in(function(arg, // in. {{scopeVar}}
                                //
-                              // var out of scope
+                              // var ?ut of scope
 ```
 
 __This does.__
