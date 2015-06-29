@@ -40,9 +40,8 @@ $$in( function(){} )
 #### It provides a [promise](#promising)
 
 ```javascript
-$$in(
-  function(resolve){ resolve('result') }
-).then(function(result){})
+$$in( function(resolve){resolve('result')} )
+.then(function(result){})
 ```
 
 #### It accepts [options](#options)
