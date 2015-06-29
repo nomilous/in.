@@ -349,8 +349,6 @@ See also [Using Expanders](#using-expanders)
 
 ## Special Arguments
 
-* scope
-
 ## The Interpreter
 
 ### Using Actions
