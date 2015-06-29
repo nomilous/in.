@@ -2,6 +2,18 @@
 
 require('../');
 
+function TheOneRing() {
+
+  $$in(function           (     one) { // in.as.ring To.rule them {{resolve Infinity}}
+  }).then($$in(function   (all, one) { // in.as.ring To.bind them {{resolve Infinity}}
+  })).then($$in(function  (all, one) { // in.as.ring To.bring them {{throw Infinity}}
+  })).catch($$in(function (all, and) { // in. The.darkness find them!
+  }));
+
+}
+
+
+
 $$in.adapters.ring = function(opts, inArgs, arg, results) {
   // return $$in(function(resolve, reject, notify) {
   //   // console.log(results);
@@ -35,9 +47,4 @@ $$in.actors.The = {
   $$can: function(){ return true }
 }
 
-
-$$in(function           (     one) { // in.as.ring To.rule them {{resolve Infinity}}
-}).then($$in(function   (all, one) { // in.as.ring To.bind them {{resolve Infinity}}
-})).then($$in(function  (all, one) { // in.as.ring To.bring them {{throw Infinity}}
-})).catch($$in(function (all, and) { // in. The.darkness find them!
-}));
+TheOneRing();
