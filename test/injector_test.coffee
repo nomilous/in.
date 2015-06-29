@@ -29,56 +29,31 @@ objective 'Inject processed args into function', ->
 
 
             opts = 
-                onInject: (arg, callback) ->
+                $$onInject: (arg, callback) ->
                     arg.value++
                     callback()
 
 
-            Injector.perform opts, 
+            Injector.perform opts,
                 arg1: value: 1
                 arg2: value: 2
                 arg3: value: 3
                 fn
-
-
-    it 'calls opts.onError if error in onInject',
-
-        (done, Injector) ->
-
-            fn = ->
-
-            opts = 
-                onInject: (arg, callback) ->
-                    callback new Error 'Oh! No!'
-
-                onError: (e) ->
-                    e.toString().should.match /Oh/
-                    done()
-
-
-            Injector.perform opts, 
-                arg1: value: 1
-                arg2: value: 2
-                arg3: value: 3
-                fn
-
-            .catch ->
 
 
     it 'calls the function with the error',
 
         (done, Injector) ->
 
-            fn = (e, arg1) ->
-                e.toString().should.match /Oh/
+            fn = (ee, arg1) ->
+                ee.toString().should.match /Oh/
                 done()
 
             opts = 
-                onError: (e) -> e
-                onInject: (arg, callback) ->
+                $$onInject: (arg, callback) ->
                     callback new Error 'Oh! No!'
 
             Injector.perform opts, 
-                e: {}
+                ee: {}
                 arg1: value: 2
                 fn

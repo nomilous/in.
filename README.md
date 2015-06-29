@@ -105,19 +105,19 @@ $$in(function(
 
 ```javascript
 $$in(function(
-    e,
+    ee,
     nothing,  // in.as something as {{1}}
     somthing, // in. {{throw new Error('No such thing.')}}
     one       // in. {{ 1 }}
 ){
-    e.toString() === 'Error: No such thing.';
+    ee.toString() === 'Error: No such thing.';
     nothing === 'something as 1'; // populated before the error
     somthing === undefined;
     one === undefined; // not populated, after error
 
 }).then...
 ```
-[e](http://wonderingminstrels.blogspot.com/2002/12/if-everything-happens-that-can-be-done.html) is a special argument. There are [others](#special-arguments).
+[ee](http://objective.black/if/everything/happens/that/cant/be/done) is a special argument. There are [others](#special-arguments).
 
 
 ## Infuser Composition
@@ -349,6 +349,8 @@ See also [Using Expanders](#using-expanders)
 [&#9650;](#in)
 
 ## Special Arguments
+
+* scope
 
 ## The Interpreter
 

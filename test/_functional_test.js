@@ -135,11 +135,14 @@ objective('ensure it all works', function(should) {
 
     it('puts the promise resolver and rejector and notifier into moustach scope', function(done, In) {
 
-      In(function(
+      trace.filter = true;
+
+      fn= In(function(
         array, // in. {{[1,2,3]}}
         ps,   // in. {{notify array.length}}
         done // in. {{resolve array}}
-      ){}).then(
+      ){})
+      .then(
         function(result){
           result.should.eql [1,2,3]
           done()
@@ -149,6 +152,7 @@ objective('ensure it all works', function(should) {
           // console.log(m);
         }
       )
+
     })
   })
 
@@ -157,7 +161,7 @@ objective('ensure it all works', function(should) {
     it('pends the function by flag', function(done, In) {
 
       var run = false;
-      var pend = In({pend: true}, function(resolve, arg1, arg2) { // in. ARG2
+      var pend = In({$$pend: true}, function(resolve, arg1, arg2) { // in. ARG2
         run = true;
         resolve(arg1 + arg2);
       })
@@ -208,24 +212,6 @@ objective('ensure it all works', function(should) {
       }, 10)
     })
 
-    it("pends the function by 'results' in args", function(done, In) {
-
-      var run = false;
-      var pend = In(function(results, resolve, arg2) { // in. ARG2
-        run = true;
-        resolve(results + arg2);
-      })
-
-      setTimeout(function() {
-        run.should.equal(false);
-
-        pend('ARG1').then(function(result) {
-          result.should.equal('ARG1ARG2');
-          done();
-        })
-      }, 10)
-    })
-
   })
 
 
@@ -262,9 +248,9 @@ objective('ensure it all works', function(should) {
 
       In(function(
         fn, // in.as.function {{-> throw new Error('Not run')}}
-        err
+        ee
       ){
-        should.not.exist(err);
+        should.not.exist(ee);
         try {
           fn()
         } catch (e) {
@@ -278,10 +264,10 @@ objective('ensure it all works', function(should) {
 
       In(function(
         arg1, // in. {{-> throw new Error('Was run')}}
-        err
+        ee
       ){
         should.not.exist(arg1);
-        err.toString().should.match(/Was run/);
+        ee.toString().should.match(/Was run/);
         done()
       });
     });
@@ -290,7 +276,7 @@ objective('ensure it all works', function(should) {
 
       In(function(
         arg1, // in. {{ -> $$in.promise (resolve) -> resolve [1,2,3]}}
-        err
+        ee
       ){
         arg1.should.eql [1, 2, 3]
         done()
@@ -335,6 +321,30 @@ objective('ensure it all works', function(should) {
           done()
         }
       ).then(function(){}, done)
+
+    })
+
+  })
+
+  context('the opts / scope object is cleaned', function() {
+
+    it('has no longer $$onInject', function(In, done) {
+
+      var opts = {
+        $$onInject: function(arg, done) {
+          arg.value = 1;
+          done()
+        },
+        $$pend: false,
+        $$specialArgs: []
+      }
+
+      In(opts, function(one) { // in.
+
+        // console.log(opts);
+        done()
+
+      });
 
     })
 

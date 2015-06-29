@@ -1,6 +1,9 @@
 objective 'Error handling', ->
 
-    it 'exits with errno if no handler',
+    # no longer callign the error handler, 
+    # let the promise reject if no ee in args
+
+    xit 'exits with errno if no handler',
 
         (In, done) ->
 
@@ -20,7 +23,7 @@ objective 'Error handling', ->
             .catch ->
 
 
-    it 'calls optional error handler', 
+    xit 'calls optional error handler', 
 
         (In, done) ->
 
@@ -42,11 +45,11 @@ objective 'Error handling', ->
             .catch ->
 
 
-    it 'injects the error if (e)',
+    it 'injects the error if (ee)',
 
         (In, done) ->
 
-            $$in (arg, e) ->
+            $$in (arg, ee) ->
 
                 ### in(arg). {{
 
@@ -54,40 +57,6 @@ objective 'Error handling', ->
 
                 }} ###
 
-                e.toString().should.match /Oh/
-                done()
-
-
-
-
-    it 'injects the error if (err)',
-
-        (In, done) ->
-
-            $$in (arg, err) ->
-
-                ### in(arg). {{
-
-                    throw new InfusionError 'Oh! No!'
-
-                }} ###
-
-                err.toString().should.match /Oh/
-                done()
-
-
-    it 'injects the error if (error)',
-
-        (In, done) ->
-
-            $$in (arg, error) ->
-
-                ### in(arg). {{
-
-                    throw new InfusionError 'Oh! No!'
-
-                }} ###
-
-                error.toString().should.match /Oh/
+                ee.toString().should.match /Oh/
                 done()
 

@@ -4,7 +4,7 @@ objective 'Expand infuser arguments', ->
 
     beforeEach (Expander) ->
 
-        @opts = value: 1, caller: {}
+        @opts = value: 1, $$caller: {}
         @inArgs = {}
         @arg = 
             name: 'arg1'
