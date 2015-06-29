@@ -215,10 +215,10 @@ $$in(function(arg, // in. {{scopeVar}}
 __This does.__
 
 ```javascript
-var scope = {
+var opts = {
   scopeVar: 'accessable in expander'
 }
-$$in(scope, function(arg, // in. {{scopeVar}}
+$$in(opts, function(arg, // in. {{scopeVar}}
 ```
 
 ## Going Deeper
@@ -263,14 +263,16 @@ $$in( function (fn, // in.as.js.function {{ function() {} }}
 #### It is integratable
 
 ```javascript
-$$in({
-  onInject: function(arg, done){
+var opts = {
+  $$onInject: function(arg, done){
     setTimeout(function() {
       if (arg.name == 'one') arg.value = 1;
       done(err = null);
     }, 42);
   }
-}, function(one, two, three) {
+}
+
+$$in(opts, function(one, two, three) {
   console.log(one);
 });
 ```
