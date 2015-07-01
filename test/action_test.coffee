@@ -17,8 +17,10 @@ objective 'Call infusion actor', (should) ->
                 value: ''
             ]
 
-        global.$$in.actors = actor: ->  
+        global.$$in.actors = (global.$$in.actors || {})
+        global.$$in.actors.actor = ->  
         global.$$in.actors.actor.$$can = ->
+        global.$$in.adapters = (global.$$in.actors || {})
         global.$$in.adapters.pipe = ->
 
     it 'rejects with error if pipe is not first adapter',
@@ -90,7 +92,8 @@ objective 'Call infusion actor', (should) ->
 
             @arg.actions[0].action = 'ACTION1'
             @arg.actions[0].actor = 'ACTOR1'
-            global.$$in.actors = ACTOR1: -> 'RESULT'
+            global.$$in.actors = (global.$$in.actors || {})
+            global.$$in.actors.ACTOR1 = -> 'RESULT'
             global.$$in.actors.ACTOR1.$$can = -> true
 
 

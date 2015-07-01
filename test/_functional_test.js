@@ -7,10 +7,6 @@ objective('ensure it all works', function(should) {
 
   });
 
-  before(function(){
-    mock('dir', require('in.expander.dir'));
-  });
-
   context('general functionality', function() {
 
     it('runs the empty function', function(done, In) {
@@ -286,42 +282,20 @@ objective('ensure it all works', function(should) {
   })
 
 
-  xcontext('in.expander.dir', function() {
+  context('in.expander.dir', function() {
 
-      it ('is called on expand.dir', function(In, dir, done) {
+      it('expands dir', function(In, done) {
 
-      // set expectation on expand.dir() handler
-
-      dir.does(function perform(config, arg1){
-
-        config.should.eql({
-          opts: {
-            // conf: 'ig'
-          },
-          expansion: {
-            eval: 'expand.dir(\'./\')'
-          }
-        });
-
-        arg1.should.equal('./');
-
-        return {
-          then: function(resolver) {
-            resolver(['file1', 'file2']);
-          }
-        }
-      })
-
-      $$in(
-        function(
-          files // in. {{expand.dir('./')}}
-        ){
-
-          files.should.eql ['file1', 'file2']
+        In(function(dir) { // in. {{ expand.dir('./a*.coffee') }}
+          dir.should.eql([
+            './action_test.coffee',
+            './adapter_test.coffee',
+            './async_test.coffee'
+          ])
           done()
-        }
-      ).then(function(){}, done)
+        }).catch(done);
 
+      
     })
 
   })
