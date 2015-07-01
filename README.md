@@ -144,7 +144,7 @@ $$in(function(
 ```javascript
 $$in(function(
 
-    bunchOFjsons // in.as.json $ cat {{expand.dir('/my/*.json')}}
+    bunchOFjsons // in.as.json $ cat {{ $$files('/my/*.json') }}
 
 ){}).then...
 ```
@@ -205,7 +205,7 @@ Note: [special arguments](#special-arguments) are not naked even if no `in.` spe
 __This does not work.__
 
 ```javascript
-var scopeVar = 'unaccessable in expander';
+var scopeVar = 'unaccessable in moustache';
 $$in(function(arg, // in. {{scopeVar}}
                                //
                               // var out of scope
@@ -215,7 +215,7 @@ __This does.__
 
 ```javascript
 var opts = {
-  scopeVar: 'accessable in expander'
+  scopeVar: 'accessable in moustache'
 }
 $$in(opts, function(arg, // in. {{scopeVar}}
 ```

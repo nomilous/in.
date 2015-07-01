@@ -286,7 +286,7 @@ objective('ensure it all works', function(should) {
 
       it('expands dir', function(In, done) {
 
-        In(function(dir) { // in. {{ expand.dir('./a*.coffee') }}
+        In(function(dir) { // in. {{ $$dir('./a*.coffee') }}
           dir.should.eql([
             './action_test.coffee',
             './adapter_test.coffee',

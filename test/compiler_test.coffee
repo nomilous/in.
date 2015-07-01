@@ -23,7 +23,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
         (done, Compiler) ->
 
-            @expansion = eval: 'expand.thing() and expand.thisToo()'
+            @expansion = eval: '$$thing() and $$thisToo()'
             Compiler.perform(@opts, @arg, @inArgs, @expansion)
             .then( 
                 (res) ->
@@ -46,7 +46,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                         arg2.should.equal 'VALUE'
                         then: (resolver) -> resolver([1, 2, 3]);
                         
-                @expansion = eval: 'expand.thing(\'arg value\', previousArg)'
+                @expansion = eval: '$$thing(\'arg value\', previousArg)'
                 @inArgs = {previousArg: value: 'VALUE'};
                 
                 Compiler.perform(@opts, @arg, @inArgs, @expansion)
@@ -67,7 +67,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                         then: (resolver) -> 
                             resolver [{a: 1}, {a: 2}, {a: 'THREE'}]
 
-                @expansion = eval: 'thing.a for thing in expand.thirdPartyExpander(\'arg\')'
+                @expansion = eval: 'thing.a for thing in $$thirdPartyExpander(\'arg\')'
                 
                 Compiler.perform(@opts, @arg, @inArgs, @expansion)
                 .then (res) ->
@@ -91,7 +91,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                     deeper: (conf, arg) -> then: (r) -> r [arg, 'do', 're', 'me']
 
 
-                @expansion = eval: '[expand.ex1(\'arg1\'), expand.ex2(\'arg2\'), expand.ex3.deeper(\'arg3\'), async(\'one\')]'
+                @expansion = eval: '[$$ex1(\'arg1\'), $$ex2(\'arg2\'), $$ex3.deeper(\'arg3\'), $$async(\'one\')]'
 
                 Compiler.perform(@opts, @arg, @inArgs, @expansion)
                 .then( 
@@ -124,11 +124,9 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                         otherArgs += arg
                         resolve anArray: [{i:1}, {i:2}, {i:3}]
-                                                                                              # property on async call
-                                                                                              # as if synchronous
-                                                                                              #
-                # @expansion = eval: 'console.log xxx: expand.A(\'loop\', expand.I(\'stem \')).anArray'
-                @expansion = eval: '++a.i for a in expand.A(\'loop\', expand.I(\'stem \')).anArray'
+
+
+                @expansion = eval: '++a.i for a in $$A(\'loop\', $$I(\'stem \')).anArray'
 
 
                 Compiler.perform(@opts, @arg, @inArgs, @expansion)
@@ -153,7 +151,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                         optFn(arg).then resolve
 
-                @expansion = eval: 'expand.fn(optFn, \'arg\')'
+                @expansion = eval: '$$fn(optFn, \'arg\')'
 
                 @opts.optFn = (arg) -> $$in.promise (resolve) ->
 
@@ -181,7 +179,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
 
                         argFn(arg).then resolve
 
-                @expansion = eval: 'expand.fn(argFn, \'arg\')'
+                @expansion = eval: '$$fn(argFn, \'arg\')'
 
                 @inArgs = argFn: value: (arg) -> $$in.promise (resolve) ->
 
@@ -215,7 +213,7 @@ objective 'Compile embedded in. {{fusions}}', (should) ->
                          'b' + conf.arg.$e[0][1],
                          'c' + conf.arg.$e[0][2]]
 
-                @expansion.eval = 'expand.thing2(expand.thing1())'
+                @expansion.eval = '$$thing2($$thing1())'
                 Compiler.perform @opts, @arg, @inArgs, @expansion
                 .then =>
                     @arg.$e.should.eql [ 
