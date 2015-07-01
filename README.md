@@ -396,7 +396,7 @@ Search npm for<br>
 
 [&#9650;](#in)
 
-Because you can do some [crazy stuff](https://github.com/nomilous/in./blob/master/4LUNATICS.md)...
+Because you can do some [crazy stuff (missing crazy stuff example link)]()...
 
 ### But Besides That
 
