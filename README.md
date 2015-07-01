@@ -371,8 +371,8 @@ See also [Using Expanders](#using-expanders)
 
 #### Special Expanders
 
-* `async()` for promises.
-* `callback()` for node callbacks.
+* `$$async()` for promises.
+* `$$callback()` for node callbacks.
 
 ### Using Expander Result
 

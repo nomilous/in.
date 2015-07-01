@@ -290,7 +290,6 @@ objective('ensure it all works', function(should) {
           dir.should.eql([
             './action_test.coffee',
             './adapter_test.coffee',
-            './async_test.coffee'
           ])
           done()
         }).catch(done);
