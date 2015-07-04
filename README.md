@@ -341,6 +341,28 @@ See also [Using Actors](#using-actors)
 
 See also [Using Expanders](#using-expanders)
 
+### What an expander does.
+
+Whenever the moustache contents 'returns' an array the action argument is expanded before performing the action.
+
+eg.
+
+```javascript
+$$in(function(
+  packages // in.as.json $ cat {{ $$files('node_modules/*/package.json') }}
+){});
+
+// becomes
+
+$$in(function(
+  packages[], // in.as.json $ cat node_modules/coffee-script/package.json
+  packages[], // in.as.json $ cat node_modules/in.actor.shell/package.json
+  packages[], // in.as.json $ cat node_modules/in.expander.dir/package.json
+  packages[], // in.as.json $ cat node_modules/when/package.json
+){});
+```
+
+
 # Injector
 
 [&#9650;](#in)
