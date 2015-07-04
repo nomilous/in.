@@ -80,13 +80,11 @@ $$in(function(
 
 #### The moustache interpreter is coffee-script
 
-It [expands](#expanders) on `for` loops.
-
 ```javascript
 $$in(function(
-    array // in. {{i for i in [0..9]}}
+    array // in. {{ Math.pow i, i for i in [1..6] }}
 ){
-    array === [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    array === [ 1, 4, 27, 256, 3125, 46656 ];
 }).then...
 ```
 
@@ -96,7 +94,7 @@ $$in(function(
 ```javascript
 $$in(function(
   array, // in. {{ [1,2,3] }}
-  hello // in. hello {{i++ for i in array}}
+  hello // in. hello {{++i for i in array}}
 ){});
 ```
 
