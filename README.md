@@ -94,7 +94,7 @@ $$in(function(
 ```javascript
 $$in(function(
   array, // in. {{ [1,2,3] }}
-  hello // in. hello {{++i for i in array}}
+  hello // in. hello world {{i for i in array}}
 ){});
 ```
 
