@@ -323,11 +323,24 @@ $$in(function(
 
 [&#9650;](#in)
 
-It would be useful when publishing Adapters, Actors or Expanders to include 'in.adapter', 'in.actor' or 'in.expander' in the module keywords so that [these searches](#next) works.
+It would be useful when publishing Adapters, Actors or Expanders to include __in.adapter__, __in.actor__ or __in.expander__ in the module keywords so that [these searches](#next) works.
 
 ## Creating Actions
 
 See also [Using Actions](#using-actions)
+
+Anything that follows `// in.` or `// out.` without whitespace is an Action.
+
+The Action serves only to inform the Actor what to do.
+
+### Conventions
+
+These conventions are a work in progress.
+
+* __in.as__ informs the actor to provide data. (this is the default)
+* __in.do__ informs the actor to do something and provide only boolean success or failure
+
+Conventions for __out.__ are not yet clear.
 
 ## Creating Adapters
 
