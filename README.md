@@ -323,6 +323,8 @@ $$in(function(
 
 [&#9650;](#in)
 
+It would be useful when publishing Adapters, Actors or Expanders to include 'in.adapter', 'in.actor' or 'in.expander' in the module keywords so that [these searches](#next) works.
+
 ## Creating Actions
 
 See also [Using Actions](#using-actions)
@@ -343,9 +345,9 @@ See also [Using Expanders](#using-expanders)
 
 ### What an expander does.
 
-Whenever the moustache contents 'returns' an array the action argument is expanded before performing the action.
+Whenever the moustache contents resolves with an array the action argument is expanded before performing the action.
 
-eg.
+__eg.__
 
 ```javascript
 $$in(function(
@@ -361,6 +363,10 @@ $$in(function(
   packages[], // in.as.json $ cat node_modules/when/package.json
 ){});
 ```
+
+### Expander definition
+
+
 
 
 # Injector
