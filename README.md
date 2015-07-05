@@ -147,11 +147,11 @@ $$in(function(
 ){}).then...
 ```
 
-#### (TODO) Some [Actors](#creating-actors) support pipes
+#### (TODO) Some [Actors](#creating-actors) support streams
 
 ```javascript
-$$in(function(pipe) { // in.as.pipe.tcpdump2json $ tcpdump -i en0
-  pipe.on('data', function(frame) {
+$$in(function(stream) { // in.as.stream.tcpdump2json $ tcpdump -i en0
+  stream.on('data', function(frame) {
     console.log(frame.source.ip);
     // the 'in.adapter.tcpdump2json' module might not exist?
   })
@@ -346,12 +346,6 @@ Conventions for __out.__ are not yet clear.
 
 See also [Using Adapters](#using-adapters)
 
-## Creating Actors
-
-See also [Using Actors](#using-actors)
-
-* Actor.$$can...
-
 ## Creating Expanders
 
 See also [Using Expanders](#using-expanders)
@@ -380,6 +374,12 @@ $$in(function(
 ### Expander definition
 
 
+## Creating Actors
+
+See also [Using Actors](#using-actors)
+
+* Actor.$$can...
+
 
 
 # Injector
@@ -401,6 +401,8 @@ $$in(function(
 ### Using Moustaches
 
 ### Using Options
+
+* per arg options .eg. maxBuffer to shell
 
 ### Using Previous Argument
 

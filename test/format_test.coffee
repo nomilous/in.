@@ -5,6 +5,7 @@ objective 'Format infuser', ->
         Expander.stub perform: -> then: (resolve) -> resolve()
         global.$$in.actors.default = ->
         global.$$in.actors.actor = ->
+        global.$$in.actorAliases.$ = 'actor'
 
     it 'sets the actor to default if it does not exist (for in)', (Format) ->
 
@@ -20,18 +21,18 @@ objective 'Format infuser', ->
 
     it 'extracts the action and actor and parameters (for in)', (Format) ->
 
-        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as actor ex pans ion'
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as     actor   ex   pans  ion'
 
         arg.should.eql
             name: 'name'
-            infuse: 'in.as actor ex pans ion'
+            infuse: 'in.as     actor   ex   pans  ion'
             value: undefined
             asArray: false
             actions: [
                 action: ['in', 'as']
                 adapters: []
                 actor: 'actor'
-                expansion: 'ex pans ion'
+                expansion: 'ex   pans  ion'
             ]
 
     it 'extracts the action and actor and parameters (for out)', (Format) ->
@@ -49,6 +50,22 @@ objective 'Format infuser', ->
                 actor: 'actor'
                 expansion: 'ex pans ion'
             ]
+
+    it 'allows actor aliases with control chars', (Format) ->
+
+        Format.perform {}, {}, arg = name: 'name', infuse: 'in.as $ pa ra ms'
+        arg.should.eql
+            name: 'name'
+            infuse: 'in.as $ pa ra ms'
+            value: undefined
+            asArray: false
+            actions: [
+                action: ['in', 'as']
+                adapters: []
+                actor: 'actor'
+                expansion: 'pa ra ms'
+            ] 
+
 
     it 'extracts the action and actor (for in)', (Format) ->
 

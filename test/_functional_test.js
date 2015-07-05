@@ -294,8 +294,25 @@ objective('ensure it all works', function(should) {
           ])
           done()
         }).catch(done);
+    })
+  })
 
-      
+
+  context('in.actor.shell', function() {
+
+    it('is called on shell action', function(In, done) {
+
+
+      $$in(
+        function(
+          proc, // in. $ ps | grep '^\s*{{ process.pid }}' | awk '{print $4,$5}'
+          parts // in. {{proc.trim().split(' ')}}
+        ){
+          parts.should.eql(process.argv);
+          done()
+        }
+      ).then(function(){}, done)
+
     })
 
   })
@@ -319,26 +336,6 @@ objective('ensure it all works', function(should) {
         done()
 
       });
-
-    })
-
-  })
-
-
-  context('in.actor.shell', function() {
-
-    it('is called on shell action', function(In, done) {
-
-
-      $$in(
-        function(
-          files // in. {{i for i in [0..10]}}
-        ){
-          // console.log(files)
-          // files.should.eql ['file1', 'file2']
-          done()
-        }
-      ).then(function(){}, done)
 
     })
 

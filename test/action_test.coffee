@@ -21,19 +21,19 @@ objective 'Call infusion actor', (should) ->
         global.$$in.actors.actor = ->  
         global.$$in.actors.actor.$$can = ->
         global.$$in.adapters = (global.$$in.actors || {})
-        global.$$in.adapters.pipe = ->
+        global.$$in.adapters.stream = ->
 
-    it 'rejects with error if pipe is not first adapter',
+    it 'rejects with error if stream is not first adapter',
 
         # adapters process right to left
 
         (done, Action) ->
 
             global.$$in.actors = actor: done
-            @arg.actions[0].adapters = ['json', 'pipe']
+            @arg.actions[0].adapters = ['json', 'stream']
             @defer.reject = (e) ->
 
-                e.toString().should.match /InfusionError\: pipe must be first adapter/
+                e.toString().should.match /InfusionError\: stream must be first adapter/
                 done()
 
             Action.perform @defer, @opts, @inArgs, @arg
@@ -43,11 +43,11 @@ objective 'Call infusion actor', (should) ->
 
         (done, Action) ->
 
-            @arg.actions[0].adapters = ['pipe']
+            @arg.actions[0].adapters = ['stream']
 
             global.$$in.actors.actor.$$can = (doStuff) ->
 
-                doStuff.adapters.should.eql ['pipe']
+                doStuff.adapters.should.eql ['stream']
                 done()
                 true
 
@@ -58,11 +58,11 @@ objective 'Call infusion actor', (should) ->
 
         (done, Action) ->
 
-            @arg.actions[0].adapters = ['pipe']
+            @arg.actions[0].adapters = ['stream']
 
             global.$$in.actors.actor = (opts, inArgs, actionArg, actorPath) ->
 
-                actionArg.adapters.should.eql ['pipe']
+                actionArg.adapters.should.eql ['stream']
                 done()
 
             global.$$in.actors.actor.$$can = () -> true
