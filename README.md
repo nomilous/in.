@@ -337,7 +337,7 @@ The Action serves only to inform the Actor what to do.
 These conventions are a work in progress.
 
 * __in.as__ informs the actor to provide data. (this is the default)
-* __in.do__ informs the actor to do something and provide only boolean success or failure
+* __in.do__ informs the actor to do something and provide only null for success or error for failure
 
 Conventions for __out.__ are not yet clear.
 
