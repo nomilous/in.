@@ -316,6 +316,21 @@ objective('ensure it all works', function(should) {
 
   })
 
+  context('in.actor.read', function() {
+
+    it('reads files', function(In, done) {
+
+      $$in(function(file) { // in. < ../README.md
+
+        file.should.match(/And Finally/);
+        done();
+
+      }).then(function(){}, done)
+
+    })
+
+  })
+
   context('the opts / scope object is cleaned', function() {
 
     it('has no longer $$onInject', function(In, done) {

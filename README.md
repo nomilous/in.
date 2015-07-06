@@ -357,18 +357,20 @@ __eg.__
 
 ```javascript
 $$in(function(
-  packages // in.as.json $ cat {{ $$files('node_modules/*/package.json') }}
+  packages // in.as.json < {{ $$files('node_modules/*/package.json') }}
 ){});
 
 // becomes
 
 $$in(function(
-  packages[], // in.as.json $ cat node_modules/coffee-script/package.json
-  packages[], // in.as.json $ cat node_modules/in.actor.shell/package.json
-  packages[], // in.as.json $ cat node_modules/in.expander.dir/package.json
-  packages[], // in.as.json $ cat node_modules/when/package.json
+  packages[], // in.as.json < node_modules/coffee-script/package.json
+  packages[], // in.as.json < node_modules/in.actor.shell/package.json
+  packages[], // in.as.json < node_modules/in.expander.dir/package.json
+  packages[], // in.as.json < node_modules/when/package.json
 ){});
 ```
+
+__<__ is an alias for the [read](https://github.com/nomilous/in.actor.read) Actor.
 
 ### Expander definition
 
