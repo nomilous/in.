@@ -440,6 +440,7 @@ Assuming that someone has taken the trouble to implement the following node modu
 
 * `npm install in.adapter.uptime`
 * `npm install in.adapter.unkle`
+* `npm install in.expander.is`
 
 Then...
 
@@ -448,21 +449,18 @@ Then...
 require('in.');
 require('in.adapter.uptime');
 require('in.adapter.unkle');
+require('in.expander.is');
 
 $$in(function(uptime) { // in.as.uptime $ uptime
-    
-    /* and so forth... */
-
-}).then.....
+  //...
+}).then(...
 ```
 
 The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Adapter](#creating-adapters) for formatting into a suitable object to be injected into the function argument completely devoid of all further effort ever. ([possible exageration?](#in))
 
 ```javascript
-.....then($$in(function(result, Bob) { // in.as.unkle {{ $$is ( 'your\'s' ) }}`'
-
-    // TODO: un-'currently unkle will be injected into result (i think)'
-
+...then($$in(function(result, Bob) { // in.as.unkle {{ $$is( 'your\'s' ) }}
+  //...
 })).then...
 ```
 
