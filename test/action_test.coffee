@@ -10,7 +10,7 @@ objective 'Call infusion actor', (should) ->
         @inArgs = {}
         @arg = 
             actions: [
-                action: 'action'
+                action: ['in', 'as']
                 adapters: []
                 actor: 'actor'
                 expansion: ''
@@ -45,9 +45,9 @@ objective 'Call infusion actor', (should) ->
 
             @arg.actions[0].adapters = ['stream']
 
-            global.$$in.actors.actor.$$can = (doStuff) ->
+            global.$$in.actors.actor.$$can = (action) ->
 
-                doStuff.adapters.should.eql ['stream']
+                action.adapters.should.eql ['stream']
                 done()
                 true
 

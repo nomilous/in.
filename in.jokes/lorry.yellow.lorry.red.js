@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 // osx
+// TODO: redo with out. (say is slow to start)
 
 require('../');
 

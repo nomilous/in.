@@ -302,7 +302,6 @@ objective('ensure it all works', function(should) {
 
     it('is called on shell action', function(In, done) {
 
-
       $$in(
         function(
           proc, // in. $ ps | grep '^\s*{{ process.pid }}' | awk '{print $4,$5}'

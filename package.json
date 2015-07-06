@@ -23,8 +23,12 @@
   },
   "dependencies": {
     "coffee-script": "^1.9.3",
-    "in.actor.shell": "0.0.0",
-    "in.expander.dir": "0.0.1",
+    "in.actor.shell": "0.0.1",
+    "in.actor.read": "0.0.1",
+    "in.expander.dir": "0.0.2",
+    "in.adapter.lines": "0.0.2",
+    "in.adapter.json": "0.0.1",
+    "merge": "^1.2.0",
     "when": "^3.7.3"
   }
 }

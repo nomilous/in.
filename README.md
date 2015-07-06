@@ -21,8 +21,6 @@ An argument infuser.
 
 #### It uses eval
 
-Hmmmm...
-
 #### It pollutes the global namespace
 
 ```javascript
@@ -141,19 +139,17 @@ $$in(function(
 
 ```javascript
 $$in(function(
-
-    bunchOFjsons // in.as.json $ cat {{ $$files('/my/*.json') }}
-
+  bunchOFjsons // in.as.json $ cat {{ $$files('/my/*.json') }}
 ){}).then...
 ```
 
 #### (TODO) Some [Actors](#creating-actors) support streams
 
 ```javascript
-$$in(function(stream) { // in.as.stream.tcpdump2json $ tcpdump -i en0
+$$in(function(stream) { // in.as.stream.tcpdump $ tcpdump -i en0
   stream.on('data', function(frame) {
     console.log(frame.source.ip);
-    // the 'in.adapter.tcpdump2json' module might not exist?
+    // the 'in.adapter.tcpdump' module might not exist?
   })
 })
 ```
@@ -460,7 +456,7 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 }).then.....
 ```
 
-The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Adapter](#creating-adapters) for formatting into probably json to be injected into the function argument completely devoid of all further effort ever. ([possible exageration?](#in))
+The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Adapter](#creating-adapters) for formatting into a suitable object to be injected into the function argument completely devoid of all further effort ever. ([possible exageration?](#in))
 
 ```javascript
 .....then($$in(function(result, Bob) { // in.as.unkle {{ $$is ( 'your\'s' ) }}`'

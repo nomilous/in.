@@ -22,7 +22,8 @@ objective 'Format infuser', ->
     it 'extracts the action and actor and parameters (for in)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'in.as     actor   ex   pans  ion'
-
+        
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'in.as     actor   ex   pans  ion'
@@ -39,6 +40,7 @@ objective 'Format infuser', ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'out.as actor ex pans ion'
 
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'out.as actor ex pans ion'
@@ -54,6 +56,8 @@ objective 'Format infuser', ->
     it 'allows actor aliases with control chars', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'in.as $ pa ra ms'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'in.as $ pa ra ms'
@@ -70,6 +74,8 @@ objective 'Format infuser', ->
     it 'extracts the action and actor (for in)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'in.as actor'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'in.as actor'
@@ -85,6 +91,8 @@ objective 'Format infuser', ->
     it 'extracts the action and actor (for out)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'out.as actor'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'out.as actor'
@@ -100,6 +108,8 @@ objective 'Format infuser', ->
     it 'extracts the action (for in)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'in.as'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'in.as'
@@ -115,6 +125,8 @@ objective 'Format infuser', ->
     it 'extracts the action (for out)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'out.as'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'out.as'
@@ -130,6 +142,8 @@ objective 'Format infuser', ->
     it 'extracts the action and adapter and actor and params (for in)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.adapter actor params'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'in.as.adapter actor params'
@@ -145,6 +159,8 @@ objective 'Format infuser', ->
     it 'extracts the action and adapter and actor and params (for out)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'out.as.adapter actor params'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'out.as.adapter actor params'
@@ -160,6 +176,8 @@ objective 'Format infuser', ->
     it 'extracts the action and adapters and actor (for in)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.adapter1.adapter2 actor'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'in.as.adapter1.adapter2 actor'
@@ -175,6 +193,8 @@ objective 'Format infuser', ->
     it 'extracts the action and adapters and actor (for out)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'out.as.adapter1.adapter2 actor'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'out.as.adapter1.adapter2 actor'
@@ -190,6 +210,8 @@ objective 'Format infuser', ->
     it 'extracts the action and adapters (for in)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'in.as.adapter1.adapter2'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'in.as.adapter1.adapter2'
@@ -205,6 +227,8 @@ objective 'Format infuser', ->
     it 'extracts the action and adapters (for out)', (Format) ->
 
         Format.perform {}, {}, arg = name: 'name', infuse: 'out.as.adapter1.adapter2'
+
+        delete arg.actions[0].toString
         arg.should.eql
             name: 'name'
             infuse: 'out.as.adapter1.adapter2'
