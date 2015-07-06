@@ -452,7 +452,7 @@ require('in.adapter.unkle');
 require('in.expander.is');
 
 $$in(function(uptime) { // in.as.uptime $ uptime
-  //...
+
 }).then(...
 ```
 
@@ -460,7 +460,7 @@ The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#c
 
 ```javascript
 ...then($$in(function(result, Bob) { // in.as.unkle {{ $$is( 'your\'s' ) }}
-  //...
+
 })).then...
 ```
 
