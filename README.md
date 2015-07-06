@@ -141,7 +141,7 @@ $$in(function(
   bunchOFjsons // in.as.json read {{ $$files('/my/*.json') }}
 ){}).then...
 ```
-[json](https://github.com/nomilous/in.adaptor.json) is an Adaptor (comes bundled)<br>
+[json](https://github.com/nomilous/in.adapter.json) is an Adaptor (comes bundled)<br>
 [read](https://github.com/nomilous/in.actor.read) is an Actor (comes bundled)<br>
 [files](https://github.com/nomilous/in.expander.dir) in an Expander (comes bundled)
 
