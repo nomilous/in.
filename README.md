@@ -436,10 +436,6 @@ Search npm (using keywords) for<br>
 
 [&#9650;](#in)
 
-Because you can do some [crazy stuff (missing crazy stuff example link)]()...
-
-### But Besides That
-
 Assuming that someone has taken the trouble to implement the following node modules
 
 * `npm install in.adapter.uptime`
