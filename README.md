@@ -147,10 +147,11 @@ $$in(function(
 #### (TODO) Some [Actors](#creating-actors) support streams
 
 ```javascript
+require('in.adapter.tcpdump'); // adapter might not exist yet?
+
 $$in(function(stream) { // in.as.stream.tcpdump $ tcpdump -i en0
   stream.on('data', function(frame) {
     console.log(frame.source.ip);
-    // the 'in.adapter.tcpdump' module might not exist?
   })
 })
 ```
