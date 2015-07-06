@@ -91,9 +91,11 @@ $$in(function(
 
 ```javascript
 $$in(function(
-  array, // in. {{ [1,2,3] }}
-  hello // in. hello world {{i for i in array}}
-){});
+  myArray, // in. {{ [1,2,3] }}
+  hello   // in. hello world {{i for i in myArray}}
+){
+  hello === [ 'hellow world 1', 'hello world 2', 'hello world 3' ];
+});
 ```
 
 #### It provides the [error](#error-handling)
@@ -101,13 +103,13 @@ $$in(function(
 ```javascript
 $$in(function(
     ee,
-    nothing,  // in.as something as {{1}}
-    somthing, // in. {{throw new Error('No such thing.')}}
+    nothing,    // in.as something as {{1}}
+    something, // in. {{throw new Error('No such thing.')}}
     one       // in. {{ 1 }}
 ){
     ee.toString() === 'Error: No such thing.';
     nothing === 'something as 1'; // populated before the error
-    somthing === undefined;
+    something === undefined;
     one === undefined; // not populated, after error
 
 }).then...
@@ -128,7 +130,6 @@ $$in(function(
 
 
     /*     <action>.<adapter1>.<adapter2...> <actor> para{{'m'}}eters
-
             in.as  .json                        $    cat /file.json
 
                                         $ is alias for shell actor */
@@ -319,7 +320,7 @@ $$in(function(
 
 [&#9650;](#in)
 
-It would be useful when publishing Adapters, Actors or Expanders to include __in.adapter__, __in.actor__ or __in.expander__ in the module keywords so that [these searches](#next) works.
+It would be useful when publishing Adapters, Actors or Expanders to include __in.adapter__, __in.actor__ or __in.expander__ in the module keywords so that [these searches](#next) work.
 
 ## Creating Actions
 
