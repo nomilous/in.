@@ -127,12 +127,12 @@ $$in(function(
 $$in(function(
 
     arg1 // in.as.json $ cat /file.json
-    
+
     /*     <action>.<adapter1>.<adapter2...> <actor> para{{'m'}}eters
             in.as  .json                        $    cat /file.json  */
 ){}).then...
 ```
-[__$__](https://github.com/nomilous/in.actor.shell) (a.k.a. shell) is an Actor (comes bundles)
+[__$__](https://github.com/nomilous/in.actor.shell) (a.k.a. shell) is an Actor (comes bundled)
 
 #### (TODO) It has [Expanders](#creating-expanders)
 
@@ -141,7 +141,7 @@ $$in(function(
   bunchOFjsons // in.as.json read {{ $$files('/my/*.json') }}
 ){}).then...
 ```
-[read](https://github.com/nomilous/in.actor.read) is an Actor (comes bundled)
+[read](https://github.com/nomilous/in.actor.read) is an Actor (comes bundled)<br>
 [$$files](https://github.com/nomilous/in.expander.dir) in an Expander (comes bundled)
 
 #### (TODO) Some [Actors](#creating-actors) support streams
