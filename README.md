@@ -148,7 +148,7 @@ $$in(function(
 #### (TODO) Some [Actors](#creating-actors) support streams
 
 ```javascript
-require('in.adapter.tcpdump'); // adapter might not exist yet?
+require('in.adapter.tcpdump'); // adapter might not exist?
 
 $$in(function(stream) { // in.as.stream.tcpdump $ tcpdump -i en0
   stream.on('data', function(frame) {
@@ -160,7 +160,7 @@ $$in(function(stream) { // in.as.stream.tcpdump $ tcpdump -i en0
 #### It can pend the function
 
 ```javascript
-require('in.actor.web'); // actor might not exist yet?
+require('in.actor.web'); // actor might not exist?
 
 loadJson = $$in.pend(function(
   arg1, // in.as.json web.get www.my-json.com/arg1.json
@@ -177,7 +177,7 @@ loadJson().then...
 `url` is a naked argument - no `in.` specified.
 
 ```javascript
-require('in.actor.web'); // actor might not exist yet?
+require('in.actor.web'); // actor might not exist?
 
 loadJsonFrom = $$in(function(
   url,
