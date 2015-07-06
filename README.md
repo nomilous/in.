@@ -369,7 +369,6 @@ $$in(function(
   packages[], // in.as.json < node_modules/when/package.json
 ){});
 ```
-
 __<__ is an alias for the [read](https://github.com/nomilous/in.actor.read) Actor.
 
 ### Expander definition
