@@ -4,9 +4,7 @@ objective('ensure it all works', function(should) {
 
   context('general functionality', function() {
 
-    it.only('runs the empty function', function(done, In) {
-
-      console.log({tty: process.stdout.isTTY});
+    it('runs the empty function', function(done, In) {
 
       In(function(){
         done()
