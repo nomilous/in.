@@ -135,7 +135,7 @@ $$in(function(
 [json](https://github.com/nomilous/in.adapter.json) is an Adaptor (comes bundled)<br>
 [$](https://github.com/nomilous/in.actor.shell) (a.k.a. shell) is an Actor (comes bundled)
 
-#### (TODO) It has [Expanders](#creating-expanders)
+#### It has [Expanders](#creating-expanders)
 
 ```javascript
 $$in(function(
@@ -145,7 +145,7 @@ $$in(function(
 [read](https://github.com/nomilous/in.actor.read) is an Actor (comes bundled)<br>
 [files](https://github.com/nomilous/in.expander.dir) in an Expander (comes bundled)
 
-#### (TODO) Some [Adapters](#creating-adapters)/[Actors](#creating-actors) support streams
+#### Some [Adapters](#creating-adapters)/[Actors](#creating-actors) support streams
 
 ```javascript
 require('in.adapter.tcpdump'); // adapter might not exist?
