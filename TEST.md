@@ -1,7 +1,5 @@
 ```bash
 npm install
 
-./node_modules/.bin/objective
-
-# objective is still under construction.
+./node_modules/.bin/objective --once
 ```

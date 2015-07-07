@@ -4,7 +4,7 @@
   "description": "Argument infuser.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/objective --once"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/nomilous/in.#readme",
   "devDependencies": {
-    "objective": "0.0.26",
+    "objective": "0.0.27",
     "request": "^2.58.0",
     "should": "^7.0.1"
   },
