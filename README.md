@@ -156,7 +156,9 @@ $$in(function(stream) { // in.as.stream.tcpdump $ tcpdump -i en0
   })
 })
 ```
-Note: It is not an actual stream, rather a data event emitter.
+It is not an actual stream, rather a data event emitter.<br>
+The adapter will have already parsed the data into a usable object.
+
 
 #### It can pend the function
 
