@@ -2,12 +2,7 @@ objective('In', function(should) {
 
   // trace.filter = true;
 
-  it('pollutes the global namespace', {
-
-    why: "Extenders need only define global.$$in.<action>.<actor>" +
-         "to integrate their argument infuser."
-
-  }, function(In) {
+  it('pollutes the global namespace', function(In) {
     should.exist($$in);
   });
 
@@ -17,7 +12,7 @@ objective('In', function(should) {
   });
 
 
-  xcontext('formatting', function(In, Format, Action,  Injector) {
+  context('formatting', function(In, Format, Action,  Injector) {
 
     it('calls format.perform with each argument', function(done) {
 
@@ -41,16 +36,20 @@ objective('In', function(should) {
         }
       );
       Injector.stub(function perform(){
+        done()
         return {then: function(resolver) {resolver()}}
       })
-      In(function(arg1, arg2, arg3) {}).then(function() {
-        done();
-      });
+      In(function(
+        arg1, // in. 1
+        arg2, // in. 2
+        arg3 // in. 3
+      ){
+      }).catch(done);
     });
   });
 
   
-  xcontext('action', function(In, Format, Action, Injector) {
+  context('action', function(In, Format, Action, Injector) {
 
     trace.filter = true;
 
@@ -64,27 +63,14 @@ objective('In', function(should) {
         function perform(defer) { defer.resolve() }
       )
       Injector.stub(function perform(){
+        done()
         return {then: function(resolver) {resolver()}}
       })
-      In(function(arg1, arg2, arg3) {}).then(function() {
-        done();
-      });
+      In(function(
+        arg1, // in. 1
+        arg2, // in. 2
+        arg3  // in. 3
+      ){});
     })
   });
-
-  xcontext('aliases', function(In, Injector) {
-
-    it('calls shell on $', function(done) {
-
-      Injector.stub(function perform(){
-        return {then: function(resolver) {resolver()}}
-      })
-
-      $$in.actions = {as: {reason: {shell: done}}}
-      In(function(progress) { // in.as.reason $ /usr/local/bin/being < /dev/imagination | /usr/sbin/culture |
-      });
-    })
-
-  });
-
 });

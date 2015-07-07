@@ -3,8 +3,9 @@ objective 'Format infuser', ->
     beforeEach (In, Expander) ->
 
         Expander.stub perform: -> then: (resolve) -> resolve()
-        global.$$in.actors.default = ->
+        # global.$$in.actors.default = ->
         global.$$in.actors.actor = ->
+        global.$$in.actors.actor.$$can = -> true
         global.$$in.actorAliases.$ = 'actor'
 
     it 'sets the actor to default if it does not exist (for in)', (Format) ->

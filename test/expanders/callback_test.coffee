@@ -1,28 +1,23 @@
 objective 'Callback expander', ->
 
-    xit 'works',
+    it 'works',
 
         (done, In) ->
 
-            In.actors.none.$$can = -> true
-
             In
 
-                onError: (e) ->
+                fn1: (arg1, callback) -> callback null, arg1 + 1
 
-                    console.log e.stack
-                    done e
-
-                fn1: (arg1, callback) -> $$in.promise (resolve) -> resolve arg1 * 10
-
-                fn2: (arg1) -> $$in.promise (resolve) -> resolve arg1 * 100
+                fn2: (arg1, callback) -> callback null, arg1 + 2
 
                 (arg) -> 
 
-                    ### in(arg). {{callback(1, fn1, fn2) }}###
+                    ### in(arg). {{ $$callback(1, fn1, fn2) }} ###
 
-                    console.log XXX: arg
+                    arg.should.eql [2, 3]
                     done()
+
+            .catch done
 
 
     it 'runs the provided function',

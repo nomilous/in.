@@ -1,10 +1,8 @@
 objective 'Async expander', ->
 
-    xit 'works',
+    it 'works',
 
         (done, In) ->
-
-            In.actors.none.$$can = -> true
 
             In
 
@@ -19,10 +17,12 @@ objective 'Async expander', ->
 
                 (arg) -> 
 
-                    ### in(arg). {{async(1, fn1, fn2) }}###
+                    ### in(arg). {{ $$async(1, fn1, fn2) }} ###
 
-                    console.log XXX: arg
+                    arg.should.eql [10, 100]
                     done()
+
+            .catch done
 
     it 'runs the provided function',
 

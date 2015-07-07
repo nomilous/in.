@@ -1,12 +1,5 @@
 objective('ensure it all works', function(should) {
 
-  before(flush)
-  before(function(){
-    delete $$in.actors
-    delete $$in.adapters
-
-  });
-
   context('general functionality', function() {
 
     it('runs the empty function', function(done, In) {
@@ -172,30 +165,12 @@ objective('ensure it all works', function(should) {
       }, 10)
     })
 
-    xit("pends the function by 'res' in args", function(done, In) {
+    it("pends the function by naked args", function(done, In) {
 
       var run = false;
       var pend = In(function(res, resolve, arg2) { // in. ARG2
         run = true;
         resolve(res + arg2);
-      })
-
-      setTimeout(function() {
-        run.should.equal(false);
-
-        pend('ARG1').then(function(result) {
-          result.should.equal('ARG1ARG2');
-          done();
-        })
-      }, 10)
-    })
-
-    it("pends the function by 'result' in args", function(done, In) {
-
-      var run = false;
-      var pend = In(function(result, resolve, arg2) { // in. ARG2
-        run = true;
-        resolve(result + arg2);
       })
 
       setTimeout(function() {

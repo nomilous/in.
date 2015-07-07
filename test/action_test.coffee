@@ -20,7 +20,7 @@ objective 'Call infusion actor', (should) ->
         global.$$in.actors = (global.$$in.actors || {})
         global.$$in.actors.actor = ->  
         global.$$in.actors.actor.$$can = ->
-        global.$$in.adapters = (global.$$in.actors || {})
+        global.$$in.adapters = (global.$$in.adapters || {})
         global.$$in.adapters.stream = ->
 
     it 'rejects with error if stream is not first adapter',
@@ -29,7 +29,7 @@ objective 'Call infusion actor', (should) ->
 
         (done, Action) ->
 
-            global.$$in.actors = actor: done
+            global.$$in.actors.actor = done
             @arg.actions[0].adapters = ['json', 'stream']
             @defer.reject = (e) ->
 
@@ -86,44 +86,6 @@ objective 'Call infusion actor', (should) ->
             Action.perform @defer, @opts, @inArgs, @arg
 
 
-    context 'promise', ->
-
-        beforeEach ->
-
-            @arg.actions[0].action = 'ACTION1'
-            @arg.actions[0].actor = 'ACTOR1'
-            global.$$in.actors = (global.$$in.actors || {})
-            global.$$in.actors.ACTOR1 = -> 'RESULT'
-            global.$$in.actors.ACTOR1.$$can = -> true
-
-
-        xit 'resolves with returned value if the actor returns no promise',
-
-            (Action, done) ->
-
-                @defer.resolve = (res) ->
-
-                    res.should.eql ['RESULT']
-                    done()
-
-                Action.perform @defer, @opts, @inArgs, @arg
-
-
-        xit 'resolves with what the actor resolves with if actor returns a promise',
-
-            (Action, In, done) ->
-
-                @defer.resolve = (res) ->
-                    res.should.eql ['RESULT']
-                    done()
-
-                global.$$in.actions = ACTION1: ACTOR1: -> 
-                    $$in.promise (resolve) ->
-                        resolve('RESULT')
-
-                Action.perform @defer, @opts, @inArgs, @arg
-
-
     context 'expansion', ->
 
         beforeEach ->
@@ -134,59 +96,23 @@ objective 'Call infusion actor', (should) ->
                 action: 'ACTION1'
                 actor: 'ACTOR1'
                 adapters: []
-            # global.$$in.actions = ACTION1: ACTOR1: -> 'RESULT'
 
+        it 'supports multiple actions in the same arg',
 
-        xit 'supports multiple actions in the same arg',
+            (Action, Adapter, In, done) ->
 
-            why: """Formatter can expand.
-                    eg. // in.as shell cat {{file for file in expand.dir('/etc/bind/zones/db.*')}}
-                 """
-
-            (Action, In, done) ->
-
-                @defer.resolve = (res) ->
-
-                    res.should.eql [['RESULT', 'RESULT']]
-                    done()
-
-                global.$$in.actors ||= {}
                 global.$$in.actors.ACTOR1 = -> 
                     $$in.promise (resolve) ->
                         resolve('RESULT')
 
                 global.$$in.actors.ACTOR1.$$can = -> true
 
-                @arg.asArray = true
-                Action.perform @defer, @opts, @inArgs, @arg
-
-
-        xit 'passes result through the infusers expansion handler if defined',
-
-            (Action, In, done) ->
-
-                @defer.resolve = (res) ->
-                    
-                    res.should.equal 'REFORMATTED BY EXPANSION HANDLER'
-                    done()
-
-                global.$$in.actions = ACTION1: ACTOR1: -> 
-                    $$in.promise (resolve) ->
-                        resolve('RESULT')
-
-                global.$$in.actions.ACTION1.ACTOR1
-                .onExpanded = (arg, actionArgs, results) ->
+                Adapter.does perform: (opts, inArgs, arg, results) ->
 
                     results.should.eql ['RESULT', 'RESULT']
-                    return 'REFORMATTED BY EXPANSION HANDLER'
+                    done()
+                    then: ->
 
                 @arg.asArray = true
                 Action.perform @defer, @opts, @inArgs, @arg
-
-
-
-
-
-
-
-
+                
