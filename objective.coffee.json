@@ -4,6 +4,7 @@
   "repl": {
     "listen": "/tmp/socket-fbbea35a-cf15-4202-a0e5-9c8d7f819fb5"
   },
+  "once": false,
   "plugins": {
     "objective_dev": {
       "testDir": "test",

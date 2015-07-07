@@ -279,10 +279,9 @@ objective('ensure it all works', function(should) {
 
       $$in(
         function(
-          proc, // in. $ ps | grep '^\s*{{ process.pid }}' | awk '{print $4,$5}'
-          parts // in. {{proc.trim().split(' ')}}
+          rings // in.as.lines $ ../in.jokes/lord.of.the.rings.js
         ){
-          parts.should.eql(process.argv);
+          rings.should.eql [ 'them undefined', 'them undefined', 'find them!', '' ]
           done()
         }
       ).then(function(){}, done)
