@@ -1,8 +1,5 @@
 objective 'Error handling', ->
 
-    # no longer callign the error handler, 
-    # let the promise reject if no ee in args
-
     it 'injects the error if (ee)',
 
         (In, done) ->
