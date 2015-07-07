@@ -1,7 +1,7 @@
 {
   "name": "in.",
-  "version": "0.0.0",
-  "description": "Dynamic argument injector.",
+  "version": "0.0.1",
+  "description": "Argument infuser.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,11 +23,11 @@
   },
   "dependencies": {
     "coffee-script": "^1.9.3",
-    "in.actor.shell": "0.0.1",
-    "in.actor.read": "0.0.1",
-    "in.expander.dir": "0.0.2",
-    "in.adapter.lines": "0.0.2",
-    "in.adapter.json": "0.0.1",
+    "in.actor.shell": "0.0.2",
+    "in.actor.read": "0.0.2",
+    "in.expander.dir": "0.0.3",
+    "in.adapter.lines": "0.0.3",
+    "in.adapter.json": "0.0.2",
     "merge": "^1.2.0",
     "when": "^3.7.3"
   }
