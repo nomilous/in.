@@ -2,7 +2,9 @@ objective('ensure it all works', function(should) {
 
   context('general functionality', function() {
 
-    it('runs the empty function', function(done, In) {
+    it.only('runs the empty function', function(done, In) {
+
+      console.log({tty: process.stdout.isTTY});
 
       In(function(){
         done()
