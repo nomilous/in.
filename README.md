@@ -459,7 +459,7 @@ $$in(function(uptime) { // in.as.uptime $ uptime
 }).then(...
 ```
 
-The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Adapter](#creating-adapters) for formatting into a suitable object to be injected into the function argument completely devoid of all further effort ever. ([possible exageration?](#in))
+The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#creating-actors) to spawn the uptime command and provide the results into the uptime [Adapter](#creating-adapters) for formatting into a suitable object to be injected into the function argument completely devoid of all further effort ever. (possible exageration)
 
 ```javascript
 ...then($$in(function(result, Bob) { // in.as.unkle {{ $$is( 'your\'s' ) }}
