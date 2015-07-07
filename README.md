@@ -103,12 +103,12 @@ $$in(function(
 ```javascript
 $$in(function(
     ee,
-    nothing,    // in.as something as {{1}}
+    nothing,    // in.as something
     something, // in. {{throw new Error('No such thing.')}}
     one       // in. {{ 1 }}
 ){
     ee.toString() === 'Error: No such thing.';
-    nothing === 'something as 1'; // populated before the error
+    nothing === 'something'; // populated before the error
     something === undefined;
     one === undefined; // not populated, after error
 
