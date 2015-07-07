@@ -307,29 +307,5 @@ objective('ensure it all works', function(should) {
 
   })
 
-  context('the opts / scope object is cleaned', function() {
-
-    it('has no longer $$onInject', function(In, done) {
-
-      var opts = {
-        $$onInject: function(arg, done) {
-          arg.value = 1;
-          done()
-        },
-        $$pend: false,
-        $$specialArgs: []
-      }
-
-      In(opts, function(one) { // in.
-
-        // console.log(opts);
-        done()
-
-      });
-
-    })
-
-  })
-
 
 });

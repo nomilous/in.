@@ -118,10 +118,9 @@ $$in(function(
 ```
 [ee](http://objective.black/if/everything/happens/that/cant/be/done) is a special argument. There are [others](#special-arguments).
 
+[&#9650;](#in)
 
 ## Infuser Composition
-
-[&#9650;](#in)
 
 #### It has [Actions](#creating-actions), [Adapters](#creating-adapters), [Actors](#creating-actors) and para{{'m'}}eters
 
@@ -222,9 +221,9 @@ var opts = {
 $$in(opts, function(arg, // in. {{scopeVar}}
 ```
 
-## Going Deeper
-
 [&#9650;](#in)
+
+## Going Deeper
 
 #### It will run the function
 
@@ -287,22 +286,21 @@ $$in (arg1, arg2) ->
     ### in(arg2). ... ###
 
 .then (result) ->
-
 ```
-
-# Error Handling
 
 [&#9650;](#in)
 
+# Error Handling
+
 What if things go wrong in the `//in.`...
+
+[&#9650;](#in)
 
 # Options
 
 [&#9650;](#in)
 
 # Promising
-
-[&#9650;](#in)
 
 ### Resolving in the argument chain.
 
@@ -322,10 +320,9 @@ $$in(function(
 
 ```
 
+[&#9650;](#in)
 
 # Extending
-
-[&#9650;](#in)
 
 It would be useful when publishing Adapters, Actors or Expanders to include __in.adapter__, __in.actor__ or __in.expander__ in the module keywords so that [these searches](#next) work.
 
@@ -385,11 +382,9 @@ See also [Using Actors](#using-actors)
 
 * Actor.$$can...
 
-
+[&#9650;](#in)
 
 # Injector
-
-[&#9650;](#in)
 
 ## Special Arguments
 
@@ -424,10 +419,9 @@ See also [Using Actors](#using-actors)
 
 ### Multiple Expanders
 
-# Next
-
 [&#9650;](#in)
 
+# Next
 
 Search npm (using keywords) for<br>
 <br>
@@ -437,9 +431,9 @@ Search npm (using keywords) for<br>
 [&#9654;](https://www.npmjs.com/search?q=in.jokes) Jokes<br>
 [&#9654;](https://www.npmjs.com/search?q=in.love) Lovers<br>
 
-# Why
-
 [&#9650;](#in)
+
+# Why
 
 Assuming that someone has taken the trouble to implement the following node modules
 
@@ -471,10 +465,9 @@ The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#c
 
 `result` is a special argument. There are [others](#special-arguments).
 
+[&#9650;](#in)
 
 # The Downside
-
-[&#9650;](#in)
 
 This world has some `Type: UnfortnatelyExisting` individials.
 
@@ -501,9 +494,9 @@ It's about how `in.` makes it easier to camouflage.
 
 So, [um?](https://github.com/nomilous/in./issues/1)
 
-# And Finally
-
 [&#9650;](#in)
+
+# And Finally
 
 ```javascript
 recurse = $$in(
@@ -525,5 +518,5 @@ function(
 
 ```
 
-&#9654;
+[&#9650;](#in)&#9654;
 
