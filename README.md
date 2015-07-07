@@ -45,7 +45,7 @@ $$in( function(resolve){resolve('result')} )
 #### It accepts [options](#options)
 
 ```javascript
-$$in(  {opt:'ion'},  function(){} ).then...
+$$in(  {encoding:'ascii'},  function(){} ).then...
 ```
 
 #### It [injects](injector) arguments from their comments
