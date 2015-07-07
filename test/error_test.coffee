@@ -49,7 +49,7 @@ objective 'Error handling', ->
 
                 }} ###
 
-            .then (r) -> 1
+            .then (r) -> r
 
             .catch (e) ->
 
