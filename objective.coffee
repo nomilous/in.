@@ -1,12 +1,7 @@
-objective 'Dynamic Function Injector', (recurse, link) ->
+objective 'Argument Infuser', (link) ->
 
-    ### search for files to watch / run tests on changes ###
-
-    # objective, bug: why must link before recurse?
-    # objective, bug: can only link one?
-
-    # link.root './node_modules/in.actor.shell/objective'
-    # .then -> link.root './node_modules/in.expander.dir/objective'
-    # .then -> 
-    recurse ['lib', 'test'], createDir: true
-    .then -> 
+    link.root 'node_modules/in.actor.read/objective'
+    .then -> link.root 'node_modules/in.actor.shell/objective'
+    .then -> link.root 'node_modules/in.adapter.json/objective'
+    .then -> link.root 'node_modules/in.adapter.lines/objective'
+    .then -> link.root 'node_modules/in.expander.dir/objective'
