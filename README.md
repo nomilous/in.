@@ -476,7 +476,7 @@ The [$](https://github.com/nomilous/in.actor.shell) aliases the shell [Actor](#c
 
 This world has some `Type: UnfortnatelyExisting` individials.
 
-They might think <b>this</b> is funny, or fun, or who knows what.
+They might think __this__ is funny, or fun, or who knows what.
 
 ```javascript
 
