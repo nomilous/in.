@@ -19,3 +19,7 @@ Run only tests for in.
 
     node_modules/.bin/objective --once
 
+p.s. This saves a lot of nuisance
+
+    git config --global credential.helper osxkeychain
+
