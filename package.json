@@ -25,7 +25,7 @@
     "coffee-script": "^1.9.3",
     "in.actor.shell": "0.0.4",
     "in.actor.read": "0.0.3",
-    "in.expander.dir": "0.0.3",
+    "in.expander.dir": "0.0.4",
     "in.adapter.lines": "0.0.3",
     "in.adapter.json": "0.0.2",
     "merge": "^1.2.0",
