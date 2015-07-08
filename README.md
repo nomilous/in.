@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nomilous/in..svg)](https://travis-ci.org/nomilous/in.)
+
 # in[.](https://www.youtube.com/watch?v=zUDDiWtFtEM)
 
 An argument infuser.
@@ -14,7 +16,6 @@ An argument infuser.
 * [Why](#why)
 * What About If... [the downside](#the-downside)
 * [And Finally](#and-finally)
-* [![Build Status](https://travis-ci.org/nomilous/in..svg)](https://travis-ci.org/nomilous/in.)
 
 ## The Basics
 
