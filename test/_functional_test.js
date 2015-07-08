@@ -279,6 +279,8 @@ objective('ensure it all works', function(should) {
 
     it('is called on shell action', function(In, done) {
 
+      this.timeout(300);
+
       $$in(
         function(
           rings // in.as.lines $ ../in.jokes/lord.of.the.rings.js
