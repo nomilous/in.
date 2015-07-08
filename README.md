@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/nomilous/in..svg)](https://travis-ci.org/nomilous/in.)
-
 # in[.](https://www.youtube.com/watch?v=zUDDiWtFtEM)
+
+[![Build Status](https://travis-ci.org/nomilous/in..svg)](https://travis-ci.org/nomilous/in.)
 
 An argument infuser.
 

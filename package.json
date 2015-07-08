@@ -1,6 +1,6 @@
 {
   "name": "in.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Argument infuser.",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "dependencies": {
     "coffee-script": "^1.9.3",
     "in.actor.shell": "0.0.4",
-    "in.actor.read": "0.0.3",
+    "in.actor.read": "0.0.4",
     "in.expander.dir": "0.0.4",
     "in.adapter.lines": "0.0.3",
     "in.adapter.json": "0.0.2",
