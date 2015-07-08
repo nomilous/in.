@@ -2,7 +2,6 @@
 
 An argument infuser.
 
-* [![Build Status](https://travis-ci.org/nomilous/in..svg)](https://travis-ci.org/nomilous/in.)
 * __The Basics__
 * [Infuser Composition](#infuser-composition)
 * [Going Deeper](#going-deeper)
@@ -15,6 +14,7 @@ An argument infuser.
 * [Why](#why)
 * What About If... [the downside](#the-downside)
 * [And Finally](#and-finally)
+* [![Build Status](https://travis-ci.org/nomilous/in..svg)](https://travis-ci.org/nomilous/in.)
 
 ## The Basics
 
