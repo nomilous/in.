@@ -1,9 +1,8 @@
 # in[.](https://www.youtube.com/watch?v=zUDDiWtFtEM)
 
-[![Build Status](https://travis-ci.org/nomilous/in..svg)](https://travis-ci.org/nomilous/in.)
-
 An argument infuser.
 
+* [![Build Status](https://travis-ci.org/nomilous/in..svg)](https://travis-ci.org/nomilous/in.)
 * __The Basics__
 * [Infuser Composition](#infuser-composition)
 * [Going Deeper](#going-deeper)
