@@ -1,0 +1,15 @@
+[submodule "node_modules/in.actor.shell"]
+	path = node_modules/in.actor.shell
+	url = https://github.com/nomilous/in.actor.shell.git
+[submodule "node_modules/in.actor.read"]
+	path = node_modules/in.actor.read
+	url = https://github.com/nomilous/in.actor.read.git
+[submodule "node_modules/in.expander.dir"]
+	path = node_modules/in.expander.dir
+	url = https://github.com/nomilous/in.expander.dir.git
+[submodule "node_modules/in.adapter.lines"]
+	path = node_modules/in.adapter.lines
+	url = https://github.com/nomilous/in.adapter.lines.git
+[submodule "node_modules/in.adapter.json"]
+	path = node_modules/in.adapter.json
+	url = https://github.com/nomilous/in.adapter.json.git
