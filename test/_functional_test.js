@@ -279,7 +279,7 @@ objective('ensure it all works', function(should) {
 
     it('is called on shell action', function(In, done) {
 
-      this.timeout(300);
+      this.timeout(1000);
 
       $$in(
         function(
