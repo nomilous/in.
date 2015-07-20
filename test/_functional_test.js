@@ -261,6 +261,27 @@ objective('ensure it all works', function(should) {
 
   context('in.expander.dir', function() {
 
+      it('defaults to path + /* if no *', function(In, done) {
+
+        In(function(dir) { // in. {{ $$files('.') }}
+
+          dir.should.eql([
+            "./_functional_test.js",
+            "./action_test.coffee",
+            "./adapter_test.coffee",
+            "./compiler_test.coffee",
+            "./error_test.coffee",
+            "./expander_test.coffee",
+            "./format_test.coffee",
+            "./in_test.js",
+            "./injector_test.coffee",
+            "./parse_test.js"
+          ])
+          done()
+        }).catch(done);
+
+      })
+
       it('expands dir', function(In, done) {
 
         In(function(dir) { // in. {{ $$files('./a*') }}

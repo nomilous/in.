@@ -152,7 +152,7 @@ $$in(function(
 ```javascript
 require('in.adapter.tcpdump'); // adapter might not exist?
 
-$$in(function(stream) { // in.as.stream.tcpdump $ tcpdump -i en0
+$$in(function(stream) { // in.as.stream.tcpdump $ sudo tcpdump -nXXi lo0 
   stream.on('data', function(frame) {
     console.log(frame.source.ip);
   })
