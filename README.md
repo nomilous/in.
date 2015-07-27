@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/nomilous/in..svg)](https://travis-ci.org/nomilous/in.)
 
+### bugs
+
+* cannot have argument name same as key on opts
+
 # in[.](https://www.youtube.com/watch?v=zUDDiWtFtEM)
 
 An argument infuser.
