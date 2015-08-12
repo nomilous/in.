@@ -1,5 +1,7 @@
 objective('Parse function args', function(Parse, should) {
 
+  require('../');
+
   // trace.filter = true;
 
   it('finds args from function definition', function() {
@@ -54,6 +56,66 @@ objective('Parse function args', function(Parse, should) {
     args.arg2.infuse.should.equal('in.cognito')
   })
 
+  it('handles nested inner $$in ok', function() {
+    fn = function(
+      arg1, // in. text1
+      arg2, // in. {{2}}
+      arg3  // in. text3
+    ) {
+      $$in(function(
+        arg1, // in. nested1
+        arg2  // in. nested2
+      ){})
+    };
+    args = Parse({}, fn);
+    args.should.eql({
+      arg1: { name: 'arg1', infuse: 'in. text1' },
+      arg2: { name: 'arg2', infuse: 'in. {{2}}' },
+      arg3: { name: 'arg3', infuse: 'in. text3' }
+    })
+  });
+
+  it('handles nested inner and outer $$in ok', function() {
+    fn = function(
+      arg1,  // in. text1
+      arg2, //in. {{2}}
+      arg3
+    ) { // in. text3
+      $$in(function(
+        arg1, // in. nested1
+        arg2  // in. nested2
+      ){})
+    };
+    args = Parse({}, fn);
+    args.should.eql({
+      arg1: { name: 'arg1', infuse: 'in. text1' },
+      arg2: { name: 'arg2', infuse: 'in. {{2}}' },
+      arg3: { name: 'arg3', infuse: 'in. text3' }
+    })
+  });
+
+  it('handles nested outer and contained $$in ok', function() {
+    fn = function(
+      arg1,
+      arg2,
+      arg3
+    ) { // in. text3
+
+      // in(arg1). text1
+      // in(arg2). {{2}}
+
+      $$in(function(
+        arg1, // in. nested1
+        arg2  // in. nested2
+      ){})
+    };
+    args = Parse({}, fn);
+    args.should.eql({
+      arg1: { name: 'arg1', infuse: 'in. text1' },
+      arg2: { name: 'arg2', infuse: 'in. {{2}}' },
+      arg3: { name: 'arg3', infuse: 'in. text3' }
+    })
+  });
 
   it('does the same for out', function() {
 

@@ -302,7 +302,9 @@ objective('ensure it all works', function(should) {
 
       this.timeout(1000);
 
-      $$in(
+      $$in({
+          cwd: __dirname
+        },
         function(
           rings // in.as.lines $ ../in.jokes/lord.of.the.rings.js
         ){
