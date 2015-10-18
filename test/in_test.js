@@ -11,6 +11,12 @@ objective('In', function(should) {
     fn.toString().should.equal('function (done) {}');
   });
 
+  it('remove special and infused arguments from toString', function(In) {
+    fn = In(function(done, ee, xx) { // in.as xx
+    });
+    fn.toString().should.equal('function (done) { // in.as xx\n    }');
+  });
+
   it('returns a promise', function(done, In) {
     In(function(){}).then.should.be.an.instanceof(Function)
     done()
