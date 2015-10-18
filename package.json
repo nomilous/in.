@@ -1,6 +1,6 @@
 {
   "name": "in.",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Argument infuser.",
   "main": "index.js",
   "scripts": {
