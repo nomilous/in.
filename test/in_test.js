@@ -6,6 +6,11 @@ objective('In', function(should) {
     should.exist($$in);
   });
 
+  it('masquerades as original function', function(In) {
+    fn = In(function(done) {});
+    fn.toString().should.equal('function (done) {}');
+  });
+
   it('returns a promise', function(done, In) {
     In(function(){}).then.should.be.an.instanceof(Function)
     done()
